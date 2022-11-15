@@ -1,0 +1,102 @@
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url('./fonts/OpenSans-Regular.ttf') format("truetype");
+}
+@font-face {
+    font-family: MyriadPro-Regular;
+    src: url('./fonts/MyriadPro-Regular.ttf') format("truetype");
+}
+@font-face {
+    font-family: MyriadPro-Bold;
+    src: url('./fonts/MyriadPro-Bold.ttf') format("truetype");
+}
+@font-face {
+    font-family: Helvetica-Regular;
+    src: url('./fonts/HelveticaNeue-Regular.ttf') format("truetype");
+}
+
+:root {
+    --background-home-main: url('../src/images/svg/background-home.svg');
+    --item-square-purple: url('../src/images/svg/purple.svg');
+    --item-square-yellow: url( '../src/images/svg/yellow.svg');
+    --item-square_lilac: url('../src/images/svg/lilac.svg');
+    --icon-check-option: url('../src/images/svg/check.svg');
+    --icon-check-item: url('../src/images/svg/check-white.svg');
+    --icon-arrow-select: url('../src/images/svg/dropdown_menu.svg');
+    --color-gradient-global: transparent linear-gradient(271deg, #DF32FA 0%, #843BF9 54%, #57ABFB 100%) 0% 0% no-repeat padding-box;
+    --box-shadow-contour:  inset 0px 3px 6px #00000029, 0px 3px 6px #00000029;
+    --larger-texts-ever: 45px;
+    --big-text-ever: 40px;
+    --bg-medium-text-ever: 36px;
+    --medium-text-ever: 30px;
+    --middle-text-ever: 28px;
+    --subtitle-text-ever: 24px;
+    --very-medium-text: 20px;
+    --short--texts--medium: 17px;
+    --small-texts-ever: 16px;
+    --small-text-ever: 14px;
+    --smaller-text-ever: 12px;
+    --very-small-text: 11px;
+    --text-responsive-small: 10px;
+    --color-light--blue: #6ECEF8;
+    --color-large-text: #8733FF;
+    --color-black-text: #050505;
+    --color-text-description: #707070;
+    --color-text-light-grey: #7D7D7D;
+    --color-white: #fff;
+    /* #00008b */
+}
+
+
+.circlePurple{
+    list-style-image: url('../src/images/svg/circlePurple.svg');
+}
+
+.circleBlue{
+    list-style-image: url('../src/images/svg/circleBlue.svg');
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+

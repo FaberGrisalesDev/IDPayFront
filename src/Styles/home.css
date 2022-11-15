@@ -1,0 +1,1521 @@
+    .container-fluid {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    }
+
+    .check-options{
+        background-image: var(--icon-check-option);
+        background-repeat: no-repeat;
+        position: relative;
+        left: 40px;
+        top: 20px;
+        width: 50%;
+    }
+    .dropdown-toggle::after {
+        border: none;
+    }
+    .logo-container {
+        margin-left: 20%;
+    }
+
+    .global-enterprise{
+        color: #707070;
+        font-family: 'OpenSans-Regular';
+        font-size: var(--smaller-text-ever);
+    }
+
+    .logo-size {
+        height: 6rem;
+    }
+
+    .backgroud-home {
+        width: 100%;
+        background-image: var(--background-home-main);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: initial;
+        background-size: contain;
+    }
+
+    .cookies-z{
+        z-index: 1;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .content-cookies {
+        width: 90%;
+        height: 191px;
+        background-color: var(--color-white);
+        border-radius: 53px;
+        border: none; 
+        border: 3px solid var(--color-light--blue);
+        z-index: 3;
+        position: fixed;
+        bottom: 68px;
+    }
+
+    .img-cookies{   
+        width: 75%;
+        margin-left: 40px;
+        margin-top: 8px;
+    }
+
+    .btn-cookieshome{
+        float: right;
+        background: #6ecef830 0% 0% no-repeat padding-box;
+        opacity: 1;
+        border: none;
+        color: var(--color-large-text);
+        font-family: 'MyriadPro-Regular';
+        border-radius: 19px;
+        width: 198px;
+        height: 50px;
+        margin-top: -45px;
+        margin-right: -135px;
+        font-size: var(--middle-text-ever);
+        padding: 0px;
+    }
+
+    .btn-cookieshome:active{
+        background: #6ecef830 0% 0% no-repeat padding-box !important;
+    }
+
+    .text-cookies{
+        font-family: 'OpenSans-Regular';
+        font-size: 23px;
+        margin-left: -44px;
+        color: var(--color-black-text);
+    }
+    
+    .text-route{
+        color: var(--color-large-text);
+        padding: 0px 7px;
+        cursor: pointer;
+    } 
+
+    .itemPurple{
+        list-style-image: var(--item-square-purple);     
+    }
+
+    .itemYellow{
+        list-style-image: var(--item-square-yellow);
+    }
+
+    .itemLilac{
+        list-style-image: var(--item-square_lilac);
+    }
+    /* diana-dev */
+    .img-top-section {
+        width: 80%;
+        margin-left: 4%;
+        margin-top: 10%;
+    }
+
+    .text-worrie {
+        height: 35rem;
+        display: flex;
+        justify-content: center;
+        padding-top: 37%;
+        padding-left: 32%;
+    }
+
+    .text-main {
+        font-size: var(--big-text-ever);
+        font-family: 'MyriadPro-Regular';
+    }
+
+    .content-carrousel{
+        border-radius: 35px;
+        /* box-shadow: var(--box-shadow-contour); */
+    }
+
+    .imgTest {
+        width: 90% !important;
+        height: 475px;
+        border-radius: 35px;
+    }
+
+    .text-target{
+        display: block;
+        margin: auto;
+    }
+
+    .title-target{
+        font-size: var(--big-text-ever);
+        font-family: 'MyriadPro-Regular';
+        color: var(--color-black-text);
+        text-align: center;
+        line-height: 2rem;
+    }
+
+    .subTitle-target{
+        font-family: 'MyriadPro-Bold';
+        color: var(--color-large-text);
+        text-align: center;
+        font-size: var(--medium-text-ever);
+    }
+
+    .description-target{
+        color: var(--color-text-description);
+        font-family: 'OpenSans-Regular';
+        line-height: 1rem;
+        font-size: var(--small-text-ever);
+        margin-left: 100px;
+        margin-top: 20px;
+        padding: 0px 185px;
+        text-align: justify;
+    }
+
+    .container-img-yellow {
+        width: 100%;
+    }
+
+    .img-yellow {
+        width: 70%;
+        float: right;
+    }
+
+    .container-moment-pay {
+        background: #f0f0f0;
+        padding: 2% 0 6% 0;
+        border-radius: 14px;
+        height: 490px;
+        margin-top: -175px;
+    }
+
+    .title-moment-pay{
+        text-align: center!important;
+        color: var(--color-large-text);
+        font-family: 'MyriadPro-Regular';
+        font-size: var(--subtitle-text-ever);
+        margin-top: 20px;
+    }
+    
+    .list-moment-pay {
+        padding: 40px 80px;
+    }
+
+    .listStyle{
+        line-height: 1rem;
+    }
+
+    .items-payment{
+        font-family: 'OpenSans-Regular';
+        color: var(--color-text-description);
+        font-size: var(--small-text-ever);
+    }
+
+    .container-imgs-center {
+        display: flex;
+        justify-content: start;
+        padding: 0% 5%;
+        margin-top: -4%;
+    }
+
+    .container-card-img {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .woman-img{
+        width: 88%;
+        height: 159px;
+        border-radius: 30px;
+        box-shadow: inset 0px 3px 6px #00000029, 0px 3px 6px #00000029;
+    }
+  
+    .container-cardholder {
+        margin-top: 75px;
+    }
+
+    .homework-card{
+        font-family: 'MyriadPro-Regular';
+        color: var(--color-large-text);
+        font-size: var(--medium-text-ever);
+        text-align: center;
+    }
+    .icon-homework{
+        display: block;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .description-homework{
+        text-align: center;
+        margin-top: 15px;
+        color: var(--color-text-description);
+        font-family: 'OpenSans-Regular';
+        line-height: 1rem;
+        font-size: var(--small-texts-ever)
+    }
+
+    .homework-itemOne{
+        width: 20%;
+    }
+
+    .homework-item{
+        width: 12%;
+    }
+
+    .homework-itemPayment{
+        width: 12%;
+        margin-top: 12px;
+    }
+
+    .homework-itemSp{
+        width: 13%;
+    }
+
+    .homework-itemCard{
+        width: 13%;
+        margin-top: 10px;
+    }
+
+    .cardBody-national{
+        border: 3px solid var(--color-large-text);
+        border-radius: 21px;
+        box-shadow: var(--box-shadow-contour);
+        height: 330px;
+        width: 260px;
+        margin-top: 62px;
+        margin-left: 70%;
+    }
+
+    .title-national{
+        color: var(--color-large-text);
+        font-size: var(--very-medium-text);
+        text-align: center;
+        font-family: 'MyriadPro-Regular';
+    }
+
+    .title-international{
+        color: var(--color-large-text);
+        font-size: var(--very-medium-text);
+        text-align: center;
+        font-family: 'MyriadPro-Regular';
+        margin-top: -35px;
+    }
+
+    .title-national-text{
+        color: var(--color-large-text);
+        font-size: var(--very-medium-text);
+        text-align: center;
+        font-family: 'MyriadPro-Regular';
+        margin-top: 15px;
+    }
+
+    .btn-closeCard{
+        position: relative;
+        left: 84%;
+        top: -13px;
+    }
+
+    .description-national{
+        color: var(--color-text-description);
+        font-family: 'OpenSans-Regular';
+        font-size: var(--text-responsive-small);
+        line-height: 0.6rem;
+        margin: 20px 0px;
+    }
+
+    .description-national-text{
+        color: var(--color-text-description);
+        font-family: 'OpenSans-Regular';
+        font-size: var(--text-responsive-small);
+        Line-height: 0.7rem;
+        padding: 15px 3px 90px 3px;
+    }
+
+    .cardBody-international{
+        border: 3px solid var(--color-large-text);
+        border-radius: 21px;
+        box-shadow: var(--box-shadow-contour);
+        margin-right: 42%;
+        height: 330px;
+        width: 260px;
+        margin-top: -180px;
+    }
+
+    .description-international{
+        color: var(--color-text-description);
+        font-family: 'OpenSans-Regular';
+        font-size: 9px;
+        line-height: 0.6rem;
+        margin-left: 10px;
+    }
+    .card-imgOne {
+        width: 100%;
+        height: 159px;
+        border-radius: 30px;
+        box-shadow: inset 0px 3px 6px #00000029, 0px 3px 6px #00000029;
+    }
+    .btn_national{
+        width: 84%;
+        height: 30px;
+        border-radius: 25px;
+        border: none;
+        background: var(--color-gradient-global);
+        font-family: 'OpenSans-Regular';
+        font-size: var(--smaller-text-ever);
+        margin: auto;
+        display: block;
+        position: relative;
+        top: -15px;
+    }
+
+    .text-shopping{
+        font-size: var(--bg-medium-text-ever);
+        color: var(--color-large-text);
+        font-family: 'MyriadPro-Regular';
+        margin-top: 5%;
+        margin-left: 20px;
+        margin-bottom: 20%;
+    }
+    .container-payment {
+        width: 100%;
+        height: 30rem;
+    }
+
+    .container-cash {
+        background-color: var(--color-large-text);
+        color: var(--color-white);
+        height: 560px;
+    }
+
+    .content-items{
+        position: relative;
+        top: 30%;
+        left: 15%;
+    }
+
+    .title-cash{
+        font-family: 'MyriadPro-Bold';
+        font-size: var(--medium-text-ever);
+        margin-left: 10px;
+    }
+
+    .listItem_cash{
+        font-family: 'OpenSans-Regular';
+        font-size: var(--small-texts-ever);
+        list-style: var(--icon-check-item);
+        line-height: 0.3rem;
+    }
+
+    .listItem-phone{
+        list-style: disc;
+    }
+    
+    .textItems-phone{
+        line-height: 1rem;
+        list-style: var(--icon-check-item);
+        font-size: var(--small-texts-ever);
+    }
+
+    .content-advances{
+        position: relative;
+        top: -66px;
+    }
+
+    .container-cash-img {
+        position: relative;
+        left: 65%;
+        top: -20px;
+    }
+
+    .container-diner-img{
+        position: relative;
+        top: 45px;
+        left: 59%;
+    }
+
+    .content-phone{
+        margin-top: 66px;
+        margin-left: 45px;
+    }
+
+    .img-phoneItem{
+        height: 16rem;
+        width: 84%;
+    }
+
+    .content-infoPhone{
+        margin-top: 30%;
+    }
+
+    .img_colors{
+        z-index: 2;
+        position: absolute;
+        margin-left: 64%;
+        margin-top: 1%;
+        width: 35%;
+    }
+
+    .cont-geeting{
+        margin-top: 133px;
+    }
+
+    .geeting{
+        width: 76%;
+        margin-left: 158px;
+    }
+
+    .container-info{
+        float: right;
+        position: relative;
+        right: 13%
+    }
+    .img-cash {
+        width: 26%;
+    }
+
+    .container-hi-img {
+        width: 100%;
+        height: 31rem;
+        border-radius: 50% 50% 0% 50%;
+        background-color: #fff;
+        margin-top: 22%;
+        margin-left: 12px;
+    }
+
+    .img-hi {
+        width: 100%;
+        height: 30rem;
+    }
+
+    .container-card-pay {
+        padding: 0px 120px;
+        z-index: 1;
+    }
+
+    .contentItem-card{
+        margin-top: 10%;
+    }
+
+    .title-card-pay {
+        color: var(--color-large-text);
+        font-size: var(--bg-medium-text-ever);
+        font-family: 'MyriadPro-Regular'
+    }
+
+    .listItem-card{
+        font-family: 'OpenSans-Regular';
+        color: var(--color-text-description);
+        font-size: 16px;
+        line-height: 1rem;
+    }
+
+    .div-phone {
+        display: flex;
+        justify-content: end;
+        height: 92.8vh;
+    }
+
+    .img-phone {
+        align-self: flex-end;
+        width: 100%;
+        height: 55rem;
+    }
+
+    .container-btn-sesion {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    .btn-sesion {
+        width: 19%;
+        height: 51px;
+        border-radius: 25px;
+        border: none;
+        background: var(--color-gradient-global);
+        margin-left: 35%;
+        font-family: 'OpenSans-Regular';
+        font-size: var(--short--texts--medium);
+        padding: 0px;
+    }
+
+    .cookies-mobile{
+        padding: 0px 245px 0px 64px;
+    }
+
+    .img-user-logo {
+        width: 22%;
+        position: relative;
+        left: 27px;
+        top: -1px;
+    }
+    .menuOptions{
+        width: 85%;
+    }
+    .btn-menu{
+        color: transparent;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    .imgs-bottom {
+        padding: 1% 4% 1% 5%;
+    }
+    .menu-home{
+        width: 172%;
+        height: 375px;
+        border: none;
+        margin-top: 30px;
+        margin-left: -37px;
+    }
+
+    .item-menuOptions{
+        font-family: 'OpenSans-Regular';
+        padding: 0px 50px;
+        color: #050505c9;
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .list-ul{
+        margin-top: -12px
+    }
+
+    .btn:focus{
+        box-shadow: none;
+    } 
+
+    .cardPayment-infoWallet{
+        border: 1px solid var(--color-large-text);
+        border-radius: 0px 0px 20px 20px;
+        width: 240px;
+        margin-top: 30%;
+        height: 213px;
+        float: right;
+        padding: 10px 20px;
+    }
+
+    .content-cards{
+        margin-left: 9%;
+    }
+
+    .item-paymentPurchase{
+        color: var(--color-large-text);
+        font-family: 'MyriadPro-Regular';
+        font-size: var(--very-small-text);
+    }
+
+    .title-paymentPurchase {
+        color: var(--color-black-text);
+        font-size: var(--short--texts--medium);
+        font-family: 'MyriadPro-Regular';
+        margin-top: 20px;
+    }
+
+    .description-paymentWallet{
+        font-family: 'MyriadPro-Regular';
+        font-size: var(--very-small-text);
+        line-height: 0.7rem;
+        color: var(--color-text-light-grey);
+        opacity: 1;
+    }
+    
+    .card-position {
+        margin-left: -135px;
+    }
+
+    .img-payment {
+        width: 240px;
+        position: relative;
+        top: 122px;
+        left: 148px;
+    }
+
+    .content-footer{
+        height: 70px;
+        margin-top: 60px;
+    }
+
+    .footer-text{
+        font-family: 'OpenSans-Regular';
+        color: var(--color-text-description);
+        margin-top: 25px;
+        font-size: var(--very-small-text);
+        margin-left: -45px;
+    }
+
+    .content-logo{
+        float: right;
+        margin-top: 7px;
+    }
+
+    .style-logo{
+        width: 16%;
+    }
+    
+    .style-logoGlobal{
+        padding: 6px;
+        width: 16%;
+        margin-left: 40%;
+    }
+
+    .btn-closeCard.btn-primary{
+        background-color: transparent;
+        border-color: transparent;
+    }
+    
+    .img-circles{
+        width: 5%;
+        float: right;
+        margin-top: -16%;
+        margin-right: 40px;
+    }
+    
+    .color-rectangle{
+        width: 98%;
+        z-index: 2;
+        position: absolute;
+        margin-top: 5%;
+    }
+    
+    /* Dispositivos */
+@media only screen and (max-width: 1536px){
+    .btn-sesion {
+        width: 23%;
+    }
+
+    .geeting {
+        margin-left: 129px;
+    }
+
+    .cont-geeting {
+        margin-top: 210px;
+    }
+
+    .card-position {
+        margin-left: -70px;
+    }
+
+    .content-cards {
+        margin-left: 4%;
+    }
+
+    .text-target{
+        margin-top: 25px;
+    }
+
+    .homework-itemOne {
+        width: 13%;
+    }
+
+    .homework-item {
+        width: 13%;
+    }
+
+    .homework-itemSp {
+        width: 16%;
+    }
+
+    .homework-itemPayment {
+        width: 15%;
+    }
+
+    .homework-itemCard {
+        width: 16%;
+    }
+
+    .img-payment {
+        top: 92px;
+        left: 56px;
+    }
+    
+    .cardBody-international{
+        margin-top: -140px;
+    }
+
+    .cardBody-national{
+        margin-left: 65%;
+    }
+
+    .description-target {
+        margin-left: 131px;
+        padding: 0px 65px;
+    }
+
+    .text-cookies {
+        font-size: 19px;
+    }
+}
+
+
+@media only screen and (max-width: 1440px){
+    .card-position, .content-cards{
+        margin-left: 0px;
+    }
+
+    .cardPayment-infoWallet{
+        float: none;
+    }
+
+    .img-payment{
+        top: 86px;
+        left: 10px;
+    }
+
+    .btn-sesion {
+        width: 25%;
+    }
+
+    .text-cookies{
+        font-size: var(--very-medium-text);
+    }
+
+    .cookies-mobile {
+        padding: 0px 87px 0px 64px;
+    }
+
+    .btn-cookieshome{
+        margin-top: -29px;
+        margin-right: -40px;
+    }
+
+    .description-target{
+        text-align: left;
+        margin-left: 0px;
+        padding: 0px 104px;
+    }
+
+    .text-target{
+        display: inline;
+        margin: 0px;
+    }
+
+    .container-moment-pay{
+        margin-top: -200px;
+    }
+
+    .homework-itemOne {
+        width: 9%;
+    }
+
+    .homework-item {
+        width: 15%;
+    }
+
+    .homework-itemSp {
+        width: 18%;
+    }
+
+    .homework-itemPayment {
+        width: 16%;
+        margin-top: 12px;
+    }
+
+    .homework-itemCard {
+        width: 17%;
+        margin-top: 10px;
+    }
+
+    .cardBody-national{
+        margin-top: 50px;
+        margin-left: 63%;
+    }
+
+    .cardBody-international{
+        margin-top: -117px;
+    }
+
+    .container-cash{
+        height: 480px;
+    }
+
+    .geeting{
+        margin-left: 120px;
+    }
+
+    .cont-geeting {
+        margin-top: 156px;
+    }
+
+}
+
+@media only screen and (max-width: 1280px){
+    .description-target {
+        margin-left: 40px;
+        padding: 0px 38px;
+    }
+
+    .listItem-card{
+        font-size: var(--small-text-ever);
+    }
+
+    .homework-itemOne {
+        width: 6%;
+    }
+
+    .homework-itemSp {
+        width: 20%;
+    }
+
+    .homework-itemPayment {
+        width: 18%;
+    }
+
+    .homework-itemCard {
+        width: 19%;
+    }
+
+    .geeting {
+        margin-left: 109px;
+    }
+
+    .cont-geeting {
+        margin-top: 191px;
+    }
+    
+    .cardBody-national {
+        margin-left: 58%;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .cardBody-national {
+        margin-left: 47%;
+    }
+
+    .cardBody-international {
+        margin-top: -90px;
+    }
+
+    .card-position, .content-cards {
+        margin-left: 0px;
+    }
+
+    .img-payment {
+        top: 55px;
+        left: 10px;
+    }
+
+    .cardPayment-infoWallet, .img-payment{
+        width: 201px;
+    }
+
+    .container-cash {
+        height: 415px;
+    }
+
+    .geeting {
+        margin-left: 12px;
+        width: 100%;
+    }
+
+    .cont-geeting {
+        margin-top: 115px;
+    }
+
+    .listItem_cash{
+        line-height: 0.9rem;
+    }
+
+    .container-info {
+        right: -6%;
+    }
+
+    .container-diner-img {
+        position: relative;
+        top: 6px;
+        left: 59%;
+    }
+
+    .img-phoneItem {
+        height: 11rem;
+        width: 107%;
+    }
+
+    .description-homework{
+        font-size: var(--smaller-text-ever);
+    }
+
+    .text-target {
+        margin-top: -105px;
+    }
+
+    .imgTest {
+        width: 100% !important;
+        height: 352px;
+    }
+
+    .text-worrie {
+        padding-left: 20%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .description-homework{
+        font-size: var(--very-small-text);
+    }
+
+    .cookies-mobile {
+        padding: 0px 10px 0px 0px;
+    }
+
+    .logo-container {
+        margin-left: 70px;
+        margin-top: -6px;
+    }
+
+    .logo-size {
+        height: 3rem;
+        margin-top: -6px;
+    }
+
+    .text-worrie {
+        justify-content: unset;
+        padding-left: 63px;
+        padding-top: 70px;
+        height: 0px;
+    }
+
+    .text-main{
+        font-size: var(--medium-text-ever);
+    }
+
+    .img-top-section {
+        width: 95%;
+        margin-left: -52px;
+        margin-top: 55px;
+    }
+
+    .imgTest {
+        width: 100% !important;
+        height: 232px;
+    }
+
+    .btn-sesion {
+        width: 40%;
+        height: 40px;
+        margin-left: 0px;
+        font-size: var(--small-text-ever);
+        padding: 3px 10px;
+    }
+
+    .img-user-logo {
+        width: 27%;
+        left: 11px;
+        top: -1px;
+    }
+
+    .menuOptions {
+        width: 73%;
+        margin-top: -4px;
+    }
+
+    .container-btn-sesion {
+        margin-top: 15px
+    }
+
+    .container-moment-pay{
+        margin-top: 0px;
+    }
+
+    .img-yellow {
+        width: 95%;
+    }
+
+    .description-target{
+        margin-left: 44px;
+        padding: 0px;
+        font-size: var(--very-small-text);
+    }
+
+    .title-moment-pay, .homework-card, .title-cash, .title-card-pay{
+        font-size: var(--very-medium-text);
+    }
+
+    .items-payment, .listItem-card{
+        font-size: var(--smaller-text-ever);
+    }
+
+    .container-cardholder {
+        margin-top: 40px;
+    }
+
+    .homework-itemOne {
+        width: 0%;
+    }
+
+    .homework-item, .homework-item {
+        width: 17%;
+        padding: 0px;
+    }
+
+    .homework-itemSp {
+        width: 22%;
+        padding: 0px;
+    }
+
+    .homework-itemPayment {
+        width: 19%;
+        padding: 0px;
+    }
+
+    .homework-itemCard {
+        width: 21%;
+        padding: 0px;
+    }
+
+    .text-shopping{
+        font-size: var(--subtitle-text-ever);
+        margin-top: 48px;
+    }
+
+    .cardBody-international{
+        margin-top: -45px;
+    }   
+
+    .cardBody-national{
+        margin-left: 115px;
+    }
+
+    .listItem_cash,.textItems-phone{
+        font-size: var(--very-small-text);
+        line-height: 0.7rem;
+    }
+
+    .img-phoneItem {
+        height: 8rem;
+        width: 30%;
+    }
+
+    .container-cash{
+        height: 320px;
+    }
+
+    .content-phone {
+        margin-top: 95px;
+        margin-left: 0px;
+    }
+
+    .content-infoPhone {
+        margin-top: -32%;
+        margin-left: 182px;
+    }
+
+    .geeting {
+        width: 105%;
+        margin-left: 0px;
+        margin-top: -101px;
+    }
+
+    .container-card-pay {
+        padding: 0px 79px;
+    }
+
+    .img-payment {
+        width: 153px;
+        top: 45px;
+        left: 0px;
+    }
+
+    .content-cards, .card-position {
+        margin-left: 0px;
+    }
+
+    .cardPayment-infoWallet{
+        margin-left: 0px;
+        width: 153px;
+        float: none;
+        padding: 10px;
+    }
+
+    .item-paymentPurchase, .description-paymentWallet{
+        font-size: var(--text-responsive-small);
+    }
+
+    .title-paymentPurchase{
+        font-size: var(--small-text-ever);
+        margin-top: 0px;
+    }
+
+    .footer-text{
+        margin-top: 19px;
+        font-size: var( --text-responsive-small);
+        margin-left: -20px;
+    }
+
+    .container-info{
+        left: 23px;
+    }
+
+    .container-cash-img{
+        top: 20px;
+    }
+
+    .container-diner-img {
+        top: 15px;
+        left: 73%;
+    }
+
+    .content-items{
+        left: 0px;
+    }
+
+    .img-cookies{
+        width: 140%;
+        margin-top: 42px;
+        margin-left: -8px;
+    }
+
+    .text-cookies{
+        font-family: 'OpenSans-Regular';
+        color: #707070;
+        font-size: var(--small-text-ever);
+        margin-left: 10px;
+    }
+
+    .content-cookies{
+        height: 175px;
+    }
+
+    .btn-cookieshome{
+        background: #6ECEF81C 0% 0% no-repeat padding-box;
+        font-family: 'OpenSans-Regular';
+        width: 145px;
+        height: 40px;
+        margin-top: -7px;
+        margin-right: 24px;
+        font-size: var(--small-texts-ever);
+    }
+
+}
+
+@media only screen and (max-width:480px){
+
+    .global-enterprise, .container-img-yellow, .img-yellow, .img_colors, .geeting, .leftside-colors, .colors-lateral{
+        display: none;
+    }
+
+    .logo-size {
+        height: 30px;
+        position: relative;
+        top: -10px;
+        right: 50px;
+    }
+
+    .text-main, .text-target{
+        font-size: var(--subtitle-text-ever);
+        margin-top: 20px;
+    }
+
+    .text-worrie{
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+        height: 0px;
+    }
+
+    .btn-sesion {
+        width: 34%;
+        height: 24px;
+        font-size: 9px;
+        margin-top: 10px;
+        margin-left: 199px;
+    }
+
+    .menuOptions {
+        width: 60%;
+    }
+
+    .imgTest {
+        width: 265px !important;
+        height: 170px;
+        margin: auto;
+    }
+
+    .container-btn-sesion{
+        position: relative;
+        top: -108px;
+    }
+    
+    .img-user-logo {
+        width: 26%;
+        left: 1px;
+        top: 0px;
+    }
+
+    .img-top-section {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    .title-target{
+        font-size: var(--subtitle-text-ever);
+        line-height: 1rem;
+    }
+
+    .subTitle-target{
+        font-size: var(--very-medium-text);
+    }
+
+    .homework-card{
+        font-size: var(--very-medium-text);
+    }
+
+    .title-moment-pay, .title-cash{
+        font-size: var(--small-texts-ever);
+    }
+
+    .description-target{
+        font-size: var(--smaller-text-ever);
+        margin-left: 0px;
+        margin-top: 0px;
+        padding: 10px 23px;
+    }
+
+    .list-moment-pay{
+        padding: 20px;
+    }
+
+    .items-payment, .listItem-card{
+        font-size: var(--smaller-text-ever);
+    }
+
+    .container-moment-pay{
+        height: 585px;
+        margin-top: 0px;
+    }
+
+    .woman-img {
+        width: 93%;
+        height: 110px;
+    }
+
+    .card-imgOne {
+        width: 100%;
+        height: 110px;
+    }
+
+    .container-cardholder {
+        margin-top: 20px;
+    }
+
+    .homework-itemCard, .homework-itemOne, .homework-item, .homework-itemSp, .homework-itemPayment, .homework-itemCard{
+        width: 100%;
+        display: block;
+        margin: auto;
+        margin-top: -25px;
+    }
+
+    .card.card-national {
+        float: unset;
+    }
+
+    .cardBody-national{
+        height: 281px;
+        width: 239px;
+        margin-top: 70px !important;
+        margin: auto;
+        display: block;
+    }
+
+    .cardBody-international{
+        height: 320px;
+        width: 239px;
+        margin: auto;
+        display: block;
+        margin-top: -120px;
+
+    }
+
+    .container-payment {
+        height: 45rem;
+    }
+
+    .content-shopping{
+        position: relative;
+        top: -377px;
+        text-align: center
+    }
+
+    .text-shopping {
+        font-size: var(--very-medium-text);
+        margin-top: 10%;
+    }
+
+    .container-cash {
+        height: 290px;
+        z-index: 1;
+    }
+
+    .textItems-phone{
+        font-size: var(--smaller-text-ever);
+    }
+
+    .listItem_cash{
+        font-size: var(--very-small-text);
+        line-height: 0.8rem;
+    }
+
+    .content-infoPhone {
+        margin-top: -24%;
+        margin-left: 102px;
+    }
+
+    .phone_purple{
+        width: 25%;
+        margin-left: 64px;
+    }
+
+    .container-card-pay {
+        padding: 0px 45px;
+    }
+    
+    .title-card-pay{
+        font-size: var(--subtitle-text-ever);
+    }
+
+    .content-cards{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .img-payment{
+        position: relative;
+        top: 45px;
+        left: 0px; 
+        display: block;
+        margin: auto;
+        width: 239px;
+    }
+
+    .cardPayment-infoWallet{
+        display: block;
+        margin: auto;
+        margin-top: 44px;
+        float: none;
+        width: 239px;
+        height: 190px;
+    }
+
+    .card-position{
+        margin-left: 0px;
+    }
+
+    .footer-text{
+        margin-left: 0px;
+        text-align: center;
+        font-size: var(--very-small-text);
+    }
+
+    .content-logo{
+        margin-top: 0px;
+        margin-left: 10px;
+        float: none;
+    }
+
+    .style-logoGlobal {
+        padding: 5px;
+        width: 12%;
+        margin-left: 0px;
+    }
+
+    .style-logo{
+        width: 12%;
+    }
+
+    .content-advances {
+        top: -71px;
+
+    }
+
+    .content-items{
+        left: 0px;
+    }
+
+    .container-diner-img {
+        position: relative;
+        top: -13px;
+        left: 74%;
+        z-index: 2;
+    }
+
+    .list-ul {
+        padding: 0px 31px;
+    }
+
+    .container-info{
+        float: none;
+        right: 0px;
+    }
+
+    .container-cash-img {
+        left: 74%;
+        top: 8px;
+    }
+    
+    .content-phone {
+        margin-top: 0px;
+        margin-left: 0px;
+        position: relative;
+        left: -76px;
+        top: 61px;
+    }
+
+    .img-phoneItem {
+        height: 9rem;
+        width: 45%;
+    }
+
+    .content-cookies {
+        width: 100%;
+        height: 151px;
+        border-radius: 0px; 
+        border: none;;
+        bottom: 0px;
+        background: #ffffffd1 0% 0% no-repeat padding-box;
+        box-shadow: inset 0px 3px 6px #00000029, 0px 3px 6px #00000029;
+        opacity: 1;
+    }
+
+    .color-Star{
+        width: 25%;
+        z-index: 2;
+        position: absolute;
+        margin-left: 74%;
+        margin-top: 9%;
+    }
+
+    .btn-cookieshome {
+        border: none;
+        font-family: 'OpenSans-Regular';
+        border-radius: 11px;
+        width: 87px;
+        height: 22px;
+        margin-top: -21px;
+        margin-right: 27px;
+        font-size: 12px;
+        padding: 0px;
+        background: #6ECEF81C 0% 0% no-repeat padding-box;
+        opacity: 1;
+    }
+
+    .img-cookies {
+        width: 17%;
+        margin: 10px;
+        position: relative;
+        top: 80px;
+        left: -16px;
+    }
+
+    .text-cookies {
+        font-family: 'OpenSans-Regular';
+        font-size: var(--smaller-text-ever);
+        margin-left: 0px;
+        color: #707070;
+        padding: 0px 37x
+    }
+
+    .cookies-mobile{
+        margin-top: -81px;
+        margin-left: -7px;
+        padding: 0px 0px 0px 97px;
+    }
+}

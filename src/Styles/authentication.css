@@ -1,0 +1,242 @@
+.drowtown_menu{
+    background-image: var(--icon-arrow-select);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-origin: content-box;
+}  
+
+.background_woman{
+    width: 85%;
+    height: 100vh;
+    padding: 45px;
+}
+
+.text-background{
+    position: absolute;
+    top: 7%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    font-size: var(--bg-medium-text-ever);
+    color: var(--color-white-text);
+    font-family: 'MyriadPro-Regular';
+}
+.text-bottom{
+    position: absolute;
+    left: 24%;
+    transform: translate(-50%, -50%);
+    bottom: 0%;
+    color: var(--color-white-text);
+    font-family: 'OpenSans-Regular';
+    font-size: var( --small-text-ever);
+}
+.singIn-logo{
+    width: 30%;
+    padding-top: 65px;
+    margin: auto;
+    display: block;
+}
+.text-hello{
+    color: var(--color-large-text);
+    font-family: 'MyriadPro-Regular';
+    text-align: center;
+    font-size: var(--bg-medium-text-ever);
+}
+.text-welcome{
+    color: var(--color-large-text);
+    font-family: 'MyriadPro-Regular';
+    text-align: center;
+    font-size: var(--subtitle-text-ever);
+}
+.text-data{
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+    color: var(--color-text-description);
+    text-align: center;
+}
+
+.enter-data{
+    display: -webkit-box;
+    width: 100%;
+    height: 60px;
+    border: 2px solid var(--color-large-text);
+    padding: 18px;
+    font-family: 'OpenSans-Regular';
+    border-radius: 10px;
+    -webkit-appearance: none;
+}
+
+.form-login{
+    width: 90%;
+    display: block;
+    margin: auto;
+    z-index: 1;
+}
+
+.label-document{
+    position: relative;
+    left: 19px;
+    top: 15px;
+    width: 30%;
+    height: 25px;
+    background-color: var(--color-white);
+    color: var(--color-text-description);
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+}
+
+.img-tablet{
+    position: relative;
+    top: 27rem;
+    width: 295%;
+    left: -120px;
+}
+
+.label-documentPassword{
+    position: relative;
+    left: 19px;
+    top: 15px;
+    width: 17%;
+    height: 25px;
+    background-color: var(--color-white);
+    color: var(--color-text-description);
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+}
+
+.btn-continue-login{
+    border-radius: 32px;
+    width: 73%;
+    margin: auto;
+    display: block;
+    border: none;
+    font-family: 'OpenSans-Regular';
+    margin-top: 50px;
+    height: 40px;
+}
+
+.content-password{
+    text-align: center;
+    margin: 25px 0px 25px 0px;
+
+}
+
+.label-password{
+    color: var(--color-large-text);
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-texts-ever);
+}
+
+.form-number{
+    margin-bottom: 15%;
+}
+
+.icon-close{
+    float: right;
+    padding: 25px 30px
+}
+
+/* Dispositivos */
+@media only sreen and (max-width: 1700px){
+    
+    .label-document{       
+        width: 40%;
+    }
+
+    .btn-sesionCookies {
+        width: 11%;
+    }
+
+    .background_woman {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1536px){
+    .label-document{
+        width: 40%;
+    }
+
+    .label-documentPassword{
+        width: 22%;
+    }
+}
+
+@media only screen and (max-width: 1280px){
+    .label-document {
+        width: 57%;
+    }
+
+    .label-documentPassword {
+        width: 30%;
+    }
+
+    .background_woman {
+        width: 116%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+
+    .background_woman{
+        display: none;
+    }
+
+    .text-hello{
+        font-size: var(--medium-text-ever);
+    }
+
+    .text-welcome{
+        font-size: var(--very-medium-text);
+    }
+
+    .text-data, .label-document{
+        font-size: var(--small-text-ever);
+        width: 50%;
+    }
+
+    .label-documentPassword{
+        width: 27%;
+    }
+
+    .enter-data{
+        font-size: var(--smaller-text-ever);
+    }
+
+    .btn-continue-login{
+        margin-top: 130px;
+    }
+
+    .icon-close {
+        padding: 25px 10px;
+    }
+}
+
+@media only screen and (max-width:480px){
+
+    .enter-data{
+        height: 54px;
+    }
+
+    .label-document{
+        width: 50%;
+    }
+
+    .label-document, .label-documentPassword{
+        font-size: var(--very-small-text);
+    }
+}
+
+@media only screen and (max-width:320px){
+    
+    .btn-continue-login {
+        width: 100%;
+    }
+
+    .label-document {
+        width: 60%;
+    }
+
+    .label-documentPassword{
+        width: 30%;
+    }
+    
+}

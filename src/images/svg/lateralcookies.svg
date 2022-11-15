@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1017.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffc045;
+      }
+
+      .cls-2 {
+        fill: #8733ff;
+      }
+
+      .cls-3 {
+        fill: #c461fa;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1014" data-name="Grupo 1014">
+    <rect id="Rectángulo_2944" data-name="Rectángulo 2944" class="cls-3" x="510.66" y="39.8" width="41.88" height="56.76" rx="12.14" ry="12.14" transform="translate(371.98 579.81) rotate(-79.98)"/>
+    <rect id="Rectángulo_2945" data-name="Rectángulo 2945" class="cls-3" x="620.18" y="481.98" width="41.88" height="56.76" rx="12.14" ry="12.14" transform="translate(27.01 1052.92) rotate(-79.98)"/>
+    <rect id="Rectángulo_2952" data-name="Rectángulo 2952" class="cls-3" x="532.43" y="747.6" width="41.88" height="56.76" rx="12.14" ry="12.14" transform="translate(-307.04 1185.93) rotate(-79.98)"/>
+    <rect id="Rectángulo_2946" data-name="Rectángulo 2946" class="cls-1" x="447.77" y="533.07" width="41.88" height="56.76" rx="12.14" ry="12.14" transform="translate(-165.71 925.35) rotate(-79.98)"/>
+    <rect id="Rectángulo_2947" data-name="Rectángulo 2947" class="cls-1" x="485.83" y="960.27" width="28.39" height="39.23" rx="6.74" ry="6.74" transform="translate(-551.9 1301.82) rotate(-79.98)"/>
+    <rect id="Rectángulo_2948" data-name="Rectángulo 2948" class="cls-1" x="626.92" y="299.04" width="28.39" height="39.23" rx="6.74" ry="6.74" transform="translate(215.79 894.57) rotate(-79.98)"/>
+    <rect id="Rectángulo_2949" data-name="Rectángulo 2949" class="cls-2" x="422.4" y="234.36" width="29.47" height="39.94" rx="6.74" ry="6.74" transform="translate(110.64 640.56) rotate(-79.98)"/>
+    <rect id="Rectángulo_2950" data-name="Rectángulo 2950" class="cls-2" x="813.39" y="785.53" width="41.88" height="56.76" rx="12.14" ry="12.14" transform="translate(-112.3 1493.94) rotate(-79.98)"/>
+    <rect id="Rectángulo_2951" data-name="Rectángulo 2951" class="cls-3" x="813.39" y="333.21" width="41.88" height="56.76" rx="12.14" ry="12.14" transform="translate(333.12 1120.3) rotate(-79.98)"/>
+  </g>
+</svg>
