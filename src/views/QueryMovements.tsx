@@ -41,8 +41,6 @@ export function QueryMovements() {
     const [endDate, setEndDate] = useState<string>("");
     const auth = useAuth();
 
-    // let date1 = '20230501';
-    // let date2 = '20230720';
     let [allMovements, setAllMovements] = useState<any>([]);
     const buscarCliente = async () => {
         if (auth.user != null) {
@@ -178,8 +176,8 @@ export function QueryMovements() {
         year = inputDate.getFullYear();
 
         // QA - DEV
-        // year = year + 1;
-        // month = month -4;
+        year = year + 1;
+        month = month -4;
         
         if ( date < 10) {
             date = date

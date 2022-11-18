@@ -191,7 +191,6 @@ export function Main() {
     }
 
     const showCardImg = (val: boolean) => {
-        console.log(val);
         if (val) {
             setImgCardShow(tarjFigBack);
         } else {
@@ -293,7 +292,8 @@ export function Main() {
                                                 <img className={"img-visa"} src={logoVisa} alt="logo_visa"/>
                                                 <div className="my-1"></div>
                                                 <h5><Trans>tarjetaCredito</Trans></h5>
-                                                <h6><Trans>Numero</Trans>{item.valNumeroTarjeta}</h6>
+                                                {/* <h6><Trans>Numero</Trans>{item.valNumeroTarjeta}</h6>
+                                                HIJUEPUTA COMENTARIO */}
                                             </Card.Body>
                                         </div>
                                     );
