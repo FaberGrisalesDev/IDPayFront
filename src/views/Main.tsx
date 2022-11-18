@@ -293,6 +293,7 @@ export function Main() {
                                                 <div className="my-1"></div>
                                                 <h5><Trans>tarjetaCredito</Trans></h5>
                                                 {/* <h6><Trans>Numero</Trans>{item.valNumeroTarjeta}</h6>
+                                                Esto es un texto x 
                                                 */}
                                             </Card.Body>
                                         </div>
