@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1017.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffc045;
+      }
+
+      .cls-2 {
+        fill: #8733ff;
+      }
+
+      .cls-3 {
+        fill: #c461fa;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1014" data-name="Grupo 1014">
+    <rect id="Rectángulo_2944" data-name="Rectángulo 2944" class="cls-3" x="542.07" y="344.71" width="55.2" height="74.81" rx="16" ry="16" transform="translate(94.28 876.62) rotate(-79.98)"/>
+    <rect id="Rectángulo_2945" data-name="Rectángulo 2945" class="cls-3" x="612.7" y="805.59" width="55.2" height="74.81" rx="16" ry="16" transform="translate(-301.23 1326.88) rotate(-79.98)"/>
+    <rect id="Rectángulo_2952" data-name="Rectángulo 2952" class="cls-3" x="360.49" y="620.49" width="55.2" height="74.81" rx="16" ry="16" transform="translate(-327.28 925.62) rotate(-79.98)"/>
+    <rect id="Rectángulo_2946" data-name="Rectángulo 2946" class="cls-1" x="332.15" y="355.07" width="55.2" height="74.81" rx="16" ry="16" transform="translate(-89.32 678.46) rotate(-79.98)"/>
+    <rect id="Rectángulo_2947" data-name="Rectángulo 2947" class="cls-1" x="382.3" y="918.14" width="37.42" height="51.7" rx="8.89" ry="8.89" transform="translate(-598.34 1174.67) rotate(-79.98)"/>
+    <rect id="Rectángulo_2948" data-name="Rectángulo 2948" class="cls-1" x="592.57" y="575.46" width="37.42" height="51.7" rx="8.89" ry="8.89" transform="translate(-87.19 1098.67) rotate(-79.98)"/>
+    <rect id="Rectángulo_2949" data-name="Rectángulo 2949" class="cls-2" x="508.62" y="80.44" width="38.84" height="52.65" rx="8.89" ry="8.89" transform="translate(331.06 608.19) rotate(-79.98)"/>
+    <rect id="Rectángulo_2950" data-name="Rectángulo 2950" class="cls-2" x="814.05" y="687.82" width="55.2" height="74.81" rx="16" ry="16" transform="translate(-18.93 1427.88) rotate(-79.98)"/>
+    <rect id="Rectángulo_2951" data-name="Rectángulo 2951" class="cls-3" x="972.22" y="872.92" width="55.2" height="74.81" rx="16" ry="16" transform="translate(-70.56 1736.54) rotate(-79.98)"/>
+  </g>
+</svg>
