@@ -20,10 +20,6 @@ export class ObjectHome{
     squareColor: any;
     rectangleColor: any;
     colorStar: any;
-    buyWallet: any;
-    interestCommissions: any;
-    excerptStatus: any;
-    technologyContact: any;
     logoGlobal: any;
     logoIdPay: any;
     logoCoopcentral: any;

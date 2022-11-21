@@ -3,6 +3,7 @@ import React from 'react';
 export class ObjectCookies{
     logo: any;
     logoUserSession: any;
+    iconClose: any;
     menuOptions: any;
     womanCookies: any;
     formsColors: any;
