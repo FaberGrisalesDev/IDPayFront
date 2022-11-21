@@ -5,7 +5,8 @@ import { Button, Col, Container, Card, Row } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom'; 
 import { ObjectCookies } from '../models/ObjectCookies';
 import logo from "../images/img/logoIdPay.png";
-import user_sesion from '../images/svg/session.svg';
+import imgClose from "../images/img/close.svg";
+import user_sesion from '../images/img/session.png';
 import menuImg from '../images/home-imgs/menu.png'
 import womanPolicies from "../images/cookies-img/woman-computer.png";
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -14,12 +15,14 @@ import leftSide from '../images/cookies-img/leftSide-colors.png';
 import colorsLateral from '../images/auth-imgs/cookies-colorsRight.png';
 import endLateral from '../images/auth-imgs/cookies_tablet.png';
 
-function PoliciesCookies(){
+
+export function PoliciesCookies(){
     
     const navigate = useNavigate();
     const COOKIES_ITEM = new ObjectCookies(logo);
     COOKIES_ITEM.logoUserSession = user_sesion;
-    COOKIES_ITEM.menuOptions = menuImg;
+    COOKIES_ITEM.iconClose = imgClose;
+    // COOKIES_ITEM.menuOptions = menuImg;
     COOKIES_ITEM.womanCookies = womanPolicies;
     COOKIES_ITEM.formsColors = backgroundLateral;
     COOKIES_ITEM.colorsLeft = leftSide;
@@ -37,6 +40,11 @@ function PoliciesCookies(){
                         </div>
                     </Col>
                     <Col className="col-5">
+                        <div className='cont_iconclose'>
+                            <img src={COOKIES_ITEM.iconClose} alt=''
+                                  onClick={() => navigate("/") }
+                            />
+                        </div>
                          <img src={COOKIES_ITEM.womanCookies} alt='' className='woman-policies'/>
                             <Button
                                 className='btn-sesionCookies'
@@ -48,7 +56,7 @@ function PoliciesCookies(){
                                 </span>
                             </Button>
                             <div className='contentDropdown'>
-                                <Dropdown>
+                                {/* <Dropdown>
                                     <Dropdown.Toggle variant="CustomToggle" className='btn-menuCookies'>
                                         <img src={COOKIES_ITEM.menuOptions} alt="" className="menuOptionsCookies" />
                                     </Dropdown.Toggle>
@@ -60,7 +68,7 @@ function PoliciesCookies(){
                                         <Dropdown.Item className='item-menuOptions check-options' href="#/action-5">Simulador de cuota</Dropdown.Item>
                                         <Dropdown.Item className='item-menuOptions check-options' href="#/action-6">Idioma</Dropdown.Item>
                                     </Dropdown.Menu>
-                                </Dropdown>
+                                </Dropdown> */}
                            </div>
                     </Col>
                 </Row>
@@ -166,4 +174,3 @@ function PoliciesCookies(){
         </Container>
     )
 }
-export default PoliciesCookies;
