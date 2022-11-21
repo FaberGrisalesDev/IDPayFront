@@ -1,5 +1,6 @@
 const Constantes = {
   hola: '¡Hola! ;)',
+  Hola: "Hola,",
   queTengasUnLindoDia: 'Que tengas un lindo día',
   fechaUltimoIngreso: 'Fecha de último ingreso: ',
   activarTarjeta: 'Activar Tarjeta',

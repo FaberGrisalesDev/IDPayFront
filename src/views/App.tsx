@@ -17,9 +17,9 @@ import logo from '../images/img/logoIdPay.png';
 import carouselOne from '../images/home-imgs/carousel_1.jpg';
 import carouselTwo from '../images/home-imgs/carousel_2.png';
 import carouselThree from '../images/home-imgs/carousel_3.jpg';
-import menuImg from '../images/home-imgs/menu.png'
+// import menuImg from '../images/home-imgs/menu.png'
 import security from '../images/svg/security.svg';
-import user_sesion from '../images/svg/session.svg';
+import user_sesion from '../images/img/session.png';
 import sessionList from '../images/svg/session-list.svg';
 import account from '../images/svg/account.svg';
 import payment from '../images/svg/payment.svg';
@@ -33,21 +33,20 @@ import national from '../images/home-imgs/nacionales.jpg';
 import international from '../images/svg/international.svg';
 import friends from '../images/home-imgs/amigos.png';
 import cash from '../images/home-imgs/cashSlider.png';
-import greeting from '../images/home-imgs/greeting.png';
 import safe from '../images/home-imgs/safeSlider.png';
 import phoneItem from '../images/home-imgs/phoneSlider.png';
 import colors from '../images/home-imgs/colorfulPictures.png';
 import colors_home from '../images/home-imgs/pago_mobile.png';
-import womanPlace from '../images/home-imgs/wonderful.png';
-import saving from '../images/home-imgs/piggy-bank.png';
-import extract from '../images/home-imgs/cropped-photo.png';
-import contact from '../images/home-imgs/woman-paying.png';
 import global from '../images/home-imgs/logo-global.png';
 import idPay from '../images/img/logoIdPay.png';
-import coopCentral from '../images/home-imgs/logo-coopcentral.png';
 import Carousel from 'react-bootstrap/Carousel';
 import Cookies from '../images/svg/cookiePolities.svg';
 import phonePurple from '../images/home-imgs/phoneSlidermobile.png';
+
+import cardsInfo from '../images/home-imgs/cards_home.png';
+import cardsMobile from '../images/home-imgs/cards_homemobile.png';
+import womanCarrusel from '../images/home-imgs/carousel_woman.png';
+
 function App() {
     const navigate = useNavigate();
     const [showModalAssigPin, setShowModalAssingPin] = useState(false);
@@ -62,7 +61,7 @@ function App() {
     HOME_ITEMS.carousel_three = carouselThree;
     HOME_ITEMS.securityKey = security;
     HOME_ITEMS.logoUserSession = user_sesion;
-    HOME_ITEMS.menuOptions = menuImg;
+    // HOME_ITEMS.menuOptions = menuImg;
     HOME_ITEMS.accountStatus = account;
     HOME_ITEMS.paymentCard = payment;
     HOME_ITEMS.viewCard = cardEye;
@@ -74,13 +73,8 @@ function App() {
     HOME_ITEMS.squareColor = colors;
     HOME_ITEMS.rectangleColor = colors_home;
     HOME_ITEMS.colorStar = color_star;
-    HOME_ITEMS.buyWallet = womanPlace;
-    HOME_ITEMS.interestCommissions = saving;
-    HOME_ITEMS.excerptStatus = extract;
-    HOME_ITEMS.technologyContact = contact;
     HOME_ITEMS.logoGlobal = global;
     HOME_ITEMS.logoIdPay = idPay;
-    HOME_ITEMS.logoCoopcentral = coopCentral;
     HOME_ITEMS.phoneMobile = phonePurple;
 
 
@@ -131,7 +125,7 @@ function App() {
                                     <img src={HOME_ITEMS.logoUserSession} className="img-user-logo" alt="Logo Sesion" />
                                 </span>
                             </Button>
-                            <Dropdown>
+                            {/* <Dropdown>
                                 <Dropdown.Toggle variant="CustomToggle" className='btn-menu'>
                                     <img src={HOME_ITEMS.menuOptions} alt="" className="menuOptions" />
                                 </Dropdown.Toggle>
@@ -143,7 +137,7 @@ function App() {
                                     <Dropdown.Item className='item-menuOptions check-options' href="#/action-5">Simulador de cuota</Dropdown.Item>
                                     <Dropdown.Item className='item-menuOptions check-options' href="#/action-6">Idioma</Dropdown.Item>
                                 </Dropdown.Menu>
-                            </Dropdown>
+                            </Dropdown> */}
                         </div>
                         <div className='img-top-section'>
                             <Carousel
@@ -165,13 +159,13 @@ function App() {
                     </Col>
                 </Row>
                 <Row className="m-0">
-                    <img src={HOME_ITEMS.colorStar} alt='' className='d-block d-md-none d-lg-none color-Star'/>
+                    <img src={HOME_ITEMS.colorStar} alt='' className='d-block d-md-none d-lg-none color-Star' />
                     <Col className='col-12 col-md-8 col-lg-7 text-target'>
                         <h1 className='title-target'>Tarjeta de crédito</h1>
                         <h2 className='subTitle-target'>VISA SIGNATURE</h2>
                         <p className='description-target'>
-                            En sus manos se encuentra la Tarjeta de Crédito VISA Signature de ID Pay, la cual podrá 
-                            utilizar como instrumento de pago para realizar compras en los centros comercios afiliados a 
+                            En sus manos se encuentra la Tarjeta de Crédito VISA Signature de ID Pay, la cual podrá
+                            utilizar como instrumento de pago para realizar compras en los centros comercios afiliados a
                             VISA Internacional y realizar avances en cajeros automáticos.
                         </p>
                     </Col>
@@ -252,8 +246,8 @@ function App() {
                 </div>
             </div>
             <div className='cont-circle'>
-                    <img src={HOME_ITEMS.circles} alt="" className='img-circles'/>
-                </div>
+                <img src={HOME_ITEMS.circles} alt="" className='img-circles' />
+            </div>
             <div className='container-cardholder'>
                 <h3 className='homework-card'>Deberes del tarjetahabiente</h3>
                 <Row className='m-0'>
@@ -322,7 +316,7 @@ function App() {
                                         ) : (
                                             <div>
                                                 <Button className='btn-closeCard' onClick={() => setShow(!show)}>
-                                                    <img src={HOME_ITEMS.iconClose} alt=""/>
+                                                    <img src={HOME_ITEMS.iconClose} alt="" />
                                                 </Button>
                                                 <Card.Title className='title-national-text'>Nacionales</Card.Title>
                                                 <Card.Text className='description-national-text'>
@@ -340,55 +334,55 @@ function App() {
                             <div className="content-shopping">
                                 <p className='text-shopping'>Compras</p>
                             </div>
-                            
+
                             <Card className='cardBody-international'>
                                 <Card.Body>
-             
-                                {
-                                    showTwo ? (
-                                        <div>
-                                            <Card.Title className='title-national'>Internacional</Card.Title>
-                                            <Card.Text className='description-international'>
-                                                Su tarjeta de crédito está habilitada para <br />
-                                                realizar comprar internacionales.
-                                            </Card.Text>
-                                            <Card.Img src={international}></Card.Img>
-                                            <Button className='btn_national' onClick={() => setShowTwo(!showTwo)}>Conoce más</Button>
-                                        </div>
-                                    ) : (
-                                        <div>
-                                            <Button className='btn-closeCard' onClick={() => setShowTwo(!showTwo)}>
+
+                                    {
+                                        showTwo ? (
+                                            <div>
+                                                <Card.Title className='title-national'>Internacional</Card.Title>
+                                                <Card.Text className='description-international'>
+                                                    Su tarjeta de crédito está habilitada para <br />
+                                                    realizar comprar internacionales.
+                                                </Card.Text>
+                                                <Card.Img src={international}></Card.Img>
+                                                <Button className='btn_national' onClick={() => setShowTwo(!showTwo)}>Conoce más</Button>
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                <Button className='btn-closeCard' onClick={() => setShowTwo(!showTwo)}>
                                                     <img src={HOME_ITEMS.iconClose} alt="" />
-                                            </Button>
-                                            <Card.Title className='title-international'>Internacionales</Card.Title>
-                                            <Card.Text className='description-international'>
-                                                <p>
-                                                Su Tarjeta de crédito VISA está habilitada para 
-                                                realizar compras internacionales. Para garantizar 
-                                                seguridad en estas transacciones, es importante 
-                                                que antes de viajar se comunique con nuestro 
-                                                contact Center, informando la fecha, duración y 
-                                                destino del viaje; de lo contrario su tarjeta podrá ser 
-                                                bloqueada para mitigar el riesgo de fraude.
-                                                </p>
-                                                <p>
-                                                Para los avances efectuados fuera del territorio 
-                                                nacional, debe realizar la misma operación para 
-                                                compras nacionales, con un diferido automático a 
-                                                24 meses. Usted podrá realizar un diferido de dichas 
-                                                cuotas según sus necesidades llamando a nuestro 
-                                                contacto center y registrando su solicitud. 
-                                                </p>
-                                                <p>
-                                                El monto total de la compra se genera en pesos Colombianos sin importar la moneda y pais donde se realice.
-                                                </p>
-                                                <p>
-                                                Su tarjeta cuenta con una red de más de 30 millones de establecimientos a nivel mundial.
-                                                </p>
-                                            </Card.Text>
-                                        </div>
-                                    )
-                                }
+                                                </Button>
+                                                <Card.Title className='title-international'>Internacionales</Card.Title>
+                                                <Card.Text className='description-international'>
+                                                    <p>
+                                                        Su Tarjeta de crédito VISA está habilitada para
+                                                        realizar compras internacionales. Para garantizar
+                                                        seguridad en estas transacciones, es importante
+                                                        que antes de viajar se comunique con nuestro
+                                                        contact Center, informando la fecha, duración y
+                                                        destino del viaje; de lo contrario su tarjeta podrá ser
+                                                        bloqueada para mitigar el riesgo de fraude.
+                                                    </p>
+                                                    <p>
+                                                        Para los avances efectuados fuera del territorio
+                                                        nacional, debe realizar la misma operación para
+                                                        compras nacionales, con un diferido automático a
+                                                        24 meses. Usted podrá realizar un diferido de dichas
+                                                        cuotas según sus necesidades llamando a nuestro
+                                                        contacto center y registrando su solicitud.
+                                                    </p>
+                                                    <p>
+                                                        El monto total de la compra se genera en pesos Colombianos sin importar la moneda y pais donde se realice.
+                                                    </p>
+                                                    <p>
+                                                        Su tarjeta cuenta con una red de más de 30 millones de establecimientos a nivel mundial.
+                                                    </p>
+                                                </Card.Text>
+                                            </div>
+                                        )
+                                    }
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -396,14 +390,14 @@ function App() {
                 </div>
             </div>
             <div className='container-cash'>
-                <Row className='m-0'>
-                    <Col className="col-12 col-md-8 col-lg-8 p-0">
+                <img src={womanCarrusel} alt='' className="woman_carousel d-none d-md-block d-lg-block"/>
+                    <div className="container-carousel p-0">
                         <Carousel
                             indicators={false}
                             controls={false}
-                            interval={2000}
+                            interval={4500}
                         >
-                            {<Carousel.Item>
+                            {/* {<Carousel.Item>
                                 <div className='content-items'>
                                     <div className='container-diner-img'>
                                         <img src={cash} alt="" className='img-cash' />
@@ -432,7 +426,7 @@ function App() {
                                         </ul>
                                     </div>
                                 </div>
-                            </Carousel.Item>}
+                            </Carousel.Item>} */}
                             {<Carousel.Item>
                                 <div className='container-cash-img'>
                                     <img src={safe} alt="" className='img-cash' />
@@ -460,7 +454,7 @@ function App() {
                                     <Col className='col-12 col-lg-4'>
                                         <div className='content-phone'>
                                             <img src={phoneItem} alt="" className='d-none d-md-block d-lg-block img-phoneItem' />
-                                            <img src={HOME_ITEMS.phoneMobile} alt='' className="d-block d-md-none d-lg-none phone_purple"/>
+                                            <img src={HOME_ITEMS.phoneMobile} alt='' className="d-block d-md-none d-lg-none phone_purple" />
                                         </div>
                                     </Col>
                                     <Col className='col-12 col-lg-8'>
@@ -468,7 +462,7 @@ function App() {
                                             <h4 className='title-cash'>Líneas de atención al cliente</h4>
                                             <ul>
                                                 <li className='listItem_cash mt-4'>
-                                                    <p>Servicio al cliente......xxxx.</p>
+                                                    <p>Servicio al cliente:</p>
                                                 </li>
                                                 <li className='textItems-phone'>
                                                     <p>Nivel nacional: < br />
@@ -476,7 +470,7 @@ function App() {
                                                     </p>
                                                 </li>
                                                 <li className='listItem_cash'>
-                                                    <p>Chat......xxxxx</p>
+                                                    <p>Chat: </p>
                                                 </li>
                                                 <li className='textItems-phone'>
                                                     <p className='textItems-phone'>Acceda a estos servicios 24/7. < br />
@@ -492,16 +486,10 @@ function App() {
                                 </Row>
                             </Carousel.Item>
                         </Carousel>
-                    </Col>
-                    <Col className="col-12 col-md-4 col-lg-4">
-                        <div className='cont-geeting'>
-                            <img src={greeting} alt='' className='geeting' />
-                        </div>
-                    </Col>
-                </Row>
+                    </div>
             </div>
-            <img src={HOME_ITEMS.squareColor} alt="" className='d-none d-md-block d-lg-block img_colors'/>
-            <img src={HOME_ITEMS.rectangleColor} alt='' className='d-block d-md-none d-lg-none color-rectangle'/>
+            <img src={HOME_ITEMS.squareColor} alt="" className='d-none d-md-block d-lg-block img_colors' />
+            <img src={HOME_ITEMS.rectangleColor} alt='' className='d-block d-md-none d-lg-none color-rectangle' />
             <div className='container-card-pay'>
                 <div className='col-12 col-lg-11 contentItem-card'>
                     <h1 className='title-card-pay'>Pago de la tarjeta</h1>
@@ -522,67 +510,10 @@ function App() {
                         </li>
                     </ul>
                 </div>
-                <Row>
-                    <Col className='col-12 col-md-3 col-lg-3 content-cards'>
-                        <img src={HOME_ITEMS.buyWallet} className="img-payment" alt=""/>
-                        <Card className='cardPayment-infoWallet'>
-                            <Card.Body className='p-0'>
-                                <p className='item-paymentPurchase'>Compra de cartera</p>
-                                <Card.Title className='title-paymentPurchase'>Todo en un solo lugar</Card.Title>
-                                <Card.Text className='description-paymentWallet'>
-                                    Traslade a su tarjeta de crédito VISA  de IDPAY el saldo de sus tarjetas de
-                                    crédito de otros bancos y obtenga  una tasa de preferencial que le  permita
-                                    mejorar su flujo de caja  mensual.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col className='col-12 col-md-3 col-lg-3 card-position' >
-                        <img src={HOME_ITEMS.interestCommissions} className="img-payment" alt=""/>
-                        <Card className='cardPayment-infoWallet'>
-                            <Card.Body className='p-0'>
-                                <p className='item-paymentPurchase'>Tasas de interés y comisiones</p>
-                                <Card.Title className='title-paymentPurchase'>Ahorras más</Card.Title>
-                                <Card.Text className='description-paymentWallet'>
-                                    Si deseas consultar las tasas de interés a las comisiones vigentes,
-                                    puede verificarlas a través de su extracto mensual , de nuestro sitio web
-                                    www.coopcentral.com.co y en nuestra red de oficinas IDPay.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col className='col-12 col-md-3 col-lg-3 card-position' >
-                        <img src={HOME_ITEMS.excerptStatus} className="img-payment"alt=""/>
-                        <Card className='cardPayment-infoWallet'>
-                            <Card.Body className='p-0'>
-                                <p className='item-paymentPurchase'>Estado de cuenta</p>
-                                <Card.Title className='title-paymentPurchase'>Tú Extracto</Card.Title>
-                                <Card.Text className='description-paymentWallet'>
-                                    Mensualmente usted recibirá el extracto de su tarjeta de crédito,
-                                    a través del canal de su preferencia ya sea por correo electrónico
-                                    o dirección de correspondencia.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col className='col-12 col-md-3 col-lg-3 card-position' >
-                        <img src={HOME_ITEMS.technologyContact} className="img-payment" alt=""/>
-                        <Card className='cardPayment-infoWallet'>
-                            <Card.Body className='p-0'>
-                                <p className='item-paymentPurchase'>Tecnología contactless</p>
-                                <Card.Title className='title-paymentPurchase'>Sin contacto</Card.Title>
-                                <Card.Text className='description-paymentWallet'>
-                                    Le permite pagar con sólo acercar su Tarjeta al terminal de venta.
-                                    Usa NFC (Near Field Communications).
-                                    < br />
-                                    Tecnología inalámbrica de corto
-                                    alcancepara la transmisión instantánea de datos entre dispositivos que
-                                    se encuentren a pocos centímetros de distancia. No es necesario introducir su tarjeta al datáfono.
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
+                <div className="mt-5">
+                    <img src={cardsInfo} alt='cards' className="cards-home d-none d-md-block d-lg-block" />
+                    <img src={cardsMobile} alt='' className="cards-home d-block d-md-none d-lg-none" />
+                </div>
             </div>
             <div className='content-footer'>
                 <Row className='m-0'>
@@ -590,7 +521,6 @@ function App() {
                         <div className='content-logo'>
                             <img src={HOME_ITEMS.logoGlobal} className="style-logoGlobal" alt='' />
                             <img src={HOME_ITEMS.logoIdPay} className="style-logo" alt='' />
-                            <img src={HOME_ITEMS.logoCoopcentral} className="style-logo" alt='' />
                         </div>
                     </Col>
                     <Col className='col-12 col-md-8 col-lg-9'>
