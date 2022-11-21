@@ -176,8 +176,8 @@ export function QueryMovements() {
         year = inputDate.getFullYear();
 
         // QA - DEV
-        year = year + 1;
-        month = month -4;
+        // year = year + 1;
+        // month = month -4;
         
         if ( date < 10) {
             date = date

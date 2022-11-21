@@ -1,11 +1,14 @@
-import React, {useEffect, useState} from "react";
-import {Col, Container, Dropdown, Row} from "react-bootstrap";
-import logoHome from "../../images/svg/logo_id_color_blanco.svg";
-import {useAuth} from "../../hook/AuthContext";
-import {useNavigate} from "react-router-dom";
-import {BsBoxArrowRight} from "react-icons/bs";
-import {selectLanguage, Trans} from "../../hook/Internationalization";
-import {CreditCardController} from "../../controller/CreditCardController";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Dropdown, Row } from "react-bootstrap";
+import logo from "../../images/img/negative-logo.png";
+import character from "../../images/img/character.png";
+import '../../Styles/userBanner.css'
+import { useAuth } from "../../hook/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { BsBoxArrowRight } from "react-icons/bs";
+import { selectLanguage, Trans } from "../../hook/Internationalization";
+import { CreditCardController } from "../../controller/CreditCardController";
+import { ObjectUserBanner } from "../../models/ObjectUserBanner";
 
 type Props = {
     children?: React.ReactNode
@@ -26,6 +29,11 @@ export function InformationUserBanner(props: Props) {
     const [loading, setLoading] = useState<boolean>(false);
     const auth = useAuth();
     const navigate = useNavigate();
+
+    const BANNER_ITEMS = new ObjectUserBanner(logo);
+    BANNER_ITEMS.logo = logo;
+    BANNER_ITEMS.avatar = character;
+
 
     const handleSignOut = () => {
         auth.signOut(() => navigate("/"));
@@ -55,10 +63,10 @@ export function InformationUserBanner(props: Props) {
         }
     }
 
-    useEffect(()=> {
-        (async ()=>{
-           await buscarCliente();
-        }) ();
+    useEffect(() => {
+        (async () => {
+            await buscarCliente();
+        })();
     }, [])
     const handleSpanish = (e: any) => {
         e.preventDefault();
@@ -76,31 +84,34 @@ export function InformationUserBanner(props: Props) {
 
     }
     return (
-        <Row className={"text-white p-3 mb-5 pay-gradient-main"}>
-            <Col className={"d-none d-lg-block"}>
-                <Row className="d-flex align-items-center">
-                    <Col className="col-2 d-flex justify-content-center">
-                        <img src={logoHome} alt="logo_home" className="image-logo"/>
-                    </Col>
-                    <Col className="col-10">
-                        <h2><Trans className={"fw-light"}>sucursalVirtual</Trans></h2>
-                        {/* <h5 className={"fw-light line-spacing-up text-small"}><Trans>hoy</Trans> martes, 10 de Mayo
-                            del 2022 a las 12:30 p.m.</h5> */}
-                    </Col>
-                </Row>
-            </Col>
-            <Col className={"text-end"}>
-                <div className="my-1 py-1"/>
-                <Row className="d-flex align-items-center">
-                    <Col className="col-9 text-end" style={{borderRight: "1px solid white"}}>
-                        <h5><img className="icono" src={"./img/avatar.png"} alt="Profile"/><span
-                            className={"fw-light"}> <Trans>bienvenidoBanco</Trans> </span>{userName}</h5>
-                        {/* <h5 className={"fw-light line-spacing-up text-small"}><Trans>ultimoIngreso</Trans> domingo 8
-                            de Mayo del 2022 a las 7:45 a.m.</h5> */}
-                    </Col>
-                    <Col className="col-3 centrar">
-                        <Row className="d-flex justify-content-center">
-                            <Col sm={12} lg={3} className={"d-flex justify-content-center align-items-center mb-2"}>
+            <Row className="pay-gradient-main content-banner m-0">
+                <Col className={"d-none d-lg-block"}>
+                    <Row className="d-flex align-items-center">
+                        <Col className="col-2 d-flex justify-content-center">
+                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo" />
+                        </Col>
+                        <Col className="col-10">
+                            <h2 className="title-banner"><Trans>Hola</Trans>Andrés</h2>
+                            <h2 className="subtitle-banner"><Trans>queTengasUnLindoDia</Trans></h2>
+                        </Col>
+                    </Row>
+                </Col>
+                <Col className={"text-end"}>
+                    <Row>
+                        <Col className="col-9 mt-lg-3">
+                            <h5>
+                                {/* <img className="icono" src={"./img/avatar.png"} alt="Profile"/> */}
+                                <span
+                                    className="title-name">Andrea Velandia
+                                </span>{userName}
+                            </h5>
+                            <h5 className="subtitle-banner"><Trans>ultimoIngreso</Trans>
+                                Última conexión 05 nov 2022 a las 4:34:06 pm</h5>
+                        </Col>
+                        <Col className="col-3">
+                            <Row>
+                                <img src={BANNER_ITEMS.avatar} alt='' className="avatar" />
+                                {/* <Col sm={12} lg={3} className={"d-flex justify-content-center align-items-center mb-2"}>
                                 <BsBoxArrowRight size={"24px"}/>
                             </Col>
                             <Col className="text-start">
@@ -108,12 +119,11 @@ export function InformationUserBanner(props: Props) {
                                     <Trans>cerrarSesion</Trans></h6>
                                 <h6 className={"fw-light pointer"} onClick={() => navigate("/update-password")}>
                                     <Trans>actualizarContrasena</Trans></h6>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </Col>
-
-        </Row>
+                            </Col> */}
+                            </Row>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
     )
 }

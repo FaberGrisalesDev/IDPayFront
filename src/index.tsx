@@ -25,7 +25,9 @@ import { TemplateSideBar } from './routes/templates/TemplateSideBar';
 import {UpdatePassword} from "./views/UpdatePassword";
 import { User } from './components/admin/pages/User';
 import {QueryMovements} from "./views/QueryMovements";
-import PoliciesCookies from './views/PoliciesCookies';
+import {PoliciesCookies} from './views/PoliciesCookies';
+import { MainServices } from './views/MainServices';
+
 
 ReactDOM.render(
     <BrowserRouter>
@@ -35,6 +37,7 @@ ReactDOM.render(
                     <Routes>
                         <Route path={"/"} element={<App/>}/>
                         <Route path={"/policies-cookies"} element={<PoliciesCookies/>}/>
+                        <Route path={"/services"} element={<MainServices/>}/>
                         <Route path={"/main"} element={
                             <RequireAuth>
                                 <Main/>
