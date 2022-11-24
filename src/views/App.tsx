@@ -125,7 +125,7 @@ function App() {
                                     <img src={HOME_ITEMS.logoUserSession} className="img-user-logo" alt="Logo Sesion" />
                                 </span>
                             </Button>
-                            {/* <Dropdown>
+                            <Dropdown>
                                 <Dropdown.Toggle variant="CustomToggle" className='btn-menu'>
                                     <img src={HOME_ITEMS.menuOptions} alt="" className="menuOptions" />
                                 </Dropdown.Toggle>
@@ -137,7 +137,7 @@ function App() {
                                     <Dropdown.Item className='item-menuOptions check-options' href="#/action-5">Simulador de cuota</Dropdown.Item>
                                     <Dropdown.Item className='item-menuOptions check-options' href="#/action-6">Idioma</Dropdown.Item>
                                 </Dropdown.Menu>
-                            </Dropdown> */}
+                            </Dropdown>
                         </div>
                         <div className='img-top-section'>
                             <Carousel
@@ -194,10 +194,10 @@ function App() {
                                         Conoce nuestra política
                                     </span>
                                 </p>
-                                <Button className="btn-cookieshome"
+                                <button className="btn-cookieshome btn"
                                     onClick={(e) => closeCookies()}>
                                     Aceptar
-                                </Button>
+                                </button>
                             </Col>
                         </Row>
                     </div>
@@ -397,36 +397,6 @@ function App() {
                             controls={false}
                             interval={4500}
                         >
-                            {/* {<Carousel.Item>
-                                <div className='content-items'>
-                                    <div className='container-diner-img'>
-                                        <img src={cash} alt="" className='img-cash' />
-                                    </div>
-                                    <div className='content-advances'>
-                                        <h4 className='title-cash'>Avances en Efectivo</h4>
-                                        <ul>
-                                            <li className='listItem_cash mt-4'>
-                                                <p>Realiza avances hasta por el 100% de su cupo otogado.</p>
-                                            </li>
-                                            <li className='listItem_cash'>
-                                                <p>En cualquier red de cajeros automáticos dentro y fuera del pais.</p>
-                                            </li>
-                                            <li className='listItem_cash'>
-                                                <p>Diferido automáticamente a 24 cuotas.</p>
-                                            </li>
-                                            <li className='listItem_cash'>
-                                                <p>Estas operaciones tienen cobro de comisión según la red del cajero.</p>
-                                            </li>
-                                            <li className='listItem_cash'>
-                                                <p>Comunícate con el contact center si desea rediferir sus avances a una menos plazo.</p>
-                                            </li>
-                                            <li className='listItem_cash'>
-                                                <p>Recuerde que para realizar avances debe contar con un PIN asignado por usted a través de nuestra plataforma.</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </Carousel.Item>} */}
                             {<Carousel.Item>
                                 <div className='container-cash-img'>
                                     <img src={safe} alt="" className='img-cash' />

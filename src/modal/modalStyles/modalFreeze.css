@@ -1,0 +1,33 @@
+
+.modal-backdrop{
+    background-color: #0009;
+    border-radius: 0px 0px 0px 795px;
+}
+
+.container-modal{
+    display: block;
+    margin: auto;
+    width: 70%;
+}
+
+.modal-msj{
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-texts-ever);
+    padding: 0px 35px;
+}
+
+.btn-cancel{
+    background-color: var(--color-white);
+    border: none;
+    color: var(--color-large-text);
+    float: right;
+}
+
+.btn-continue{
+    border-radius: 28px;
+    border: none;
+    float: left;
+    font-family: 'OpenSans-Regular';
+    font-size: 16px;  
+    color: var(--color-white);
+}

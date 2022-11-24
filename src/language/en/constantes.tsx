@@ -145,7 +145,7 @@ const Constantes = {
   uso: 'of use.',
   congelarTarjeta: 'Freeze Card',
   deseasCongelarTarjeta: 'Do you want to Freeze your Card?',
-  mensajeCongelar: 'If you freeze your card you will not be able to use it at any merchant until you unfreeze it again; the consultation of information, procedures and associated formalities will not be affected.',
+  mensajeCongelar: 'Are you about to temporarily lock your card Are you sure to continue?',
   felicidades: '¡Congratulations!',
   puedesCrearContraseña: 'Now you can create your new password',
   mensajeLongitud: 'Must be greater than or equal to 8 characters in length.',

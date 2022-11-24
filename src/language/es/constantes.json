@@ -147,7 +147,7 @@
   "uso": "de uso.",
   "congelarTarjeta": "Congelar Tarjeta",
   "deseasCongelarTarjeta": "¿Deseas Congelar tu Tarjeta?",
-  "mensajeCongelar": "Si congelas tu tarjeta, no podrás utilizarla en ningún comercio hasta que la descongeles de nuevo; la consulta de información, trámites y gestiones asociadas no se verán afectadas.",
+  "mensajeCongelar": "Estas a punto de bloquear temporalmente tu tarjeta ¿Estas seguro de continuar?",
   "felicidades": "¡Felicidades!",
   "puedesCrearContraseña": "Ahora puedes crear tu nueva contraseña",
   "mensajeLongitud": "Debe tener una longitud mayor o igual a 8 caracteres",

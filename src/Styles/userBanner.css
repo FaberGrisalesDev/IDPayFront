@@ -1,3 +1,31 @@
+.arrow-banner{
+    background-image: var(--icon-arrow-banner);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 36px;
+}
+
+.close-icon{
+    background-image: var(--icon-close-banner);
+    background-repeat: no-repeat;
+    padding: 5px 45px;
+    margin-top: var(--small-texts-ever);
+    font-size: var(--small-text-ever);
+    font-family: 'OpenSans-Regular';
+}
+
+.icon-definitions{
+    background-image: var(--icon-definitions);
+    background-repeat: no-repeat;
+    padding: 3px 45px;
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+}
+
+.content-nav{
+    margin-top: -12px;
+}
 
 .content-banner{
     padding: 1rem;
@@ -18,6 +46,7 @@
     font-family: 'MyriadPro-Regular';
     font-size: var(--subtitle-text-ever);
     color: var(--color-white);
+    margin-right: 35px;
 }
 
 .title-banner{
@@ -31,4 +60,13 @@
     font-family: 'OpenSans-Regular';
     color: var(--color-white);
     font-size: var(--small-text-ever);
+}
+
+.menu-banner{
+    height: 135px;
+    width: 34%;
+    box-shadow: inset 0px 3px 6px #00000029, 0px 3px 6px #6096fa;
+    padding: 25px;
+    border-radius: 14px;
+    margin-left: -25%;
 }

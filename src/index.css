@@ -42,7 +42,8 @@ code {
 }
 
 .pay-border-extra-modal {
-    border-radius: 48px;
+    border-radius: 20px;
+    border: none;
 }
 
 .btn-circle {
