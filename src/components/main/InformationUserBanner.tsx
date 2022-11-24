@@ -27,6 +27,7 @@ export function InformationUserBanner(props: Props) {
     const [respuesta, setRespuesta] = useState("");
     const [noTarjeta, setNoTarjeta] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
+    const [simpleName, setSimpleName] = useState<string>("");
     const auth = useAuth();
     const navigate = useNavigate();
 
@@ -47,8 +48,8 @@ export function InformationUserBanner(props: Props) {
                     numberDocument: auth.user.username,
                     token: auth.user.token
                 })
-                setUserName(data.nombreRealce);
-
+                setUserName(data.nombreCorto);
+                setSimpleName(data.primerNombre);
             } catch (error) {
                 setShowAlert(true);
                 setTitulo('No se encontró el cliente');
@@ -91,7 +92,7 @@ export function InformationUserBanner(props: Props) {
                             <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo" />
                         </Col>
                         <Col className="col-10">
-                            <h2 className="title-banner"><Trans>Hola</Trans>Andrés</h2>
+                            <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>
                             <h2 className="subtitle-banner"><Trans>queTengasUnLindoDia</Trans></h2>
                         </Col>
                     </Row>
@@ -102,11 +103,11 @@ export function InformationUserBanner(props: Props) {
                             <h5>
                                 {/* <img className="icono" src={"./img/avatar.png"} alt="Profile"/> */}
                                 <span
-                                    className="title-name">Andrea Velandia
-                                </span>{userName}
+                                    className="title-name">{userName}
+                                </span>
                             </h5>
-                            <h5 className="subtitle-banner"><Trans>ultimoIngreso</Trans>
-                                Última conexión 05 nov 2022 a las 4:34:06 pm</h5>
+                            {/* <h5 className="subtitle-banner"><Trans>ultimoIngreso</Trans>
+                                Última conexión 05 nov 2022 a las 4:34:06 pm</h5> */}
                         </Col>
                         <Col className="col-3">
                             <Row>

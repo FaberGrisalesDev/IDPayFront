@@ -1,0 +1,160 @@
+
+    .container-background-main {
+        background-color: var(--background-color);
+    }
+
+    .img-container {
+        width: 95%;
+        background-color: #fff;
+        height: 81vh;
+        margin: 1.5% 0% 2% 0%;
+        border-radius: 50px;
+        border: 2px solid var(--color-large-text);
+    }
+
+    .card-container-cards {
+        width: 80%;
+        margin: 3% 2% 0 10%;
+        border-radius: 20px;
+        height: 8rem;
+        background-color: #fff;
+        text-align: start;
+    }
+
+    .card-container-cards:hover {
+        cursor: pointer;
+    }
+
+    .select-card {
+        width: 97%;
+        margin: 3% 2% 0 6%;
+        border-radius: 40px 0 0 40px;
+        height: 13rem;
+        padding: 2% 5% 2% 5%;
+        border-top: 2px solid var(--color-large-text);
+        border-left: 2px solid var(--color-large-text);
+        border-bottom: 2px solid var(--color-large-text);
+    }
+
+    .col-select {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .card-cards {
+        width: 100%;
+        text-align: start;
+    }
+
+    .card-container-cards-newCards {
+        width: 80%;
+        margin: 3% 2% 0 10%;
+        border-radius: 20px;
+        height: 5rem;
+    }
+
+    .background-select {
+        width: 90%;
+        height: 11.3rem;
+        border-radius: 17px;
+        border: none;
+        background-color: #f2e9ff;
+        padding: 5% 8%;
+    }
+
+    .img-woman-noCards {
+        width: 25%;
+        height: 33rem;
+        margin-left: 37%;
+        margin-top: 14%;
+    }
+
+    .scroll-cards {
+        overflow-y: scroll;
+        height: 80vh;
+    }
+
+    .text-products {
+        color: var(--color-large-text);
+        font-weight: 500;
+    }
+
+    .container-saldos-card {
+        border: 2px solid var(--color-large-text);
+        margin-top: 4%;
+        border-radius: 20px;
+        height: 18rem;
+        padding-left: 5%;
+    }
+
+    .imgs-logo-card {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5%;
+        height: 4rem;
+        width: 90%;
+        margin-left: 3%;
+    }
+
+    .img-logoId {
+        width: 15%;
+    }
+
+    .img-logoCard {
+        width: 18%;
+        border-radius: 10px;
+    }
+
+    .container-data-card {
+        width: 100%;
+        box-shadow: 1px 1px 1px 4px #8080809e;
+        margin-top: 4%;
+        border-radius: 20px;
+        padding: 2% 6%;
+    }
+
+    .text-data-main {
+        margin-left: 10%;
+        margin-bottom: 0%;
+    }
+
+    .text-data-color {
+        margin-left: 10%;
+        margin-bottom: 0%;
+        color: var(--color-large-text);
+    }
+
+    .btn-pay {
+        margin-left: 50%;
+        width: 30%;
+        height: 3rem;
+        border-radius: 50px;
+        background: rgb(183,242,255);
+        border: none;
+        background: linear-gradient(90deg, rgb(183, 242, 255) 1%, rgb(206, 116, 222) 100%, rgb(255, 255, 255) 100%);
+    }
+
+    .container-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-accions {
+        height: 8rem;
+        width: 20%;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        box-shadow: 1px 1px 3px 2px #8080809e;
+        margin-top: 4%;
+        border-radius: 15px;
+    }
+
+    .btn-accions:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .img-logo-cards {
+        margin-top: 2%;
+    }
