@@ -25,16 +25,13 @@ export default class AuthenticationService {
             method: "POST",
             body: JSON.stringify({...user,  language:sessionStorage.getItem('language')?? 'es-ES'}),
         });
-
         const response: AuthResponse = await stream.json();
-
         if (response.code === 200) {
             this.isAuthenticated = true;
             setTimeout(() => callback({
                 token: response.data.token,
                 username: response.data.username,
                 rol: response.data.rol,
-
 
             }), 100);
             return true;

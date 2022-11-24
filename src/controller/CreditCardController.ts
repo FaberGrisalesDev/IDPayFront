@@ -141,6 +141,7 @@ export class CreditCardController {
         const data = await response.json();
         return data;
     }
+    
     public static async create(Request: UserCreate){
         const response =  await fetch(URLBASE + '/crear/1', {
             method: "POST",
@@ -155,7 +156,19 @@ export class CreditCardController {
     }
 
     public static async consultaPorCliente(Request: ConsultaCliente, token: string){
-        const response =  await fetch(process.env.REACT_APP_BACKEND_ENDPOINT + '/api/creditcard/producto-cliente', {
+        const response =  await fetch(process.env.REACT_APP_BACKEND_ENDPOINT + '/api/creditcard/producto-cliente/false', {
+            method: "POST",
+            headers: {"Content-Type": "application/json",
+                "Authorization": "Bearer " + token,
+                "X-TenantID":tenantID!
+            },
+            body: JSON.stringify(Request)
+        })
+        return await response.json();
+    }
+    
+    public static async consultaPorCliente4Digits(Request: ConsultaCliente, token: string){
+        const response =  await fetch(process.env.REACT_APP_BACKEND_ENDPOINT + '/api/creditcard/producto-cliente/true', {
             method: "POST",
             headers: {"Content-Type": "application/json",
                 "Authorization": "Bearer " + token,
