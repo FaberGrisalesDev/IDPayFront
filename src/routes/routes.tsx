@@ -29,9 +29,9 @@ ReactDOM.render(
                     <Routes>
                         <Route path={"/"} element={<App/>}/>
                         <Route path={"/main"} element={
-                            <RequireAuth>
+                            // <RequireAuth>
                                 <Main/>
-                            </RequireAuth>
+                            // </RequireAuth>
                         }/>
                         <Route path={"/sign-in"} element={<SignIn/>}/>
                         <Route path={"/query/:number"} element={<QueryMovements />}/>
@@ -50,7 +50,7 @@ ReactDOM.render(
                             </RequireAuth>
                         }/>
                         <Route path={"/forgot-password"} element={<ForgotPassword/>}/>
-                        <Route path={"/recover-password/:token"} element={<RecoverPassword/>}/>
+                        {/* <Route path={"/recover-password/:token"} element={<RecoverPassword/>}/> */}
                     </Routes>
                 </NiceModal.Provider>
             </AuthProvider>

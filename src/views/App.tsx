@@ -99,7 +99,6 @@ function App() {
 
 
     return (
-
         <Container fluid>
             <div className="backgroud-home">
                 <Row className='m-0'>

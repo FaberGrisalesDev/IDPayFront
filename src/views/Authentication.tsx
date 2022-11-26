@@ -38,7 +38,7 @@ export function Authentication() {
     AUTH_ITEMS.iconArrow = iconSelect;
     AUTH_ITEMS.iconClose = imgClose;
     AUTH_ITEMS.tabletImg = colorsTablet;
-    
+
     //* Services
     const auth = useAuth();
     const navigate = useNavigate();
@@ -139,8 +139,7 @@ export function Authentication() {
                 <Col className="col-1 col-md-3 col-lg-4 p-0">
                     <div>
                         <img src={backgroundColors} alt="" className="background_woman" />
-                        <img src={AUTH_ITEMS.tabletImg} alt="" className="d-none d-md-block d-lg-none img-tablet"/>
-                        
+                        <img src={AUTH_ITEMS.tabletImg} alt="" className="d-none d-md-block d-lg-none img-tablet" />
                     </div>
                 </Col>
                 <Col className="col-10 col-md-6 col-lg-4">
@@ -230,7 +229,7 @@ export function Authentication() {
                 </Col>
                 <Col className="col-1 col-md-3 col-lg-4">
                     <img src={AUTH_ITEMS.iconClose} alt='' className="icon-close"
-                        onClick={() => navigate("/") }
+                        onClick={() => navigate("/")}
                     />
                 </Col>
             </Row>

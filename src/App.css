@@ -21,6 +21,7 @@
     --item-square-purple: url('../src/images/svg/purple.svg');
     --item-square-yellow: url( '../src/images/svg/yellow.svg');
     --item-square_lilac: url('../src/images/svg/lilac.svg');
+    --item--check-list: url('../src/images/img/check.png');
     --icon-check-option: url('../src/images/svg/check.svg');
     --icon-check-item: url('../src/images/svg/check-white.svg');
     --icon-arrow-select: url('../src/images/svg/dropdown_menu.svg');
@@ -64,6 +65,10 @@
     list-style-image: url('../src/images/svg/circleBlue.svg');
 }
 
+.itemCheck{
+    list-style-image: url('../src/images/img/check.png');
+}
+
 .App {
     text-align: center;
 }
@@ -89,6 +94,12 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+
+.text-purple {
+    color: var(#8733FF);
+    font-family: MyriadPro-Regular;
 }
 
 .App-link {
