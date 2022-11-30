@@ -69,8 +69,9 @@ export function Authentication() {
                 if (userInfo === undefined) {
                     return;
                 }
+                console.log(userInfo?.rol);
                 if (userInfo.rol === 2) {
-                    navigate('/main');
+                    navigate('/home');
                 }
                 if (userInfo.rol === 1) {
                     navigate('/admin');

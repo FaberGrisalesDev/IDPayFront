@@ -37,6 +37,10 @@
     width: 80%;
 }
 
+.image-logo:hover {
+    cursor: pointer;
+}
+
 .avatar{
     width: 50%;
     margin-top: -10px;

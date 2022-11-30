@@ -20,6 +20,7 @@ import {ForgotPassword} from '../views/ForgotPassword';
 import {AuthProvider, RequireAuth} from "../hook/AuthContext";
 import { RecoverPassword } from '../views/RecoverPassword';
 import {QueryMovements} from "../views/QueryMovements";
+import { MainServices } from '../views/MainServices';
 
 ReactDOM.render(
     <BrowserRouter>
@@ -28,10 +29,15 @@ ReactDOM.render(
                 <NiceModal.Provider>
                     <Routes>
                         <Route path={"/"} element={<App/>}/>
+                        <Route path={"/home"} element={
+                            <RequireAuth>
+                                <MainServices/>
+                            </RequireAuth>
+                        }/>
                         <Route path={"/main"} element={
-                            // <RequireAuth>
+                            <RequireAuth>
                                 <Main/>
-                            // </RequireAuth>
+                            </RequireAuth>
                         }/>
                         <Route path={"/sign-in"} element={<SignIn/>}/>
                         <Route path={"/query/:number"} element={<QueryMovements />}/>

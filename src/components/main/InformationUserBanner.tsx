@@ -19,7 +19,6 @@ type Props = {
 
 export function InformationUserBanner(props: Props) {
 
-
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const [titulo, setTitulo] = useState<string>('');
     const [mensaje, setMensaje] = useState<string>('');
@@ -92,7 +91,7 @@ export function InformationUserBanner(props: Props) {
                 <Col className={"d-none d-lg-block"}>
                     <Row className="d-flex align-items-center">
                         <Col className="col-2 d-flex justify-content-center">
-                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo" />
+                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo"  onClick={() => {navigate("/home")}}/>
                         </Col>
                         <Col className="col-10">
                             <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>

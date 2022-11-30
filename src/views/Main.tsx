@@ -70,6 +70,7 @@ export function Main() {
     const [cupoDispAvance, setcupoDispAvance] = useState<string>("");
     const [estado, setEstado] = useState<string>("");
     const [nCard, setNCard] = useState<string>("");
+    const [last4, setLast4] = useState<string>("");
     const [tokenUser, setTokenUser] = useState<string>("");
     const [numberCards, setNumberCards] = useState<any>();
     const [numberCardValue, setNumberCardValue] = useState<string>("");
@@ -322,6 +323,7 @@ export function Main() {
                         setMiSaldo(formatCurrency(data.tarjeta[0].valSaldo))
                         setEstado(data.tarjeta[0].fillerTar1)
                         setNCard(data.tarjeta[0].valNumeroTarjeta)
+                        setLast4(data.tarjeta[0].fourDigits)
                         setShowAlert(true);
                         setTitulo("Mensaje");
                         setMensaje("Cliente encontrado");
@@ -454,6 +456,7 @@ export function Main() {
         setMiSaldo(formatCurrency(data.valSaldo))
         setEstado(data.fillerTar1)
         setNCard(data.valNumeroTarjeta)
+        setLast4(data.fourDigits)
     }
 
     const showCardImg = (val: boolean) => {
@@ -502,13 +505,13 @@ export function Main() {
                             <div className="text-center mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
-                                    tarjetaCardObject != undefined ? 
-                                    tarjetaCardObject.map( (item: any, index: number) => {
+                                    numberCards != undefined ? 
+                                    numberCards.map( (item: any, index: number) => {
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
                                                 <Card.Body className="card-cards" onClick={() => {setStep(1); styleById(index);}}>
                                                     <p>Tarjeta Crédito</p>
-                                                    <p>No.******** {item.valNumeroTarjeta}</p>
+                                                    <p>No.******** {item.fourDigits}</p>
                                                 </Card.Body>
                                             </Card>
                                         )
@@ -537,14 +540,14 @@ export function Main() {
                                 <h2 className="text-products">Mis productos</h2>
                                 {
                                     // numberCards != undefined ? 
-                                    tarjetaCardObject != undefined ? 
-                                    tarjetaCardObject.map( (item: any, index: number) => {
+                                    numberCards != undefined ? 
+                                    numberCards.map( (item: any, index: number) => {
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
                                                 <Card.Body className={`card-cards`} id={`cardB${index}`} onClick={() => { styleById(index) }}>
                                                     <img src={logoVisa} alt="" className="img-logo-cards" />
                                                     <p>Tarjeta Crédito</p>
-                                                    <p>No.******** {item.valNumeroTarjeta}</p>
+                                                    <p>No.******** {item.fourDigits}</p>
                                                 </Card.Body>
                                             </Card>
                                         )
