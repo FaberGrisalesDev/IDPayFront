@@ -13,9 +13,10 @@ type Props = {
   show: boolean;
   setShow: Dispatch<SetStateAction<boolean>>;
   nCardIn: string;
+  acOBl: boolean;
 };
 
-export default function ModalFreeze({ show, setShow, nCardIn }: Props) {
+export default function ModalFreeze({ show, setShow, nCardIn, acOBl }: Props) {
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [titulo, setTitulo] = useState<string>('');
   const [mensaje, setMensaje] = useState<string>('');
@@ -29,6 +30,7 @@ export default function ModalFreeze({ show, setShow, nCardIn }: Props) {
   const auth = useAuth();
 
   const buscarCliente = async () => {
+    console.log(acOBl, "Modal frezze")
     if (auth.user != null) {
       let data;
       try {
@@ -52,6 +54,36 @@ export default function ModalFreeze({ show, setShow, nCardIn }: Props) {
     }
   }
 
+  useEffect( () => {
+    buscarCliente();
+  }, [])
+
+
+  const cardActivation = () => {
+    (async () => {
+        const activation = await TransaccionesController.activarProducto({
+            token: auth.user!.token,
+            tarjeta:{
+                numeroTarjeta: nCardIn
+            }
+        })
+        setShow(false)
+        if (activation) {
+          setShowAlert(true);
+          setTitulo("Mensaje");
+          setMensaje("Cliente encontrado");
+          setTipoAlerta("success");
+          setTimeout(() => setShowAlert(false), 5000);
+        } else {
+          setShowAlert(true);
+          setTitulo("Cliente no encontrado");
+          setMensaje("por favor intenta nuevamente.");
+          setTipoAlerta("danger");
+          setTimeout(() => setShowAlert(false), 4000)
+          return;
+        }
+    })();
+}
 
 
   const handleBloqueoCard = () => {
@@ -127,14 +159,20 @@ export default function ModalFreeze({ show, setShow, nCardIn }: Props) {
             <div className="my-1 py-1"></div>
             <Row>
               <Col>
-                <p className="modal-msj"><Trans>mensajeCongelar</Trans></p>
+                <>
+                  <p className="modal-msj">
+                    { acOBl ? (<Trans>mensajeCongelar</Trans>) : 'Estas a punto descongelar temporalmente tu tarjeta ¿Estas seguro de continuar?'}
+                    {/* { acOBl ?  : '' }   */}
+                  </p>
+                </>
+                
               </Col>
             </Row>
             <Row className={"mb-3"}>
             <Col className={"pt-3"}>
                 <button
                   className={"col-6 py-2 btn-cancel btn"}
-                  // onClick={handleBloqueoCard}
+                  onClick={()=>{setShow(false)}}
                 >
                 <Trans>cancelar</Trans>
                 </button>
@@ -142,7 +180,13 @@ export default function ModalFreeze({ show, setShow, nCardIn }: Props) {
               <Col className={"pt-3"}>
                 <button
                   className={"col-6 py-2 pay-gradient-main btn-continue btn"}
-                  onClick={handleBloqueoCard}
+                  onClick={()=>{ 
+                    if( !acOBl ) {
+                      cardActivation()
+                    } else {
+                      handleBloqueoCard()
+                    }
+                  }}
                 >
                 <Trans>continuar</Trans>
                 </button>
