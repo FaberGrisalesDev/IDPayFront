@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import logo from "../../images/img/negative-logo.png";
-import character from "../../images/img/character.png";
+import characterWoman from "../../images/img/avatarWoman.png";
+import characterMen from "../../images/img/avatarMen.png";
 import '../../Styles/userBanner.css'
 import { useAuth } from "../../hook/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +36,8 @@ export function InformationUserBanner(props: Props) {
 
     const BANNER_ITEMS = new ObjectUserBanner(logo);
     BANNER_ITEMS.logo = logo;
-    BANNER_ITEMS.avatar = character;
+    BANNER_ITEMS.avatarM = characterMen;
+    BANNER_ITEMS.avatarW = characterWoman
 
 
     const handleSignOut = () => {
@@ -126,7 +128,8 @@ export function InformationUserBanner(props: Props) {
                         </Col>
                         <Col className="col-3">
                             <Row>
-                                <img src={BANNER_ITEMS.avatar} alt='' className="avatar" />
+                                {/* <img src={BANNER_ITEMS.avatarM} alt='' className="avatar" /> */}
+                                <img src={BANNER_ITEMS.avatarW} alt='' className="avatarW" />
                                 {/* <Col sm={12} lg={3} className={"d-flex justify-content-center align-items-center mb-2"}>
                                 <BsBoxArrowRight size={"24px"}/>
                             </Col>

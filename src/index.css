@@ -114,15 +114,7 @@ code {
 .pointer {
     cursor: pointer;
 }
-/* .avatar {
-    width: 85px;
-    height: 85px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: 2px solid #ffffff;
-} */
+
 
 .horizontal-bar {
     width: 100%;

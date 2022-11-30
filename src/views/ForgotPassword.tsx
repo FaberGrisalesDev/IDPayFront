@@ -8,6 +8,7 @@ import { trans, Trans } from "../hook/Internationalization";
 
 import { ObjectPassword } from "../models/ObjectPassword";
 import '../Styles/password.css';
+import UserFlow from "../components/main/UserFlow";
 
 import Shield from '../images/img/shield.png';
 import Close from '../images/img/close.svg';

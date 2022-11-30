@@ -46,6 +46,11 @@
     margin-top: -10px;
 }
 
+.avatarW{
+    width: 50%;
+    margin-top: -24px;
+}
+
 .title-name{
     font-family: 'MyriadPro-Regular';
     font-size: var(--subtitle-text-ever);

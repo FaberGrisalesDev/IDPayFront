@@ -25,6 +25,8 @@ import icontwists from '../images/main-img/twists.png';
 import iconpayPal from '../images/main-img/payPal.png';
 import paySmall from '../images/main-img/smallidPay.png';
 
+
+
 export function MainServices() {
 
     const SERVICES_ITEM = new ObjectMainServices();
@@ -71,17 +73,17 @@ export function MainServices() {
                 <Card.Body>
                     <Card.Text className='title-services mt-2'><Trans>misProductos</Trans></Card.Text>
                     <Row>
-                        <Col className='col-4'>
+                        <Col className='col-lg-4'>
                             <Card className='card-financial m-lg-0'>
                                 <Card.Text className='cardMedium-title'>Financieros</Card.Text>
                                 <Row>
-                                    <Col className='col-6'>
+                                    <Col className='col-lg-6'>
                                         <button className="box btn" onClick={() => {navigate('/main')}}>
                                             <img src={SERVICES_ITEM.iconOne} alt='' className="iconleft"/>
                                             <p>Tarjetas de crédito</p>
                                         </button>
                                     </Col>
-                                    <Col className='col-6'>
+                                    <Col className='col-lg-6'>
                                         <button className="box_card btn">
                                             <img src={SERVICES_ITEM.iconTwo} alt='' className="iconCard" />
                                             <p>Depósitos</p>
@@ -89,13 +91,13 @@ export function MainServices() {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col className='col-6'>
+                                    <Col className='col-lg-6'>
                                         <button className="box btn">
                                             <img src={SERVICES_ITEM.iconThree} alt='' className="iconleft" />
                                             <p>Libranza</p>
                                         </button>
                                     </Col>
-                                    <Col className='col-6'>
+                                    <Col className='col-lg-6'>
                                         <button className="box_card btn">
                                             <img src={SERVICES_ITEM.iconFour} alt='' className="iconCard" />
                                             <p>Compra de cartera</p>
@@ -103,13 +105,13 @@ export function MainServices() {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col className='col-6'>
+                                    <Col className='col-lg-6'>
                                         <button className="box-big btn">
                                             <img src={SERVICES_ITEM.iconFive} alt='' className="iconleft" />
                                             <p>Cambio de moneda</p>
                                         </button>
                                     </Col>
-                                    <Col className='col-6'>
+                                    <Col className='col-lg-6'>
                                         <button className="box-bigRight btn">
                                             <img src={SERVICES_ITEM.iconSix} alt='' className="iconCard"/>
                                             <p>Cambiar a otros bancos</p>
@@ -118,17 +120,17 @@ export function MainServices() {
                                 </Row>
                             </Card>
                         </Col>
-                        <Col className='col-4'>
+                        <Col className='col-lg-4'>
                             <Card className='card-service'>
                                 <Card.Text className='cardMedium-title text-center py-lg-2'>Servicios</Card.Text>
                                 <Row>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box btn">
                                             <img src={SERVICES_ITEM.iconSeven} alt='' className="iconleft" />
                                             <p>SOAT</p>
                                         </button>
                                     </Col>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box_card btn">
                                             <img src={SERVICES_ITEM.iconEight} alt='' className="iconCard" />
                                             <p>Servicios Públicos</p>
@@ -136,13 +138,13 @@ export function MainServices() {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box-big btn btn">
                                             <img src={SERVICES_ITEM.iconNine} alt='' className="iconleft" />
                                             <p>TV, internet y telefonía</p>
                                         </button>
                                     </Col>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box_card btn">
                                             <img src={SERVICES_ITEM.iconTen} alt='' className="iconCard" />
                                             <p>DirecTV prepago</p>
@@ -152,30 +154,30 @@ export function MainServices() {
                             </Card>
                             <Row>
                                 <Col>
-                                    <button className='col-6 w-100 box-twists btn'>
+                                    <button className='col-lg-6 w-100 box-twists btn d-none d-lg-display'>
                                         <img src={SERVICES_ITEM.twists} alt='' className='img-payment'/>
                                         <p>Giros</p>
                                     </button>
                                 </Col>
                                 <Col>
-                                    <button className='col-6 w-100 box-paypal btn'>
+                                    <button className='col-lg-6 w-100 box-paypal btn d-none d-lg-display'>
                                         <img src={SERVICES_ITEM.paypal} alt='' className='img-paypal'/>
                                         <p>PayPal</p>
                                     </button>         
                                 </Col>
                             </Row>
                         </Col>
-                        <Col className='col-4'>
+                        <Col className='col-lg-4'>
                             <Card className='card-others'>
                                 <Card.Text className='cardMedium-title'>Otros</Card.Text>
                                 <Row>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box btn">
                                             <img src={SERVICES_ITEM.iconEleven} alt='' className="iconleft" />
                                             <p>Domicilios</p>
                                         </button>
                                    </Col>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box_card btn">
                                             <img src={SERVICES_ITEM.iconTwelve} alt='' className="iconCard" />
                                             <p>Juegos</p>
@@ -183,13 +185,13 @@ export function MainServices() {
                                    </Col>
                                 </Row>
                                 <Row>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box btn">
                                             <img src={SERVICES_ITEM.iconThirteen} alt='' className="iconleft" />
                                             <p>Inversiones</p>
                                         </button>
                                    </Col>
-                                    <Col className="col-6">
+                                    <Col className="col-lg-6">
                                         <button className="box_card btn">
                                             <img src={SERVICES_ITEM.iconFourteen} alt='' className="iconCard" />
                                             <p>Seguros</p>
@@ -197,6 +199,20 @@ export function MainServices() {
                                    </Col>
                                 </Row>
                             </Card>
+                        </Col>
+                    </Row>
+                    <Row className='mobile'>
+                        <Col>
+                            <button className='col-lg-6 w-100 box-twists btn d-block d-lg-none d-md-none'>
+                                <img src={SERVICES_ITEM.twists} alt='' className='img-payment' />
+                                <p>Giros</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className='col-lg-6 w-100 box-paypal btn d-block d-lg-none d-md-none'>
+                                <img src={SERVICES_ITEM.paypal} alt='' className='img-paypal' />
+                                <p>PayPal</p>
+                            </button>
                         </Col>
                     </Row>
                     <div className='cont-logo'>

@@ -27,6 +27,7 @@ import { User } from './components/admin/pages/User';
 import {QueryMovements} from "./views/QueryMovements";
 import {PoliciesCookies} from './views/PoliciesCookies';
 import { MainServices } from './views/MainServices';
+import UserFlow from './components/main/UserFlow';
 
 
 ReactDOM.render(

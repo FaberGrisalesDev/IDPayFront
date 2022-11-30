@@ -17,6 +17,10 @@
 }
 
 :root {
+    --container-communicate: url('../src/images/userFlow-img/background-Comm.png');
+    --background-elipse: url('../src/images/userFlow-img/background-elipse.png');
+    --container-img: url('../src/images/userFlow-img/background-color.png');
+    --container-images: url('../src/images/userFlow-img/bacground-bottom.png');
     --background-home-main: url('../src/images/svg/background-home.svg');
     --item-square-purple: url('../src/images/svg/purple.svg');
     --item-square-yellow: url( '../src/images/svg/yellow.svg');
@@ -47,6 +51,7 @@
     --color-large-text: #8733FF;
     --color-ligh--lila: #D232ED;
     --color-black-text: #050505;
+    --background-color-flow:#EDEDED;
     --color-text-description: #707070;
     --color-text-light-grey: #7D7D7D;
     --background-color: #EDEDED;
@@ -54,7 +59,7 @@
 }
 
 .background-main{
-    background-color: var(--background-color);
+    background-color: var(--color-white);
 }
 
 .circlePurple{
