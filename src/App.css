@@ -21,9 +21,13 @@
     --item-square-purple: url('../src/images/svg/purple.svg');
     --item-square-yellow: url( '../src/images/svg/yellow.svg');
     --item-square_lilac: url('../src/images/svg/lilac.svg');
+    --item--check-list: url('../src/images/img/check.png');
     --icon-check-option: url('../src/images/svg/check.svg');
     --icon-check-item: url('../src/images/svg/check-white.svg');
     --icon-arrow-select: url('../src/images/svg/dropdown_menu.svg');
+    --icon-arrow-banner: url('../src/images/img/arrowBanner.png');
+    --icon-close-banner: url('../src/images/svg/closeBanner.svg');
+    --icon-definitions: url('../src/images/svg/definitions.svg');
     --color-gradient-global: transparent linear-gradient(271deg, #DF32FA 0%, #843BF9 54%, #57ABFB 100%) 0% 0% no-repeat padding-box;
     --box-shadow-contour:  inset 0px 3px 6px #00000029, 0px 3px 6px #00000029;
     --larger-texts-ever: 45px;
@@ -41,14 +45,17 @@
     --text-responsive-small: 10px;
     --color-light--blue: #6ECEF8;
     --color-large-text: #8733FF;
+    --color-ligh--lila: #D232ED;
     --color-black-text: #050505;
     --color-text-description: #707070;
     --color-text-light-grey: #7D7D7D;
     --background-color: #EDEDED;
     --color-white: #fff;
-    /* #00008b */
 }
 
+.background-main{
+    background-color: var(--background-color);
+}
 
 .circlePurple{
     list-style-image: url('../src/images/svg/circlePurple.svg');
@@ -56,6 +63,10 @@
 
 .circleBlue{
     list-style-image: url('../src/images/svg/circleBlue.svg');
+}
+
+.itemCheck{
+    list-style-image: url('../src/images/img/check.png');
 }
 
 .App {
@@ -83,6 +94,12 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+
+.text-purple {
+    color: var(#8733FF);
+    font-family: MyriadPro-Regular;
 }
 
 .App-link {

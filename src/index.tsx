@@ -38,6 +38,11 @@ ReactDOM.render(
                         <Route path={"/"} element={<App/>}/>
                         <Route path={"/policies-cookies"} element={<PoliciesCookies/>}/>
                         <Route path={"/services"} element={<MainServices/>}/>
+                        <Route path={"/home"} element={
+                            <RequireAuth>
+                                <MainServices/>
+                            </RequireAuth>
+                        }/>
                         <Route path={"/main"} element={
                             <RequireAuth>
                                 <Main/>
@@ -68,7 +73,7 @@ ReactDOM.render(
                         <Route path={"/recover-password/:token"} element={<RecoverPassword/>}/>
                         
                         <Route path={"/"} element={<TemplateSideBar/>}>
-                            <Route path={"/home"} element={<Home/>}/>
+                            {/* <Route path={"/home"} element={<Home/>}/> */}
                             
                             <Route path={"/Usuarios"} element={
                                 <RequireAuth>

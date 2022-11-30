@@ -1,11 +1,12 @@
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
-import { Button, Col, Modal, Row } from "react-bootstrap";
+import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { Trans } from "../hook/Internationalization";
-import freezeTar from "../images/svg/ic_freeze.svg";
+import Question from "../images/img-modal/question.png";
 import {CreditCardController} from "../controller/CreditCardController";
 import {TransaccionesController} from "../controller/TransaccionesController";
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../hook/AuthContext";
+import './modalStyles/modalFreeze.css';
 
 
 type Props = {
@@ -112,68 +113,43 @@ export default function ModalFreeze({ show, setShow, nCardIn }: Props) {
   }
 
   return (
-    <Modal
-      size={"lg"}
-      show={show}
-      onHide={() => setShow(false)}
-      contentClassName={"pay-border-extra-modal"}
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Body className={"text-center"}>
-        <div
-            className="position-absolute pay-gradient-main btn-circle"
-            style={{ top: 22, right: 30, cursor: "pointer"}}
-            onClick={() => setShow(false)}
-        >
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="white"
-              className="bi bi-x-lg"
-              viewBox="0 0 16 16"
-          >
-            <path
-                fillRule="evenodd"
-                d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"
-            />
-            <path
-                fillRule="evenodd"
-                d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"
-            />
-          </svg>
-        </div>
-        <div
-          className="pay-border-gradient-bg-white-main p-3 "
-          style={{ borderRadius: 32 }}
-        >
-          <Row>
-            <Col>
-              <h4 className={"text-purple-900 mb-4"}><Trans>congelarTarjeta</Trans></h4>
-            </Col>
-          </Row>
-          <img src={freezeTar} alt="freeze_tj"/>
-          <div className="my-1 py-1"></div>
-          <Row>
-            <Col>
-              <h6 className={"text-purple-900"}><Trans>deseasCongelarTarjeta</Trans></h6>
-              <p className={"fw-light"}><Trans>mensajeCongelar</Trans></p>
-            </Col>
-          </Row>
-          <Row className={"mb-3"}>
+      <Modal
+        size={"lg"}
+        show={show}
+        onHide={() => setShow(false)}
+        contentClassName={"pay-border-extra-modal container-modal"}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Body className={"text-center p-5"}>
+          <div>
+            <img src={Question} alt="freeze_tj"/>
+            <div className="my-1 py-1"></div>
+            <Row>
+              <Col>
+                <p className="modal-msj"><Trans>mensajeCongelar</Trans></p>
+              </Col>
+            </Row>
+            <Row className={"mb-3"}>
             <Col className={"pt-3"}>
-              <Button
-                style={{ borderRadius: 32 }}
-                className={"col-6 py-2 pay-gradient-main"}
-                onClick={handleBloqueoCard}
-              >
-               <Trans>aceptar</Trans>
-              </Button>
-            </Col>
-          </Row>
-        </div>
-      </Modal.Body>
-    </Modal>
+                <button
+                  className={"col-6 py-2 btn-cancel btn"}
+                  // onClick={handleBloqueoCard}
+                >
+                <Trans>cancelar</Trans>
+                </button>
+              </Col>
+              <Col className={"pt-3"}>
+                <button
+                  className={"col-6 py-2 pay-gradient-main btn-continue btn"}
+                  onClick={handleBloqueoCard}
+                >
+                <Trans>continuar</Trans>
+                </button>
+              </Col>
+            </Row>
+          </div>
+        </Modal.Body>
+      </Modal>
   );
 }

@@ -1,0 +1,74 @@
+
+.logoidPay{
+    width: 15%;
+    margin: 20px;
+}
+
+.iconClose{
+    margin: 20px;
+    float: right;
+}
+
+.subtitle-tex{
+    font-family: 'OpenSans-Regular';
+    color: #7D7D7D;
+    font-size: 17px;
+}
+
+.text-term{
+    width: 57%;
+    line-height: 1rem;
+    text-align: left;
+    font-family: 'OpenSans-Regular';
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+.info-singUp{
+    position: relative;
+    left: 19px;
+    top: 15px;
+    width: 16%;
+    height: 25px;
+    background-color: var(--color-white);
+    color: var(--color-text-description);
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+    float: left;
+}
+
+.btn-continue-singUp{
+    border-radius: 32px;
+    width: 73%;
+    margin: auto;
+    display: block;
+    border: none;
+    font-family: 'OpenSans-Regular';
+    height: 40px;
+}
+
+.singUp-dates{
+    position: relative;
+    left: 19px;
+    top: 15px;
+    width: 28%;
+    height: 25px;
+    background-color: var(--color-white);
+    color: var(--color-text-description);
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+    float: left;
+}
+
+.singUp-document{
+    position: relative;
+    left: 19px;
+    top: 15px;
+    width: 33%;
+    height: 25px;
+    background-color: var(--color-white);
+    color: var(--color-text-description);
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+    float: left;
+}

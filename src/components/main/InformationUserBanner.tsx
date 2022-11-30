@@ -9,13 +9,15 @@ import { BsBoxArrowRight } from "react-icons/bs";
 import { selectLanguage, Trans } from "../../hook/Internationalization";
 import { CreditCardController } from "../../controller/CreditCardController";
 import { ObjectUserBanner } from "../../models/ObjectUserBanner";
+import DropdownToggle from "react-bootstrap/esm/DropdownToggle";
+import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
+import Triangle from '../../images/img/triangle.png';
 
 type Props = {
     children?: React.ReactNode
 }
 
 export function InformationUserBanner(props: Props) {
-
 
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const [titulo, setTitulo] = useState<string>('');
@@ -89,7 +91,7 @@ export function InformationUserBanner(props: Props) {
                 <Col className={"d-none d-lg-block"}>
                     <Row className="d-flex align-items-center">
                         <Col className="col-2 d-flex justify-content-center">
-                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo" />
+                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo"  onClick={() => {navigate("/home")}}/>
                         </Col>
                         <Col className="col-10">
                             <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>
@@ -99,13 +101,26 @@ export function InformationUserBanner(props: Props) {
                 </Col>
                 <Col className={"text-end"}>
                     <Row>
-                        <Col className="col-9 mt-lg-3">
-                            <h5>
-                                {/* <img className="icono" src={"./img/avatar.png"} alt="Profile"/> */}
+                        <Col className="col-9 content-nav">
+                            <Dropdown>
+                                <DropdownToggle variant="CustomToggle" className="arrow-banner">
+                                </DropdownToggle>
+                                <DropdownMenu className="menu-banner">
+                                    {/* <div>
+                                    <img src={Triangle} alt=''/> 
+                                    </div> */}
+                                    <Dropdown.Item className="icon-definitions">Ajustes de la cuenta</Dropdown.Item>
+                                    <Dropdown.Item 
+                                        onClick={handleSignOut}
+                                        className="close-icon"
+                                    >
+                                        <Trans>cerrarSesion</Trans>
+                                    </Dropdown.Item>
+                                </DropdownMenu>
+                            </Dropdown>
                                 <span
                                     className="title-name">{userName}
                                 </span>
-                            </h5>
                             {/* <h5 className="subtitle-banner"><Trans>ultimoIngreso</Trans>
                                 Última conexión 05 nov 2022 a las 4:34:06 pm</h5> */}
                         </Col>
