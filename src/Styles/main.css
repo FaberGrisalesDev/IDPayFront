@@ -16,7 +16,7 @@
         width: 80%;
         margin: 3% 2% 0 10%;
         border-radius: 20px;
-        height: 8rem;
+        height: 10rem;
         background-color: #fff;
         text-align: start;
     }
@@ -155,6 +155,19 @@
         color: #000;
     }
 
-    .img-logo-cards {
-        margin-top: 2%;
+    .style-icon {
+        margin-left: 60%;
+        margin-top: 6%;
+    }
+
+    .style-icon-visa {
+        width: 30%;
+    }
+
+    .movements-body {
+        width: 100%;
+        height: 6rem;
+        border: 1px solid;
+        border-radius: 20px;
+        margin-top: 4%;
     }
