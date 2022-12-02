@@ -18,7 +18,7 @@ type Props = {
     children?: React.ReactNode
 }
 
-export function InformationUserBanner(props: Props) {
+export function InformationUserBanner(props: any) {
 
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const [titulo, setTitulo] = useState<string>('');
@@ -26,7 +26,7 @@ export function InformationUserBanner(props: Props) {
     const [tipoAlerta, setTipoAlerta] = useState<string>('');
     const [typeDocument, setTypeDocument] = useState<string>('');
     const [userName, setUserName] = useState<string>('');
-    const [step, setStep] = useState(1);
+    const { views } = props;
     const [respuesta, setRespuesta] = useState("");
     const [noTarjeta, setNoTarjeta] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
@@ -89,60 +89,59 @@ export function InformationUserBanner(props: Props) {
 
     }
     return (
-            <Row className="pay-gradient-main content-banner m-0">
-                <Col className={"d-none d-lg-block"}>
-                    <Row className="d-flex align-items-center">
-                        <Col className="col-2 d-flex justify-content-center">
-                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo"  onClick={() => {navigate("/home")}}/>
-                        </Col>
-                        <Col className="col-10">
-                            <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>
-                            <h2 className="subtitle-banner"><Trans>queTengasUnLindoDia</Trans></h2>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col className={"text-end"}>
-                    <Row>
-                        <Col className="col-9 content-nav">
-                            <Dropdown>
-                                <DropdownToggle variant="CustomToggle" className="arrow-banner">
-                                </DropdownToggle>
-                                <DropdownMenu className="menu-banner">
-                                    {/* <div>
-                                    <img src={Triangle} alt=''/> 
-                                    </div> */}
-                                    <Dropdown.Item className="icon-definitions">Ajustes de la cuenta</Dropdown.Item>
-                                    <Dropdown.Item 
-                                        onClick={handleSignOut}
-                                        className="close-icon"
-                                    >
-                                        <Trans>cerrarSesion</Trans>
-                                    </Dropdown.Item>
-                                </DropdownMenu>
-                            </Dropdown>
-                                <span
-                                    className="title-name">{userName}
-                                </span>
-                            {/* <h5 className="subtitle-banner"><Trans>ultimoIngreso</Trans>
-                                Última conexión 05 nov 2022 a las 4:34:06 pm</h5> */}
-                        </Col>
-                        <Col className="col-3">
-                            <Row>
-                                {/* <img src={BANNER_ITEMS.avatarM} alt='' className="avatar" /> */}
-                                <img src={BANNER_ITEMS.avatarW} alt='' className="avatarW" />
-                                {/* <Col sm={12} lg={3} className={"d-flex justify-content-center align-items-center mb-2"}>
-                                <BsBoxArrowRight size={"24px"}/>
-                            </Col>
-                            <Col className="text-start">
-                                <h6 className={"fw-light pointer"} onClick={handleSignOut}>
-                                    <Trans>cerrarSesion</Trans></h6>
-                                <h6 className={"fw-light pointer"} onClick={() => navigate("/update-password")}>
-                                    <Trans>actualizarContrasena</Trans></h6>
-                            </Col> */}
-                            </Row>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
+
+        <Container fluid>
+            {views === "entry" && (
+                <Row className="pay-gradient-main content-banner m-0">
+                    <Col className="col-lg-1 d-flex justify-content-center">
+                        <img src={BANNER_ITEMS.logo} alt="logo_home" className="m-auto img-fluid" onClick={() => { navigate("/home") }} />
+                    </Col>
+                    <Col className="col-lg-7 m-auto p-0">
+                        <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>
+                        <h2 className="subtitle-banner"><Trans>queTengasUnLindoDia</Trans></h2>
+                    </Col>
+                    <Col className="col-lg-3 m-auto">
+                        <Dropdown>
+                            <DropdownToggle variant="CustomToggle" className="arrow-banner">
+                            </DropdownToggle>
+                            <DropdownMenu className="menu-banner">
+                                {/* <div>
+                                    <img src={Triangle} alt='' />
+                                </div> */}
+                                <Dropdown.Item className="icon-definitions">Ajustes de la cuenta</Dropdown.Item>
+                                <Dropdown.Item
+                                    onClick={() => navigate("/sign-off")}
+                                    className="close-icon"
+                                >
+                                    <Trans>cerrarSesion</Trans>
+                                </Dropdown.Item>
+                            </DropdownMenu>
+                        </Dropdown>
+                        <span
+                            className="title-name ml-2">
+                            {userName}
+                        </span>
+                        <h5 className="conexion-info mt-2"><Trans>ultimoIngreso</Trans>
+                            Última conexión 05 nov 2022 a las 4:34:06 pm</h5>
+                    </Col>
+                    <Col className="col-lg-1">
+                        <img src={BANNER_ITEMS.avatarM} alt='' className="m-auto" />
+                        {/* <img src={BANNER_ITEMS.avatarW} alt='' className="m-auto"/> */}
+                    </Col>
+                </Row>
+            )}
+
+            { views === "exit" && (
+                <Row className="pay-gradient-main content-banner m-0">
+                    <Col className="col-lg-1 d-flex justify-content-center">
+                        <img src={BANNER_ITEMS.logo} alt="logo_home" className="m-auto" onClick={() => { navigate("/home") }} />
+                    </Col>
+                    <Col className="col-lg-11 m-auto p-0">
+                        <h2 className="title-banner"><Trans>hastaPronto</Trans>{simpleName}</h2>
+                        <h2 className="subtitle-banner"><Trans>queTengasUnLindoDia</Trans></h2>
+                    </Col>
+                </Row>
+            )}
+        </Container>
     )
 }

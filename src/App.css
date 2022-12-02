@@ -18,6 +18,7 @@
 
 :root {
     --container-communicate: url('../src/images/userFlow-img/background-Comm.png');
+    --background-off: url('../src/images/img/signOff.png');
     --background-elipse: url('../src/images/userFlow-img/background-elipse.png');
     --container-img: url('../src/images/userFlow-img/background-color.png');
     --container-images: url('../src/images/userFlow-img/bacground-bottom.png');
@@ -43,6 +44,7 @@
     --very-medium-text: 20px;
     --short--texts--medium: 17px;
     --small-texts-ever: 16px;
+    --small-item_ever: 15px;
     --small-text-ever: 14px;
     --smaller-text-ever: 12px;
     --very-small-text: 11px;
@@ -58,8 +60,13 @@
     --color-white: #fff;
 }
 
+.pay-gradient-main {
+    background: rgb(80, 188, 255);
+    background: linear-gradient(90deg, rgba(80, 188, 255, 1) 0%, rgba(129, 65, 255, 1) 50%, rgba(246, 49, 250, 1) 100%);
+}
+
 .background-main{
-    background-color: var(--color-white);
+    background-color: var(--background-color-flow);
 }
 
 .circlePurple{

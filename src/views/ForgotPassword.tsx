@@ -12,6 +12,7 @@ import UserFlow from "../components/main/UserFlow";
 
 import Shield from '../images/img/shield.png';
 import Close from '../images/img/close.svg';
+import Colors from '../images/img/recovery.png';
 import Restart from '../images/img/restart.png';
 
 export interface Response {
@@ -32,7 +33,7 @@ export function ForgotPassword() {
     const [errorEmail, setErrorEmail] = useState<string>('');
 
     const PASSWORD_ITEMS = new ObjectPassword()
-    // PASSWORD_ITEMS.imgColors = Colors;
+    PASSWORD_ITEMS.imgColors = Colors;
     PASSWORD_ITEMS.iconShield = Shield;
     PASSWORD_ITEMS.iconClose = Close;
     PASSWORD_ITEMS.iconRestart = Restart;
@@ -138,7 +139,7 @@ export function ForgotPassword() {
             {renderShowAlert()}
             <Row className="m-0">
                 <Col className="col-lg-4">
-
+                    <img src={PASSWORD_ITEMS.imgColors} alt='' className="colors"/>
                 </Col>
                 <Col className="col-lg-4 container-form">
                     <img src={PASSWORD_ITEMS.iconShield} alt="sign_in" />

@@ -14,19 +14,19 @@ import Close from '../../images/img/close.svg';
 
 export default function UserFlow(props: any) {
 
-  const { views } = props;
-  const FLOW_ITEMS = new ObjectUserFlow(logo);
-  FLOW_ITEMS.imgSlow = Slow;
-  FLOW_ITEMS.imgMaintenance = Improve;
-  FLOW_ITEMS.imgEror = Error404;
-  FLOW_ITEMS.imgCommunicate = Call;
-  FLOW_ITEMS.imgResult = NotAvailable;
-  FLOW_ITEMS.iconClose = Close;
+    const { views } = props;
+    const FLOW_ITEMS = new ObjectUserFlow(logo);
+    FLOW_ITEMS.imgSlow = Slow;
+    FLOW_ITEMS.imgMaintenance = Improve;
+    FLOW_ITEMS.imgEror = Error404;
+    FLOW_ITEMS.imgCommunicate = Call;
+    FLOW_ITEMS.imgResult = NotAvailable;
+    FLOW_ITEMS.iconClose = Close;
 
-  return (
-    <React.Fragment>
-      {/* { views === "communicate" && ( */}
-          {/* <Container fluid className="container-communicate">
+    return (
+        <React.Fragment>
+            {/* { views === "communicate" && ( */}
+            {/* <Container fluid className="container-communicate">
               <Row className="m-0">
                   <Col className="col-lg-6 m-auto text-center">
                       <p className='text-principal'>Comunícate con nosotros</p>
@@ -48,8 +48,8 @@ export default function UserFlow(props: any) {
                   </Col>
               </Row>
           </Container> */}
-      {/* )} */}
-      {/* {views === "slow" && (
+            {/* )} */}
+            {/* {views === "slow" && (
           <Container fluid className='container-img'>
               <Row className='m-0'>
                   <Col className='col-lg-4'>
@@ -63,7 +63,7 @@ export default function UserFlow(props: any) {
               </Row>
         </Container>
       )} */}
-          {/* <Container fluid className="container-images">
+            {/* <Container fluid className="container-images">
               <Row className='m-0'>
                   <Col className='col-lg-4'>
                       <img src={FLOW_ITEMS.logo} alt='' className='logoIdpay' />
@@ -95,7 +95,8 @@ export default function UserFlow(props: any) {
             </Col>
         </Row>
       </Container> */}
-    </React.Fragment>
-  )
+      
+        </React.Fragment>
+    )
 }
 

@@ -16,14 +16,14 @@ import PadLock from '../images/singUp-img/password.png';
 import Check from '../images/singUp-img/check.png';
 import Password from '../images/singUp-img/createPassword.png';
 import Completed from '../images/singUp-img/fullRecord.png';
-import Code from '../images/singUp-img/help.png';
+import Code from '../images/singUp-img/cod_otp.png';
 
 export function SignUp() {
     const navigate = useNavigate();
 
     const [name, setNames] = useState('');
     const [last, setLast] = useState('');
-    const [step, setStep] = useState(3);
+    const [step, setStep] = useState(2);
     const [typeDocument, setTypeDocument] = useState('');
     const [numberDocument, setNumberDocument] = useState('');
     const [dateExpedition, setDateExpedition] = useState('');
@@ -196,7 +196,68 @@ export function SignUp() {
             {step === 2 && (
                 <Row className="m-0">
                     <Col className="col-lg-4">
-                        <img src="" alt='' />
+                        <img src={SINGUP_ITEMS.colorsCode} alt='' className="code-otp" />
+                    </Col>
+                    <Col className={"contentForms text-center col-lg-4"}>
+                        <img src={SINGUP_ITEMS.iconBell} alt='alert' />
+                        <h3 className="text-purple my-4"><Trans>tuSeguridad</Trans></h3>
+                        <h5 className="subtitle-tex mb-5"><Trans>metodoConfirmacion</Trans></h5>
+                        <Form onSubmit={handleSubmit}>
+                            <div>
+                                <label className="singUp-dates">
+                                    <Trans>numerocelular</Trans>
+                                </label>
+                                <input
+                                    minLength={5}
+                                    maxLength={15}
+                                    className="enter-data"
+                                    type={"password"}
+                                    // value={username}
+                                    // onChange={handleUsername}
+                                    aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                                </input>
+                                    <div className="check-circle-select"></div>
+                                {/* {(errorUsername != "") &&
+                                        <span className="text-error">{errorUsername}</span>
+                                    } */}
+                            </div>
+                            <div>
+                                <label className="info-singUp">
+                                    <Trans>correoElectronico</Trans>
+                                </label>
+                                <input
+                                    minLength={5}
+                                    maxLength={15}
+                                    className="enter-data form-check-input"
+                                    aria-label="Username"
+                                    type={"circle"}
+                                    aria-describedby="basic-addon1">
+                                </input>
+                                <div className="check-circle"></div>
+                            </div>
+                        </Form>
+                        <div className=''>
+                            <Button
+                                // onClick={handleAuth}
+                                className="btn-continue-singUp pay-gradient-main spacing"
+                                type="submit"
+                            >
+                                Continuar
+                            </Button>
+                        </div>
+                    </Col>
+                    <Col className="col-lg-4">
+                        <img src={SINGUP_ITEMS.iconClose} alt='' className="iconClose"
+                            onClick={() => navigate("/")}
+                        />
+                    </Col>
+                </Row>
+            )}
+            {step === 3 && (
+                <Row className="m-0">
+                    <Col className="col-lg-4">
+                        <img src={SINGUP_ITEMS.colorsCode} alt='' className="code-otp" />
                     </Col>
                     <Col className={"contentForms text-center col-lg-4"}>
                         <img src={SINGUP_ITEMS.iconBell} alt='alert' />
@@ -277,10 +338,10 @@ export function SignUp() {
                     </Col>
                 </Row>
             )}
-            {step === 3 && (
+            {step === 4 && (
                 <Row className="m-0">
                     <Col className="col-lg-4">
-                        <img src={SINGUP_ITEMS.colorsPassword} alt='' className="color-password"/> 
+                        <img src={SINGUP_ITEMS.colorsPassword} alt='' className="color-password" />
                     </Col>
                     <Col className="text-center col-lg-4 contentForms">
                         <img src={SINGUP_ITEMS.iconPadlock} alt='' />
@@ -347,10 +408,10 @@ export function SignUp() {
                     </Col>
                 </Row>
             )}
-            {step === 4 && (
+            {step === 5 && (
                 <Row className="m-0">
                     <Col className='col-lg-4'>
-                        <img src={SINGUP_ITEMS.colorsCompleted} alt='' className="iconCheck"/>
+                        <img src={SINGUP_ITEMS.colorsCompleted} alt='' className="iconCheck" />
                     </Col>
                     <Col className="contentForms text-center col-lg-4">
                         <img src={SINGUP_ITEMS.iconCheck} alt='' />

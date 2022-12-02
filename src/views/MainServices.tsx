@@ -68,7 +68,7 @@ export function MainServices() {
 
     return (
         <Container fluid className='background-main'>
-            <InformationUserBanner />
+            <InformationUserBanner views="entry"/>
             <Card className='content-sevices'>
                 <Card.Body>
                     <Card.Text className='title-services mt-2'><Trans>misProductos</Trans></Card.Text>

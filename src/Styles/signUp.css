@@ -9,6 +9,27 @@
     float: right;
 }
 
+.check-circle{
+    width: 19px;
+    height: 19px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    float: right;
+    margin-top: -40px;
+    margin-right: 20px;
+    border: 1px solid var(--color-large-text);
+}
+
+.check-circle-select{
+    width: 19px;
+    height: 19px;
+    background-color: var(--color-large-text);
+    border-radius: 20px;
+    float: right;
+    margin-top: -40px;
+    margin-right: 20px
+}
+
 .iconLogo{
     margin: 20px;
     float: right;
@@ -116,4 +137,9 @@
     color: var(--color-large-text);
     font-family: 'MyriadPro-Regular';
     font-size: var(--bg-medium-text-ever);
+}
+
+.code-otp{
+    width: 80%;
+    margin: 30px;
 }

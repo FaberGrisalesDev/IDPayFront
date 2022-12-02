@@ -12,6 +12,7 @@ import {SignIn} from "../views/SignIn";
 import {Authentication} from "../views/Authentication";
 import {SignInCode} from "../views/SignInCode";
 import {SignUp} from "../views/SignUp";
+import { SignOff } from '../views/SignOff';
 import App from '../views/App';
 import {ListUsers} from "../views/ListUsers";
 import {ConsultMovements} from "../views/ConsultMovements";
@@ -22,6 +23,7 @@ import { RecoverPassword } from '../views/RecoverPassword';
 import {QueryMovements} from "../views/QueryMovements";
 import { MainServices } from '../views/MainServices';
 
+
 ReactDOM.render(
     <BrowserRouter>
         <React.StrictMode>
@@ -29,6 +31,7 @@ ReactDOM.render(
                 <NiceModal.Provider>
                     <Routes>
                         <Route path={"/"} element={<App/>}/>
+                        <Route path={"/sign-off"} element={<SignOff/>}/>
                         <Route path={"/home"} element={
                             <RequireAuth>
                                 <MainServices/>
