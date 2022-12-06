@@ -203,3 +203,26 @@
     margin-left: -75px;
     margin-top: 15px;
 }
+
+
+
+@media only screen and (max-width:480px){
+
+    .content-sevices{
+        width: 90%;
+        height: 255%;
+    }
+
+    .cont-logo {
+        width: 70%;
+    }
+
+    .card-service, .card-others{
+        margin-top: 20px !important;
+        margin: auto;
+    }
+
+    .mobile{
+        margin-top: 60px;
+    }
+}

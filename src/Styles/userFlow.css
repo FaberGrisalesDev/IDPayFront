@@ -1,0 +1,116 @@
+
+.logoIdpay{
+    width: 23%;
+    margin-top: 65px;
+    margin-left: 25%;
+}
+
+.background-elipse{
+    height: 460px;
+    width: 25%;
+    background-image: var(--background-elipse);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 12%;
+    margin-left: 70px;
+}
+
+.container-img{
+    background-image: var(--container-img);
+    background-color: var(--background-color-flow);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: initial;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container-images{
+        background-image: var(--container-images);
+        background-color: var(--background-color-flow);
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: initial;
+        background-size: cover;
+        height: 100vh;
+}
+
+.container-communicate{
+    background-image: var(--container-communicate);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: initial;
+    background-size: 100% 97%;
+    height: 100vh;
+}
+
+.img-communicate{
+    width: 56%;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.text-principal{
+    color: var(--color-large-text);
+    font-family: MyriadPro-Regular;
+    font-size: var(--big-text-ever);
+    margin-top: 60px;
+}
+
+.sub-principal{
+    color: var(--color-text-light-grey);
+    margin-top: -15px;
+    font-family: 'OpenSans-Regular';
+}
+
+.number-text{
+    color: var(--color-large-text);
+    line-height: 1rem;
+    font-family: 'MyriadPro-Regular';
+    font-size: var(--middle-text-ever);
+}
+
+.reference-img{
+    margin-top: 15%;
+    margin-left: 33%;
+}
+
+.img-error{
+    margin-left: 32%;
+}
+
+.title-text{
+    text-align: center;
+    color: var(--color-large-text);
+    font-family: MyriadPro-Regular;
+    font-size: var(--subtitle-text-ever);
+    line-height: 1.5rem;
+}
+
+.subtitle-text{
+    text-align: center;
+    font-family: OpenSans-Regular;
+    font-size: var(--small-text-ever);
+    color: var(--color-black-text);
+    margin-top: -10px;
+}
+
+.text-final{
+    text-align: center;
+    margin-top: 35px;
+    color: var(--color-large-text);
+}
+
+.btn-continue-flow{
+    border-radius: 32px;
+    width: 40%;
+    margin: auto;
+    display: block;
+    border: none;
+    font-family: 'OpenSans-Regular';
+    height: 40px;
+    position: relative;
+    top: 175px;
+}

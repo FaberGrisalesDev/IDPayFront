@@ -7,6 +7,9 @@ export class ObjectSingUp{
     iconBell: any;
     iconPadlock: any;
     iconCheck: any;
+    colorsPassword : any;
+    colorsCompleted: any;
+    colorsCode: any;
 
     constructor(logo: any){
      this.logo = logo;

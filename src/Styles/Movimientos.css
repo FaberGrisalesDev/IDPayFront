@@ -1,0 +1,36 @@
+    
+    .container-body-movements  {
+        margin: 1% 1% 0% 1%;
+        background-color: #fff;
+        border-radius: 20px;
+        border: 2px solid var(--color-large-text);
+        height: 80vh;    
+    }
+
+    .enter-data-mov {
+        display: -webkit-box;
+        width: 100%;
+        height: 60px;
+        border: 2px solid var(--color-large-text);
+        padding: 18px;
+        font-family: 'OpenSans-Regular';
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .container-inputs-moviments {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 3%;
+        margin-bottom: 5%;
+    }
+
+    /* select option {
+        font-family: 'OpenSans-Regular';
+        background-color: red;
+        font-size: 20px;
+    } */
+
+    .web-select {
+        -webkit-appearance: none;
+    }

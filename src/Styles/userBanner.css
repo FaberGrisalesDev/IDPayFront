@@ -2,8 +2,7 @@
     background-image: var(--icon-arrow-banner);
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
-    top: 36px;
+    float: right;
 }
 
 .close-icon{
@@ -23,22 +22,12 @@
     font-size: var(--small-text-ever);
 }
 
-.content-nav{
-    margin-top: -12px;
-}
-
 .content-banner{
-    padding: 1rem;
     height: 130px;
 }
 
-.image-logo {
-    height: 85px;
-    width: 80%;
-}
-
-.image-logo:hover {
-    cursor: pointer;
+.content-nav{
+    margin-top: -12px;
 }
 
 .avatar{
@@ -46,17 +35,22 @@
     margin-top: -10px;
 }
 
+.avatarW{
+    width: 50%;
+    margin-top: -24px;
+}
+
 .title-name{
     font-family: 'MyriadPro-Regular';
     font-size: var(--subtitle-text-ever);
     color: var(--color-white);
-    margin-right: 35px;
+    float: right;
+    padding: 0px 10px;
 }
 
 .title-banner{
     font-family: 'MyriadPro-Regular';
     color: var(--color-white);
-    margin-top: 13px;
     font-size: var(--bg-medium-text-ever);
 }
 
@@ -66,11 +60,23 @@
     font-size: var(--small-text-ever);
 }
 
+.conexion-info{
+    font-family: 'OpenSans-Regular';
+    color: var(--color-white);
+    font-size: var(--small-text-ever);
+    float: right;
+}
+
 .menu-banner{
     height: 135px;
-    width: 34%;
+    width: 50%;
     box-shadow: inset 0px 3px 6px #00000029, 0px 3px 6px #6096fa;
     padding: 25px;
     border-radius: 14px;
     margin-left: -25%;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: var(--color-white);
+    color: var(--color-black-text);
 }

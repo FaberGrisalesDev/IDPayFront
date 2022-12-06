@@ -102,12 +102,11 @@ function App() {
         <Container fluid>
             <div className="backgroud-home">
                 <Row className='m-0'>
-                    <Col className="mt-4 col-12 col-md-6 col-lg-5">
+                    <Col className="mt-5 col-12 col-md-6 col-lg-5">
                         <div className='logo-container'>
-                            <p className="global-enterprise">Id Pay Ⓡ by Get Global Enterprise Technologies SAS</p>
                             <img className='logo-size' src={HOME_ITEMS.logo} alt="Logo App" />
                         </div>
-                        <div className='text-worrie'>
+                        <div className='text-worrie text-fluid m-auto'>
                             <h1 className='text-main'>
                                 ¡Preocúpate menos <br /> vive más!
                             </h1>
@@ -145,13 +144,13 @@ function App() {
                                 interval={4000}
                                 className='content-carrousel'>
                                 <Carousel.Item>
-                                    <img className='imgTest d-block w-100' src={HOME_ITEMS.carousel_one} alt="First slide" />
+                                    <img className='imgTest img-fluid d-block w-100' src={HOME_ITEMS.carousel_one} alt="First slide" />
                                 </Carousel.Item>
                                 <Carousel.Item>
-                                    <img className='imgTest d-block w-100' src={HOME_ITEMS.carousel_two} alt="Second slide" />
+                                    <img className='imgTest img-fluid d-block w-100' src={HOME_ITEMS.carousel_two} alt="Second slide" />
                                 </Carousel.Item>
                                 <Carousel.Item>
-                                    <img className='imgTest d-block w-100' src={HOME_ITEMS.carousel_three} alt="Third slide" />
+                                    <img className='imgTest img-fluid d-block w-100' src={HOME_ITEMS.carousel_three} alt="Third slide" />
                                 </Carousel.Item>
                             </Carousel>
                         </div>
@@ -331,7 +330,7 @@ function App() {
                         </Col>
                         <Col className="col-12 col-md-6 col-lg-6">
                             <div className="content-shopping">
-                                <p className='text-shopping'>Compras</p>
+                                <p className='text-shopping mt-lg-5'>Compras</p>
                             </div>
 
                             <Card className='cardBody-international'>
@@ -340,7 +339,7 @@ function App() {
                                     {
                                         showTwo ? (
                                             <div>
-                                                <Card.Title className='title-national'>Internacional</Card.Title>
+                                                <Card.Title className='title-national'>Internacionales</Card.Title>
                                                 <Card.Text className='description-international'>
                                                     Su tarjeta de crédito está habilitada para <br />
                                                     realizar comprar internacionales.
@@ -388,7 +387,7 @@ function App() {
                     </Row>
                 </div>
             </div>
-            <div className='container-cash'>
+            <div className='container-cash mt-5'>
                 <img src={womanCarrusel} alt='' className="woman_carousel d-none d-md-block d-lg-block"/>
                     <div className="container-carousel p-0">
                         <Carousel
@@ -396,6 +395,36 @@ function App() {
                             controls={false}
                             interval={4500}
                         >
+                            {<Carousel.Item>
+                                <div className='content-items'>
+                                    <div className='container-diner-img'>
+                                        <img src={cash} alt="" className='img-cash' />
+                                    </div>
+                                    <div className='content-advances'>
+                                        <h4 className='title-cash'>Avances en Efectivo</h4>
+                                        <ul>
+                                            <li className='listItem_cash mt-4'>
+                                                <p>Realiza avances hasta por el 100% de su cupo otogado.</p>
+                                            </li>
+                                            <li className='listItem_cash'>
+                                                <p>En cualquier red de cajeros automáticos dentro y fuera del pais.</p>
+                                            </li>
+                                            <li className='listItem_cash'>
+                                                <p>Diferido automáticamente a 24 cuotas.</p>
+                                            </li>
+                                            <li className='listItem_cash'>
+                                                <p>Estas operaciones tienen cobro de comisión según la red del cajero.</p>
+                                            </li>
+                                            <li className='listItem_cash'>
+                                                <p>Comunícate con el contact center si desea rediferir sus avances a una menos plazo.</p>
+                                            </li>
+                                            <li className='listItem_cash'>
+                                                <p>Recuerde que para realizar avances debe contar con un PIN asignado por usted a través de nuestra plataforma.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </Carousel.Item>}
                             {<Carousel.Item>
                                 <div className='container-cash-img'>
                                     <img src={safe} alt="" className='img-cash' />
@@ -494,7 +523,7 @@ function App() {
                     </Col>
                     <Col className='col-12 col-md-8 col-lg-9'>
                         <p className='footer-text'>
-                            Copyright © 2022 Global Enterprise Technology S.A.S. All rights reserved.
+                            Id Pay Ⓡ by Get Global Enterprise Technologies SAS
                         </p>
                     </Col>
                 </Row>

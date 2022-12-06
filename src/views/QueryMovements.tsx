@@ -13,6 +13,8 @@ import {useAuth} from "../hook/AuthContext";
 import {CreditCardController} from "../controller/CreditCardController";
 import { FiArrowDownLeft, FiSearch, FiArrowUpRight } from "react-icons/fi";
 import { useParams, useNavigate } from "react-router-dom";
+import "../Styles/Movimientos.css";
+import { type } from "os";
 
 
 export function formatCurrency(value: number) {
@@ -39,6 +41,7 @@ export function QueryMovements() {
     const [totalAPagar, setTotalAPagar] = useState<string>("");
     const [startDate, setStartDate] = useState<string>("");
     const [endDate, setEndDate] = useState<string>("");
+    const [nameMonth, setNameMonth] = useState("");
     const auth = useAuth();
 
     let [allMovements, setAllMovements] = useState<any>([]);
@@ -65,6 +68,59 @@ export function QueryMovements() {
             return data
         }
     }
+
+    const months = [
+        {
+            label: "Enero",
+            value: '00'
+        },
+        {
+            label: "Febrero",
+            value: '01'
+        },
+        {
+            label: "Marzo",
+            value: '02'
+        },
+        {
+            label: "Abril",
+            value: '03'
+        },
+        {
+            label: "Mayo",
+            value: '04'
+        },
+        {
+            label: "Junio",
+            value: '05'
+        },
+        {
+            label: "Julio",
+            value: '06'
+        },
+        {
+            label: "Agosto",
+            value: '07'
+        },
+        {
+            label: "Septiembre",
+            value: '08'
+        },
+        {
+            label: "Octubre",
+            value: '09'
+        },
+        {
+            label: "Nomviembre",
+            value: '10'
+        },
+        {
+            label: "Diciembre",
+            value: '11'
+        },
+
+    ]
+
 
     // const consultarPorCliente = () => {
         //some thing
@@ -167,44 +223,96 @@ export function QueryMovements() {
         } )();
     }
 
-    const format = (inputDate:any) => {
-        let date, month, year : any;
-        console.log("primer date ",date);
+
+    const getDataMonth =  (month: any) => {
+        let dateComplete = new Date();
+        let dateStart, dateEnd, year : any;
         
-        date = inputDate.getDate();
-        month = inputDate.getMonth();
-        year = inputDate.getFullYear();
+        year = dateComplete.getFullYear();
 
         // QA - DEV
         year = year + 1;
-        month = month -4;
+        // month = month -4;
+
+        dateStart = "01";
+        dateEnd = "31";
+
+        let objDates = {
+            month: month,
+            year: year,
+            dateStart: dateStart,
+            dateEnd: dateEnd
+        }
+
+        return objDates;
+    }
+
+    // const format = (inputDate:any) => {
+    //     let date, month, year : any;
         
-        if ( date < 10) {
-            date = date
-                .toString()
-                .padStart(2, '0');
-        }
+    //     date = inputDate.getDate();
+    //     month = inputDate.getMonth();
+    //     year = inputDate.getFullYear();
 
-        if ( month < 10 ) {
-            month = month
-            .toString()
-            .padStart(2, '0');
-        }
+    //     // QA - DEV
+    //     // year = year + 1;
+    //     // month = month -4;
+        
+    //     if ( date < 10) {
+    //         date = date
+    //             .toString()
+    //             .padStart(2, '0');
+    //     }
 
-        return `${year}${month}${date}`;
+    //     if ( month < 10 ) {
+    //         month = month
+    //         .toString()
+    //         .padStart(2, '0');
+    //     }
+
+    //     return `${year}${month}${date}`;
+    // }
+
+    const NameMonth = () => {
+        let month = new Date();
+        let monthN = month.getMonth();
+        let year = month.getFullYear();
+        let resultStart = `${year}${monthN+1}01`;
+        let resultEnd = `${year}${monthN+1}31`;
+
+        months.map( (item) => {
+            if ( item.value === monthN.toString() ) {
+                setNameMonth(item.label)
+                consultarCliente(resultStart, resultEnd);
+            }
+        } ) 
     }
       
-
-    const setDates = () => {
-        if  ( startDate != '' && endDate != '') {
-            let startArray = startDate.split('-');
-            let endArray = endDate.split('-');
-            const resultStart = format(new Date(parseInt(startArray[0]), parseInt(startArray[1]), parseInt(startArray[2])));
-            const resultEnd = format(new Date(parseInt(endArray[0]), parseInt(endArray[1]), parseInt(endArray[2])));
-            setStartDate(resultStart);
-            setEndDate(resultEnd);
+    const setDates = (val:any, name:any) => {
+        setNameMonth(name);
+        const dataDates = getDataMonth(val);
+        if  ( dataDates) {
+            let start = dataDates.dateStart;
+            let end = dataDates.dateEnd;
+            let month : any = parseInt(dataDates.month) + 1;
+            let year = dataDates.year;
+            if ( month < 10 ) {
+                month = month
+                .toString()
+                .padStart(2, '0');
+            }
+            let resultStart = `${year}${month}${start}`;
+            let resultEnd = `${year}${month}${end}`;
+            console.log(typeof month, month)
+            // let startArray = startDate.split('-');
+            // let endArray = endDate.split('-');
+            // const resultStart = format(new Date(parseInt(startArray[0]), parseInt(startArray[1]), parseInt(startArray[2])));
+            // const resultEnd = format(new Date(parseInt(endArray[0]), parseInt(endArray[1]), parseInt(endArray[2])));
+            // setStartDate(resultStart);
+            // setEndDate(resultEnd);
             consultarCliente(resultStart, resultEnd);
-            setStep(2);
+            // consultarCliente("20230601", "20230631");
+            // setStep(2);
         } else  {
             setShowAlert(true);
             setTitulo("Error data no valida");
@@ -215,92 +323,15 @@ export function QueryMovements() {
         }
     }
 
-    // useEffect(consultarCliente, [])
-
-    // const getInfoMovementes = (response:any) => {
-    //     if (response.valDescripcionRespuesta == "OPERACION EXITOSA" ) {
-    //         for (let i = 0; i < response.transaccion.length; i++) {
-    //             const element = response.transaccion[i];
-    //             console.log("Imprimir transaccion en la posicion: ", i)
-    //             console.log(element);
-    //         }
-    //     }
-    // }
-
-    const showInformation = () => {
-        if (!collapse) {
-            return <div
-                className="col-12 py-3 ps-5"
-                style={{backgroundColor: "white"}}>
-                <h5><Trans>fechaCreacion</Trans><span
-                    className={"fw-light line-spacing-up small ps-1"}>Mayo 31, 2022</span></h5>
-                <h5><Trans>fechaActualizacion</Trans><span className={"fw-light line-spacing-up small ps-1"}>Mayo 31, 2022</span>
-                </h5>
-            </div>;
-        }
-    };
-
-    const showState = () => {
-        if (state) {
-            return <div
-                className="col-12 p-1 ps-5 Card-Visa-Bottom"
-                style={{backgroundColor: "#8CC63F", color: "white"}}>
-                <h5><Trans>estado</Trans><span className={"fw-light"}><Trans>activo</Trans></span></h5>
-            </div>;
-        } else {
-            return <div
-                className="col-12 p-1 ps-5 Card-Visa-Bottom"
-                style={{backgroundColor: "red", color: "white"}}>
-                <h5><Trans>estado</Trans><span className={"fw-light"}><Trans>inactivo</Trans></span></h5>
-            </div>;
-        }
-    };
+    useEffect(NameMonth, [])
 
     return (
         <Container fluid style={{backgroundColor: "#EDF0F7"}} >
             <InformationUserBanner/>
-            <Row className={"p-3"}>
-
+            <Row className={"p-3 w-100"}>
                 <Row>
                     <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-                        {/* <Tab eventKey="tarjetaAhorros" title="Tarjeta Ahorros">
-                            <Row>
-                                <Col className="col-4">
-                                    <div className="min-vh-100 p-5" style={{backgroundColor: "#EDF0F7"}}>
-                                        <div
-                                            className="col-12 p-2 ps-3 Card-Visa-Top"
-                                            style={{backgroundColor: "#7757FF"}}
-                                            onClick={() => setCollapse((prev) => !prev)}
-                                        >
-                                            <Row className="centrar position-relative" style={{color: "white"}}>
-                                                <Col className="col-3">
-                                                    <img className={"img-visa pt-4 ps-3"} src={logoVisa} alt="logo_visa"
-                                                        style={{filter: "brightness(0) invert(1)"}}/>
-                                                </Col>
-                                                <Col className="col-6">
-                                                    <h5 className={"fw-light small pt-1 ps-4"}>
-                                                        <Trans>creditoClasica</Trans></h5>
-                                                    <h6 className={"fw-light line-spacing-up small ps-4"}>
-                                                        <Trans>numero</Trans>*9069</h6>
-                                                </Col>
-                                                <Col className="col-3 text-center">
-                                                    <div className="position-absolute"
-                                                        style={{transform: "translateY(-15px)"}}>
-                                                        <label className="switch">
-                                                            <input type="checkbox"
-                                                                onClick={() => setState((prev) => !prev)}></input>
-                                                            <span className="slider"></span>
-                                                        </label>
-                                                    </div>
-                                                </Col>
-                                            </Row>
-                                        </div>
-                                        {showInformation()}
-                                        {showState()}
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Tab> */}
+                        {/* <>No se que esto</> */}
                     </Tabs>
                 </Row>
                 <Col sm={4} lg={3} className={"border-end border-3"}>
@@ -319,19 +350,6 @@ export function QueryMovements() {
                             {/* <h6><Trans>numero</Trans>**********9069</h6> */}
                         </Card.Body>
                     </div>
-                    <div style={{borderRadius: 20}} className={"mb-3 bg-white card-body"}>
-                        <Row className={"fw-light mb-5"}>
-                            <h6 className={"fw-light"}><Trans>dineroDisponible</Trans></h6>
-                            <h2 className={"fw-bold text-purple-900 line-spacing-up"}>{disponibleCompras}</h2>
-                        </Row>
-                        <Row>
-                            <h6 className={"fw-light "}><Trans>totalPagar</Trans></h6>
-                            <h6 className={"fw-bold text-purple-900 line-spacing-up"}>{totalAPagar}</h6>
-                            <h6 className={"fw-light "}><Trans>fechaCorte</Trans></h6>
-                            <h6 className={"fw-bold text-purple-900 line-spacing-up"}>{fechaCorte}</h6>
-
-                        </Row>
-                    </div>
 
                     <div className="my-1 py-1"></div>
                     <Col className={"text-center text-muted"}>
@@ -348,78 +366,71 @@ export function QueryMovements() {
                     </Button>
                 </Col>
                 { step === 1 && (
-                    <Col className="m-1">
-                        <div className="text-center">
-                            <Button onClick={() => {navegation('/main')}}>Volver</Button>
-                            <h1 className="input-title-container-calendar">Ingresa el periodo de tiempo que deseas consultar</h1>
-                            <Row>
-                                <Col className="col-margin">
-                                    <h4 className="input-title-calendar">Fecha Inicio</h4>
-                                    <input type="date" className="calendar-input" onChange={(event) => {setStartDate(event.target.value)}} />
-                                </Col>
-                                <Col className="col-margin">
-                                    <h4 className="input-title-calendar">Fecha FIn</h4>
-                                    <input type="date" className="calendar-input" onChange={(event) => {setEndDate(event.target.value)}} />
-                                </Col>
-                            </Row>
-                            <button className="button-date col-margin" onClick={()=>setDates()}>Consultar</button>
+                    // <Col className="m-1">
+                    //     <div className="text-center">
+                    //         <Button onClick={() => {navegation('/main')}}>Volver</Button>
+                    //         <h1 className="input-title-container-calendar">Ingresa el periodo de tiempo que deseas consultar</h1>
+                    //         <Row>
+                    //             <Col className="col-margin">
+                    //                 <h4 className="input-title-calendar">Fecha Inicio</h4>
+                    //                 <input type="date" className="calendar-input" onChange={(event) => {setStartDate(event.target.value)}} />
+                    //             </Col>
+                    //             <Col className="col-margin">
+                    //                 <h4 className="input-title-calendar">Fecha FIn</h4>
+                    //                 <input type="date" className="calendar-input" onChange={(event) => {setEndDate(event.target.value)}} />
+                    //             </Col>
+                    //         </Row>
+                    //         <button className="button-date col-margin" onClick={()=>setDates()}>Consultar</button>
+                    //     </div>
+                    // </Col>
+                    <Col className="container-body-movements" >
+                        <div className="container-inputs-moviments">
+                            <label className="label-document-pin">MES</label>
+                            <select className="enter-data-mov drowtown_menu web-select">
+                                {
+                                    months.map( (item) => {
+                                        const date = new Date();
+                                        let month = date.getMonth();
+                                        // let monthStart : any = (month - 4)
+                                        return (
+                                            <option className="option-style" value={item.value} onClick={ () => {setDates(item.value, item.label)}}>{item.label}</option>
+                                        )
+                                    })
+                                }
+                            </select>
                         </div>
-                    </Col>
-                )}
-                { step === 2 && (
-                    <Col className="m-1">
-                        <Row> <h4 className={"text-muted font-light m-4"}>
-                            <FiSearch className="text-purple"/>
-                            <Trans>consultaMovimientos</Trans></h4>
-                        </Row>
-                        <Row className={"row-cols-lg-4 bg-white row pt-3 pb-3"} style={{borderRadius: 18, }} >
-                            <Col className="text-center">
-                                <h4 className={"text-muted font-light small m-0 p-0"}><Trans>tipo</Trans></h4>
-                            </Col>
-                            <Col className="text-center">
-                                <h4 className={"text-muted font-light small m-0 p-0"}><Trans>fecha</Trans></h4>
-                            </Col>
-                            <Col>
-                                <h4 className={"text-muted font-light small m-0 p-0"}><Trans>descripcion</Trans></h4>
-                            </Col>
-                            <Col className="text-center">
-                                <h4 className={"text-muted font-light small m-0 p-0"}><Trans>monto</Trans></h4>
-                            </Col>
-                        </Row>
-
-
-
-
-                        {/* <Row className={"row-cols-lg-4 row p-3 ms-2"} style={{borderRadius: 18}} >
-                            <Col >
-                                <p className={"text-muted font-light m-0 p-0"}>SEPTIEMBRE</p>
-                            </Col>
-                        </Row> */}
-                        <div style={{backgroundColor: "rgba(129, 65, 255, 1)", height: 1}}></div>
-                            {
-                                allMovements.map( (element:any) => {
-                                    let valorComplete = element.valValor;
-                                    let valorWithOutDecimal = valorComplete.substring(0,8);
-                                    let resultValue = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP' }).format(valorWithOutDecimal);
-                                    return (
-                                        <Row className="row-cols-lg-4 align-items-center pt-1 pb-1" style={{border: 2, borderColor: "#fff"}} >
-                                            <Col className={"bold text-center"}>
-                                                <FiArrowUpRight size={26} color={"#44CF8C"}/>
-                                            </Col>
-                                            <Col className="text-center">
-                                                <p className={"text-purple bold small m-0 p-0"}>{element.fecMovimiento}</p>
-                                            </Col>
-                                            <Col>
-                                                <h4 className={"text-muted font-light small m-0 p-0"}>{element.nomEstablecimiento === null ? element.valDescripcion : element.nomEstablecimiento}</h4>
-                                            </Col>
-                                            <Col className="text-end">
-                                                <h4 className={"text-muted bold small m-0 p-0"}>${resultValue.slice(0, -7)} </h4>
-                                            </Col>
-                                        </Row>
-                                    )
-                                })
-                            }                    
-                    </Col>
+                        <div className="text-center">
+                            <h3>Tus ultimos movimientos de {nameMonth}</h3>
+                        </div>
+                        <div>
+                            <Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Fecha</th>
+                                    <th>Descripcion</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    // objetMovements.map( (item) => {
+                                        allMovements.map( (item : any) => {
+                                        let valorComplete = item.valValor;
+                                        let valorWithOutDecimal = valorComplete.substring(0,8);
+                                        let resultValue = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP' }).format(parseInt(valorWithOutDecimal))
+                                        return (<tr>
+                                            <td>{item.nomEstablecimiento === null ? item.valDescripcion : item.nomEstablecimiento}</td>
+                                            <td>{item.fecMovimiento}</td>
+                                            <td>{item.fillerTrn1}</td>
+                                            <td>${resultValue.slice(0, -7)}</td>
+                                        </tr>)
+                                    })
+                                }
+                            </tbody>
+                            </Table>
+                        </div>
+                    </Col> 
                 )}
                 
             </Row>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import logo from "../../images/img/negative-logo.png";
-import character from "../../images/img/character.png";
+import characterWoman from "../../images/img/avatarWoman.png";
+import characterMen from "../../images/img/avatarMen.png";
 import '../../Styles/userBanner.css'
 import { useAuth } from "../../hook/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +18,7 @@ type Props = {
     children?: React.ReactNode
 }
 
-export function InformationUserBanner(props: Props) {
+export function InformationUserBanner(props: any) {
 
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const [titulo, setTitulo] = useState<string>('');
@@ -25,7 +26,7 @@ export function InformationUserBanner(props: Props) {
     const [tipoAlerta, setTipoAlerta] = useState<string>('');
     const [typeDocument, setTypeDocument] = useState<string>('');
     const [userName, setUserName] = useState<string>('');
-    const [step, setStep] = useState(1);
+    const { views } = props;
     const [respuesta, setRespuesta] = useState("");
     const [noTarjeta, setNoTarjeta] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
@@ -35,7 +36,8 @@ export function InformationUserBanner(props: Props) {
 
     const BANNER_ITEMS = new ObjectUserBanner(logo);
     BANNER_ITEMS.logo = logo;
-    BANNER_ITEMS.avatar = character;
+    BANNER_ITEMS.avatarM = characterMen;
+    BANNER_ITEMS.avatarW = characterWoman
 
 
     const handleSignOut = () => {
@@ -91,7 +93,7 @@ export function InformationUserBanner(props: Props) {
                 <Col className={"d-none d-lg-block"}>
                     <Row className="d-flex align-items-center">
                         <Col className="col-2 d-flex justify-content-center">
-                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo"  onClick={() => {navigate("/home")}}/>
+                            <img src={BANNER_ITEMS.logo} alt="logo_home" className="image-logo" />
                         </Col>
                         <Col className="col-10">
                             <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>
@@ -126,7 +128,8 @@ export function InformationUserBanner(props: Props) {
                         </Col>
                         <Col className="col-3">
                             <Row>
-                                <img src={BANNER_ITEMS.avatar} alt='' className="avatar" />
+                                {/* <img src={BANNER_ITEMS.avatarM} alt='' className="avatar" /> */}
+                                <img src={BANNER_ITEMS.avatarW} alt='' className="avatarW" />
                                 {/* <Col sm={12} lg={3} className={"d-flex justify-content-center align-items-center mb-2"}>
                                 <BsBoxArrowRight size={"24px"}/>
                             </Col>

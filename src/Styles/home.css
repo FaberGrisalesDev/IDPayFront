@@ -26,7 +26,7 @@
     }
 
     .logo-size {
-        height: 6rem;
+        width: 20%;
     }
 
     .backgroud-home {
@@ -383,9 +383,6 @@
         height: 30rem;
     }
 
-    .container-cash {
-        z-index: 1;
-    }
     .container-carousel{
         position: absolute;
         z-index: 2;
@@ -412,7 +409,7 @@
 
     .listItem_cash{
         font-family: 'OpenSans-Regular';
-        font-size: var(--very-medium-tex);
+        font-size: var(--small-texts-ever);
         list-style: var(--icon-check-item);
         line-height: 0.3rem;
         color: var(--color-white);
@@ -452,7 +449,6 @@
     }
 
     .img-phoneItem{
-        height: 16rem;
         width: 84%;
     }
 
@@ -539,7 +535,7 @@
         background: var(--color-gradient-global);
         margin-left: 35%;
         font-family: 'OpenSans-Regular';
-        font-size: var(--short--texts--medium);
+        font-size: var( --small-item_ever);
         padding: 0px;
     }
 
@@ -641,18 +637,64 @@
     }
     
     /* Dispositivos */
+/* @media only screen and (max-width: 1920px){
+    .text-main{
+        font-size: 40px;
+    }
+} */
+
 @media only screen and (max-width: 1536px){
+
+    .content-items{
+        left: 10%;
+    }
+
+    .container-info {
+        right: 8%;
+    }
+
+    .imgTest {
+        width: 90% !important;
+        height: 420px;
+    }
+
+    .woman_carousel {
+        width: 100%;
+        height: 538px;
+    }
+
+    .text-main,.title-target {
+        font-size: var(--bg-medium-text-ever);
+    }
+
     .btn-sesion {
-        width: 23%;
+        width: 22%;
+        height: 41px;
+    }
+
+    .subTitle-target{
+        font-size: var(--middle-text-ever);
+    }
+
+    .content-cookies {
+        height: 170px;
+    }
+
+    .btn-cookieshome{
+        font-size: var(--subtitle-text-ever);
     }
 
     .content-cards {
         margin-left: 4%;
     }
 
-    .text-target{
-        margin-top: 25px;
+    .homework-card{
+        font-size: var(--subtitle-text-ever);
     }
+
+    .text-target{
+        margin-top: 50px;
+    } 
 
     .homework-itemOne {
         width: 13%;
@@ -663,7 +705,7 @@
     }
 
     .homework-itemSp {
-        width: 16%;
+        width: 17%;
     }
 
     .homework-itemPayment {
@@ -675,7 +717,8 @@
     }
    
     .cardBody-international{
-        margin-top: -140px;
+        margin-top: -115px;
+        margin-left: 25px;
     }
 
     .cardBody-national{
@@ -688,7 +731,7 @@
     }
 
     .text-cookies {
-        font-size: 19px;
+        font-size: var(--short--texts--medium);
     }
 }
 

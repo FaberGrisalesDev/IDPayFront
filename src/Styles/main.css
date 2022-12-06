@@ -171,3 +171,14 @@
         border-radius: 20px;
         margin-top: 4%;
     }
+
+    .movements-body {
+        text-align: center;
+        padding: 4% 0%;
+        border: 2px solid var(--color-large-text);
+    }
+
+    .btn-act {
+        margin-top: -3%;
+        margin-left: 63%;
+    }

@@ -331,7 +331,8 @@ export function Main() {
                         setMinimoAPagar(formatCurrency(data.tarjeta[0].valPagoMinimo))
                         setcupoDispAvance(formatCurrency(data.tarjeta[0].valCupoDisponibleAvance))
                         setMiSaldo(formatCurrency(data.tarjeta[0].valSaldo))
-                        setEstado(data.tarjeta[0].fillerTar1)
+                        // setEstado(data.tarjeta[0].fillerTar1)
+                        setEstado("N-N NORMAL");
                         setNCard(data.tarjeta[0].valNumeroTarjeta)
                         setLast4(data.tarjeta[0].fourDigits)
                         setShowAlert(true);
@@ -563,7 +564,7 @@ export function Main() {
                                     // numberCards != undefined ? 
                                     numberCards != undefined ? 
                                     numberCards.map( (item: any, index: number) => {
-                                        console.log(item.fourDigits)
+                                        console.log(item.fourDigits);
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
                                                 <Card.Body className={`card-cards`} id={`cardB${index}`} onClick={() => { showInfoCard(index, item); styleById(index); }}>
@@ -594,51 +595,67 @@ export function Main() {
                                                 <img src={tarjFig} alt="" className="img-logoCard" />
                                             </div>
                                             <progress max={100} value={50}></progress>
-                                            <p>Disponible {cupoTotal}</p>
-                                            <p>Saldo utilizado {miSaldo}</p>
-                                            <p>Cupo avances {cupoDispAvance}</p>
+                                            <p>Disponible &emsp;&emsp;&emsp; {cupoTotal}</p>
+                                            <p>Saldo utilizado &emsp;&emsp;&emsp; {miSaldo}</p>
+                                            <p>Cupo avances &emsp;&emsp;&emsp; {cupoDispAvance}</p>
+                                            { estado == "0 - PENDIENTE POR ACTIVAR" || estado == "O-O PENDIENTE ENTREGA" ?
+                                                <Button className="btn-pay btn-act" onClick={() => setShowModalFreeze(true) } >ACTIVAR</Button> : ''}
                                         </div>
-                                        <div className="container-data-card">
-                                            <img src={money} alt=""  />
-                                            <p className="text-data-main">Total a pagar</p>
-                                            <p className="text-data-color">{miSaldo}</p>
-                                            <p className="text-data-main">Minimo a pagar</p>
-                                            <p className="text-data-color">{minimoAPagar}</p>
-                                            <p className="text-data-main">Fecha limite de pago</p>
-                                            <p className="text-data-color">{fechaLimitePago} <Button className="btn-pay">PAGAR</Button> </p>
-                                        </div>
-                                        <div className="container-buttons">
-                                            <Button className="btn-accions" 
-                                            onMouseEnter={() => { showHoverImage(frozen, true) }} 
-                                            onMouseLeave={() => { showHoverImage(frozen, false) }}
-                                            onClick={() => setShowModalFreeze(true) }
-                                            >
-                                            <img src={imgBtn1} alt=""/>
-                                                { estado == 'N-N NORMAL' ? 'Congelar' : 'Descongelar' }
-                                            </Button>
-                                            <Button 
-                                                className="btn-accions" 
-                                                onMouseEnter={() => { showHoverImage(lock, true) }} 
-                                                onMouseLeave={() => { showHoverImage(lock, false) }}
-                                                onClick={() => {setShowModalAssingPin(true)}}
-                                                >
-                                                <img src={imgBtn2} alt="" /> <br />
-                                                Generar Pin
-                                            </Button>
-                                            <Button className="btn-accions" onMouseEnter={() => { showHoverImage(payments, true) }} onMouseLeave={() => { showHoverImage(payments, false) }}>
-                                                <img src={imgBtn3} alt="" />
-                                                Programar Pagos
-                                            </Button>
-                                            <Button className="btn-accions" onMouseEnter={() => { showHoverImage(avance, true) }} onMouseLeave={() => { showHoverImage(avance, false) }}>
-                                                <img src={imgBtn4} alt="" /> <br />
-                                                Realizar Avance
-                                            </Button>
-                                        </div>
+                                        {
+                                            estado == 'N-N NORMAL' ?
+                                            (
+                                                <>
+                                                    <div className="container-data-card">
+                                                        <img src={money} alt=""  />
+                                                        <p className="text-data-main">Total a pagar</p>
+                                                        <p className="text-data-color">{miSaldo}</p>
+                                                        <p className="text-data-main">Minimo a pagar</p>
+                                                        <p className="text-data-color">{minimoAPagar}</p>
+                                                        <p className="text-data-main">Fecha limite de pago</p>
+                                                        <p className="text-data-color">{fechaLimitePago} <Button className="btn-pay">PAGAR</Button> </p>
+                                                    </div>
+                                                    <div className="container-buttons">
+                                                        <Button className="btn-accions" 
+                                                        onMouseEnter={() => { showHoverImage(frozen, true) }} 
+                                                        onMouseLeave={() => { showHoverImage(frozen, false) }}
+                                                        onClick={() => setShowModalFreeze(true) }
+                                                        >
+                                                            <img src={imgBtn1} alt=""/>
+                                                            {/* { estado == 'N-N NORMAL'  ? 'Congelar' : 'Descongelar' } */}
+                                                            { estado == 'N-N NORMAL'  ? 'Congelar' : 'Descongelar' }
+                                                        </Button>
+                                                        <Button 
+                                                            className="btn-accions" 
+                                                            onMouseEnter={() => { showHoverImage(lock, true) }} 
+                                                            onMouseLeave={() => { showHoverImage(lock, false) }}
+                                                            onClick={() => {setShowModalAssingPin(true)}}
+                                                            >
+                                                            <img src={imgBtn2} alt="" /> <br />
+                                                            Generar Pin
+                                                        </Button>
+                                                        <Button className="btn-accions" onMouseEnter={() => { showHoverImage(payments, true) }} onMouseLeave={() => { showHoverImage(payments, false) }}>
+                                                            <img src={imgBtn3} alt="" />
+                                                            Programar Pagos
+                                                        </Button>
+                                                        <Button className="btn-accions" onMouseEnter={() => { showHoverImage(avance, true) }} onMouseLeave={() => { showHoverImage(avance, false) }}>
+                                                            <img src={imgBtn4} alt="" /> <br />
+                                                            Realizar Avance
+                                                        </Button>
+                                                    </div>
+                                                </>
+                                            ) : ''
+                                        }
                                     </Col>
                                     <Col>
-                                        <div className="movements-body" onClick={() => navegation(`/query/${numberCardValue}`)} >
-                                            <h3>Movimientos</h3>
-                                        </div>
+                                        {
+                                            estado == 'N-N NORMAL' ? (
+                                                <>
+                                                    <div className="movements-body" onClick={() => navegation(`/query/${numberCardValue}`)} >
+                                                        <h3>Movimientos</h3>
+                                                    </div>
+                                                </>
+                                            ) : ''
+                                        }
                                     </Col>
                                 </Row>
                             </Container>

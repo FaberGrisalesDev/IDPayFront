@@ -11,6 +11,7 @@ import {SignIn} from "./views/SignIn";
 import {Authentication} from "./views/Authentication";
 import {SignInCode} from "./views/SignInCode";
 import {SignUp} from "./views/SignUp";
+import { SignOff } from './views/SignOff';
 import App from './views/App';
 import {ListUsers} from "./views/ListUsers";
 import {ConsultMovements} from "./views/ConsultMovements";
@@ -27,6 +28,7 @@ import { User } from './components/admin/pages/User';
 import {QueryMovements} from "./views/QueryMovements";
 import {PoliciesCookies} from './views/PoliciesCookies';
 import { MainServices } from './views/MainServices';
+import UserFlow from './components/main/UserFlow';
 
 
 ReactDOM.render(
@@ -35,14 +37,16 @@ ReactDOM.render(
             <AuthProvider>
                 <NiceModal.Provider>
                     <Routes>
+                        <Route path={"/error"} element={<UserFlow/>}/>
                         <Route path={"/"} element={<App/>}/>
                         <Route path={"/policies-cookies"} element={<PoliciesCookies/>}/>
                         <Route path={"/services"} element={<MainServices/>}/>
-                        <Route path={"/home"} element={
+                        <Route path={"/sign-off"} element={<SignOff/>}/>
+                        {/*<Route path={"/home"} element={
                             <RequireAuth>
                                 <MainServices/>
                             </RequireAuth>
-                        }/>
+                        }/> */}
                         <Route path={"/main"} element={
                             <RequireAuth>
                                 <Main/>
