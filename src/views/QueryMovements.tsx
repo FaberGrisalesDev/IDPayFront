@@ -6,7 +6,7 @@ import ModalFreeze from "../modal/ModalFreeze";
 import ModalChangePin from "../modal/ModalChangePin";
 import ModalAssigPin from "../modal/ModalAssigPin";
 import logHomeCol from "../images/svg/logo_id_color.svg";
-import logoVisa from "../images/svg/ic_visa.svg";
+import logoVisa from "../images/svg/ic_visa.png";
 import {InformationUserBanner} from "../components/main/InformationUserBanner";
 import {Trans} from "../hook/Internationalization";
 import {useAuth} from "../hook/AuthContext";
