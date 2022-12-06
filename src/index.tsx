@@ -42,11 +42,11 @@ ReactDOM.render(
                         <Route path={"/policies-cookies"} element={<PoliciesCookies/>}/>
                         <Route path={"/services"} element={<MainServices/>}/>
                         <Route path={"/sign-off"} element={<SignOff/>}/>
-                        <Route path={"/home"} element={
+                        {/*<Route path={"/home"} element={
                             <RequireAuth>
                                 <MainServices/>
                             </RequireAuth>
-                        }/>
+                        }/> */}
                         <Route path={"/main"} element={
                             <RequireAuth>
                                 <Main/>

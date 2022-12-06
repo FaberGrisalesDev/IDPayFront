@@ -32,11 +32,11 @@ ReactDOM.render(
                     <Routes>
                         <Route path={"/"} element={<App/>}/>
                         <Route path={"/sign-off"} element={<SignOff/>}/>
-                        <Route path={"/home"} element={
+                        {/*<Route path={"/home"} element={
                             <RequireAuth>
                                 <MainServices/>
                             </RequireAuth>
-                        }/>
+                        }/> */}
                         <Route path={"/main"} element={
                             <RequireAuth>
                                 <Main/>
