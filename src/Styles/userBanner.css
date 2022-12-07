@@ -70,7 +70,7 @@
 
 .menu-banner{
     height: 135px;
-    width: 50%;
+    width: 65%;
     box-shadow: inset 0px 3px 6px #00000029, 0px 3px 6px #6096fa;
     padding: 25px;
     border-radius: 14px;
@@ -80,4 +80,40 @@
 .dropdown-item:focus, .dropdown-item:hover {
     background-color: var(--color-white);
     color: var(--color-black-text);
+}
+
+@media only screen and (max-width: 768px){
+
+    
+    .title-banner{
+        font-size: var(--subtitle-text-ever);
+    }
+
+    .subtitle-banner, .conexion-info{
+        font-size: var(--smaller-text-ever);
+    }
+
+    .menu-banner {
+        width: 75%;
+    }
+}
+
+
+@media only screen and (max-width: 480px){
+
+    .content-banner {
+        height: 70px;
+    }
+
+    .title-name, .card-information, .text-data-main, .btn-accions, .btn-pay{
+        font-size: var(--smaller-text-ever);
+    }
+
+    .container-saldos-card{
+        height: 15rem;
+    }
+
+    .container-data-card{
+        height: 200px;
+    }
 }

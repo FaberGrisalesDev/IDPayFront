@@ -43,6 +43,7 @@ import { crediCardService } from "../services/CrediCardServices";
 import { useCookies } from "react-cookie";
 import imgClose from '../images/img/close.svg';
 import idPaySmall from '../images/main-img/smallidPay.png';
+import Search from '../images/main/lupe.png';
 
 export function formatCurrency(value: number){
     return Intl.NumberFormat("en-US", { style: "currency", currency: "USD", }).format(value);
@@ -80,7 +81,7 @@ export function Main() {
     const [numberCards, setNumberCards] = useState<any>();
     const [numberCardValue, setNumberCardValue] = useState<string>("");
     const [imgCardShow, setImgCardShow] = useState<any>(tarjFig);
-    const [classCard, setClassCard] = useState<any>("col-3");
+    const [classCard, setClassCard] = useState<any>("col-lg-3");
     const [classSelect, setClassSelect] = useState<string>("card-container-cards");
     const [classSelectBackground, setClassSelectBackground] = useState<string>("");
     const [activeOrBlock , setactiveOrBlock] = useState<boolean>(false);
@@ -183,29 +184,29 @@ export function Main() {
             "fillerTar1": "N-N NORMAL",
             "fillerTar2": null
         },
-        // {
-        //     "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
-        //     "valSaldo": -8110.74,
-        //     "valCupoTotalAprobado": 2000000.0,
-        //     "valCupoDisponible": 2008110.74,
-        //     "valCupoDisponibleAvance": 2000000.0,
-        //     "fecCorteTarjeta": "2023-08-15T05:00:00.000+00:00",
-        //     "fecLimitePago": "2023-08-31T05:00:00.000+00:00",
-        //     "valPagoMinimo": 0.0,
-        //     "valValorUltimoPago": 51400.0,
-        //     "valDiasMora": 0,
-        //     "valValorMora": 0.0,
-        //     "valSaldoUltimoCorte": -8110.74,
-        //     "valTipoTarjeta": "TARJETA PERSONAL",
-        //     "codTipoTarjeta": "1",
-        //     "valCvv": "0000",
-        //     "valFechaVencimiento": "1900-01-01",
-        //     "bin": "41464713",
-        //     "afinidad": "47",
-        //     "valLineaCredito": null,
-        //     "fillerTar1": "N-N NORMAL",
-        //     "fillerTar2": null
-        // },
+        {
+            "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
+            "valSaldo": -8110.74,
+            "valCupoTotalAprobado": 2000000.0,
+            "valCupoDisponible": 2008110.74,
+            "valCupoDisponibleAvance": 2000000.0,
+            "fecCorteTarjeta": "2023-08-15T05:00:00.000+00:00",
+            "fecLimitePago": "2023-08-31T05:00:00.000+00:00",
+            "valPagoMinimo": 0.0,
+            "valValorUltimoPago": 51400.0,
+            "valDiasMora": 0,
+            "valValorMora": 0.0,
+            "valSaldoUltimoCorte": -8110.74,
+            "valTipoTarjeta": "TARJETA PERSONAL",
+            "codTipoTarjeta": "1",
+            "valCvv": "0000",
+            "valFechaVencimiento": "1900-01-01",
+            "bin": "41464713",
+            "afinidad": "47",
+            "valLineaCredito": null,
+            "fillerTar1": "N-N NORMAL",
+            "fillerTar2": null
+        },
         // {
         //     "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
         //     "valSaldo": -8110.74,
@@ -404,10 +405,28 @@ export function Main() {
     }
 
     const showCardScroll = (val:any) => {
-        if (val > 4) {
-            setClassCard("col-3 scroll-cards")
-        } else {
-            setClassCard("col-3")
+        let size = window.screen.width
+        console.log(size)
+        if( size <= 768 && size >= 426){
+            if (val > 2) {
+                setClassCard("col-lg-3 scroll-cards")
+            } else {
+                setClassCard("col-lg-3")
+            }           
+        }
+        else if( size <= 425){
+            if (val > 1) {
+                setClassCard("col-lg-3 scroll-cards")
+            } else {
+                setClassCard("col-lg-3")
+            } 
+        }
+        else if( size > 768){
+            if (val > 4) {
+                setClassCard("col-lg-3 scroll-cards")
+            } else {
+                setClassCard("col-lg-3")
+            } 
         }
     }
 
@@ -521,15 +540,15 @@ export function Main() {
                 <ModalAssigPin numCard={nCard} show={showModalAssigPin} setShow={setShowModalAssingPin}/>
                 <ModalChangePin show={showModalChangePin} setShow={setShowModalChangePin}/>
             </Row>
-            <Row className="w-100">
+            <Row className="m-0">
                 { step === 0 && (
                     <>
-                        <Col className={`${classCard} m-0 p-0`}>
+                        <Col className={`${classCard} m-0 p-0 col-12 col-md-5`}>
                             <div className="mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
-                                    numberCards != undefined ? 
-                                    numberCards.map( (item: any, index: number) => {
+                                tarjetaCardObject != undefined ? 
+                                tarjetaCardObject.map( (item: any, index: number) => {
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
                                                 <Card.Body className="card-cards" id={`cardB${index}`} onClick={() => {
@@ -548,14 +567,14 @@ export function Main() {
                                         <p className="new-target">Solicitar nueva tarjeta crédito<img src={more} alt="" className="icon-more"/></p>
                                     </Card.Body>
                                 </Card>
-                                <div className=''>
+                                {/* <div className=''>
                                     <img src={idPaySmall} alt="" className='logo-small' />
                                     <p className='textSmall'>*Organiza*</p>
                                     <p className='help-text'><Trans>necesitasAyuda</Trans></p>
-                                </div>
+                                </div> */}
                             </div>
                         </Col>
-                        <Col className="col-9">
+                        <Col className="col-12 col-md-7 col-lg-9">
                             <Container className="img-container">
                                 <Row>
                                     <Col className="col-lg-10">
@@ -571,13 +590,13 @@ export function Main() {
                 )}
                 {  step === 1 && (
                     <>
-                       <Col className={`${classCard} m-0 p-0`}>
+                       <Col className={`${classCard} m-0 p-0 col-12 col-md-5`}>
                             <div className="text-center mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
-                                    // numberCards != undefined ? 
-                                    numberCards != undefined ? 
-                                    numberCards.map( (item: any, index: number) => {
+                                    //tarjetaCardObject != undefined ? 
+                                tarjetaCardObject != undefined ? 
+                                tarjetaCardObject.map( (item: any, index: number) => {
                                         console.log(item.fourDigits);
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
@@ -599,7 +618,7 @@ export function Main() {
                                 </Card>
                             </div>
                        </Col>
-                       <Col className="col-9">
+                       <Col className="col-12 col-md-7 col-lg-9">
                             <Container className="img-container">
                                 <Row>
                                     <Col>
@@ -663,7 +682,8 @@ export function Main() {
                                             estado == 'N-N NORMAL' ? (
                                                 <>
                                                     <div className="movements-body" onClick={() => navegation(`/query/${numberCardValue}`)} >
-                                                        <h3>Movimientos</h3>
+                                                        <img className='glass-movements' src={Search} alt=''/>
+                                                        <h3 className="movements-styles">Movimientos</h3>
                                                     </div>
                                                 </>
                                             ) : ''

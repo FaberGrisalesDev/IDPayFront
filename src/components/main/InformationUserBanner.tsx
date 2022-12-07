@@ -93,14 +93,14 @@ export function InformationUserBanner(props: any) {
         <Container fluid>
             {/* {views === "entry" && ( */}
                 <Row className="pay-gradient-main content-banner m-0">
-                    <Col className="col-lg-1 d-flex justify-content-center">
+                    <Col className="col-2 col-md-2 d-flex col-lg-1 justify-content-center">
                         <img src={BANNER_ITEMS.logo} alt="logo_home" className="m-auto img-fluid" onClick={() => { navigate("/home") }} />
                     </Col>
-                    <Col className="col-lg-7 m-auto p-0">
+                    <Col className="col-8 col-md-3 col-lg-7 m-auto p-0">
                         <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>
                         <h2 className="subtitle-banner"><Trans>queTengasUnLindoDia</Trans></h2>
                     </Col>
-                    <Col className="col-lg-3 m-auto">
+                    <Col className="col-4 col-md-5 col-lg-3 m-auto d-none d-lg-block d-md-block">
                         <Dropdown>
                             <DropdownToggle variant="CustomToggle" className="arrow-banner">
                             </DropdownToggle>
@@ -124,8 +124,8 @@ export function InformationUserBanner(props: any) {
                         <h5 className="conexion-info mt-2">
                         <Trans>ultimoIngreso</Trans> 05 nov 2022 a las 4:34:06 pm</h5>
                     </Col>
-                    <Col className="col-lg-1">
-                        <img src={BANNER_ITEMS.avatarM} alt='' className="m-auto" />
+                    <Col className="col-2 col-md-2 col-lg-1">
+                        <img src={BANNER_ITEMS.avatarM} alt='' className="m-auto img-fluid" />
                         {/* <img src={BANNER_ITEMS.avatarW} alt='' className="m-auto"/> */}
                     </Col>
                 </Row>

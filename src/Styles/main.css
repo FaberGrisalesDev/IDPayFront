@@ -104,9 +104,9 @@
     }
 
     .img-woman-noCards {
-        width: 25%;
+        width: 32%;
         margin-left: 45%;
-        margin-top: 38%;
+        margin-top: 20%;
     }
 
     .scroll-cards {
@@ -150,15 +150,6 @@
         width: 90%;
         margin-left: 3%;
     }
-
-    /* .img-logoId {
-        width: 15%;
-    } */
-
-    /* .img-logoCard {
-        width: 18%;
-        border-radius: 10px;
-    } */
 
     .container-data-card {
         width: 100%;
@@ -227,20 +218,79 @@
     }
 
     .movements-body {
-        width: 100%;
-        height: 6rem;
-        border: 1px solid;
+        /* width: 100%;
+        height: 6rem; */
+        /* border: 1px solid; */
+        /* border: 2px solid var(--color-large-text); */
+        width: 80%;
+        height: 65px;
         border-radius: 20px;
-        margin-top: 4%;
-    }
-
-    .movements-body {
         text-align: center;
         padding: 4% 0%;
-        border: 2px solid var(--color-large-text);
+        box-shadow: inset 0px 3px 6px #8080803d, 0px 3px 6px #8080803d;
+        margin: auto;
+        margin-top: 23px;
+        display: flex;
     }
 
     .btn-act {
         margin-top: -3%;
         margin-left: 63%;
+    }
+
+    .movements-styles{
+        font-family: 'OpenSans-Regular';
+        font-size: var(--small-item_ever);
+        color: var(--color-black-text);
+        margin-left: 20px;
+    }
+
+    .glass-movements{
+        margin-left: 20px;
+    }
+  
+    @media only screen and (max-width: 768px){
+    
+        .img-woman-noCards {
+            width: 100%;
+            margin-left: 60%;
+            margin-top: 210%;
+        }
+
+        .new-target, .info-target-card {
+            font-size: var(--smaller-text-ever);
+        }
+
+        .close-main{
+            width: 15%;
+        }
+
+        .movements-body{
+            padding: 4% 0%;
+            margin-top: 6%;
+            height: 45px;
+        }
+
+        .img-container {
+            height: 755px;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px){
+
+        .img-container{
+            width: 85%;
+            margin: auto;
+            margin-top: 15px;
+            height: 679px;
+        }
+
+        .img-woman-noCards {
+            margin-top: 80%;
+        }
+
+        .scroll-cards {
+            height: 50vh;
+        }
     }
