@@ -1,12 +1,21 @@
-import React from 'react'; 
+import React, {useEffect} from 'react'; 
 import { Container,Row, Col } from 'react-bootstrap';
 import { InformationUserBanner } from "../components/main/InformationUserBanner";
 import { Trans } from "../hook/Internationalization";
+import { useNavigate } from 'react-router-dom';
 import '../Styles/signOff.css';
 
 import Close from '../images/img/close.png';
 
 export function SignOff() {
+
+    const navegation = useNavigate();
+
+    setTimeout(() => {
+        navegation("/");
+    }, 3000);
+
+    
 
     return(
         <Container fluid>

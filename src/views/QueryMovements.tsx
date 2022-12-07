@@ -231,7 +231,7 @@ export function QueryMovements() {
         year = dateComplete.getFullYear();
 
         // QA - DEV
-        year = year + 1;
+        //year = year + 1;
         // month = month -4;
 
         dateStart = "01";
