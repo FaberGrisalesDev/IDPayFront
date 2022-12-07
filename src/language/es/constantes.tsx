@@ -53,7 +53,7 @@ const Constantes = {
   sucursalVirtual: 'Sucursal Virtual',
   bienvenidoBanco: 'Bienvenido a IDPAY, ',
   hoy: 'Hoy ',
-  ultimoIngreso: 'Su último ingreso ',
+  ultimoIngreso: 'Última conexión ',
   fechaCreacion: 'Fecha Creación: ',
   fechaActualizacion: 'Fecha Actualización: ',
   estado: 'Estado: ',

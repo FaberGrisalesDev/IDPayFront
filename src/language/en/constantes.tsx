@@ -53,7 +53,7 @@ const Constantes = {
   sucursalVirtual: 'Virtual Branch',
   bienvenidoBanco: 'Welcome to IDPAY, ',
   hoy: 'Today ',
-  ultimoIngreso: 'Your last income ',
+  ultimoIngreso: 'last connection ',
   fechaCreacion: 'Date Created: ',
   fechaActualizacion: 'Date Updated: ',
   estado: 'Status: ',

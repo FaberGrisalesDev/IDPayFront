@@ -2,7 +2,7 @@ import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import React from "react";
 import logHomeCol from "../images/svg/logo_id_color.svg";
 import {HiOutlinePencil} from "react-icons/hi";
-import logoVisa from "../images/svg/ic_visa.svg";
+import logoVisa from "../images/svg/ic_visa.png";
 import {InformationUserBanner} from "../components/main/InformationUserBanner";
 import { Trans } from "../hook/Internationalization";
 
