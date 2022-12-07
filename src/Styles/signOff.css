@@ -1,0 +1,38 @@
+
+.content-close{
+    width: 98%;
+    height: 790px;
+    border-radius: 36px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #8733FF;
+}
+
+.background-signOff{
+    background-image: var( --background-off); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title-sesion{
+    font-family: MyriadPro-Regular;
+    color: var(--color-black-text);
+    font-size: var(--larger-texts-ever);
+    text-align: center;
+    line-height: 1rem;
+    margin-left: 25%;
+}
+
+.text-return{
+    font-family: MyriadPro-Regular;
+    color: var(--color-black-text);
+    text-align: center;
+    font-size: var(--middle-text-ever);
+    margin-left: 22%;
+}
+
+.img-goodbye{
+    width: 85%;
+    margin-top: 125px;
+}

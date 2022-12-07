@@ -9,10 +9,37 @@
     float: right;
 }
 
+.check-circle{
+    width: 19px;
+    height: 19px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    float: right;
+    margin-top: -40px;
+    margin-right: 20px;
+    border: 1px solid var(--color-large-text);
+}
+
+.check-circle-select{
+    width: 19px;
+    height: 19px;
+    background-color: var(--color-large-text);
+    border-radius: 20px;
+    float: right;
+    margin-top: -40px;
+    margin-right: 20px
+}
+
+.iconLogo{
+    margin: 20px;
+    float: right;
+    width: 10%;
+}
+
 .subtitle-tex{
     font-family: 'OpenSans-Regular';
-    color: #7D7D7D;
-    font-size: 17px;
+    color: var(--color-text-light-grey);
+    font-size: var(--short--texts--medium);
 }
 
 .text-term{
@@ -20,8 +47,8 @@
     line-height: 1rem;
     text-align: left;
     font-family: 'OpenSans-Regular';
-    color: #7D7D7D;
-    font-size: 14px;
+    color: var(--color-text-light-grey);
+    font-size: var(--small-text-ever);
 }
 
 .info-singUp{
@@ -71,4 +98,48 @@
     font-family: 'OpenSans-Regular';
     font-size: var(--small-text-ever);
     float: left;
+}
+
+.contentForms{
+    margin-top: 8%;
+}
+
+.iconCheck{
+    width: 100%;
+    margin: 45px;
+}
+
+.color-password{
+    width: 65%;
+    margin: 46px;
+}
+
+.input-number{
+    display: -webkit-box;
+    width: 95%;
+    height: 85px;
+    border: 1.5px solid var(--color-large-text);
+    padding: 18px;
+    font-family: 'OpenSans-Regular';
+    border-radius: 10px;
+    -webkit-appearance: none;
+}
+
+.spacing{
+    margin-top: 35%
+}
+
+.btn-login{
+    margin-top: 75%;
+}
+
+.msj-congratulation{
+    color: var(--color-large-text);
+    font-family: 'MyriadPro-Regular';
+    font-size: var(--bg-medium-text-ever);
+}
+
+.code-otp{
+    width: 80%;
+    margin: 30px;
 }

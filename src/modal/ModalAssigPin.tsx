@@ -8,13 +8,15 @@ import { Trans } from "../hook/Internationalization";
 import {TransaccionesController} from "../controller/TransaccionesController";
 import {useAuth} from "../hook/AuthContext";
 import {CreditCardController} from "../controller/CreditCardController";
+import "./modalStyles/modalAssingPin.css";
 
 type Props = {
     show: boolean;
     setShow: Dispatch<SetStateAction<boolean>>;
+    numCard: string;
 };
 
-export default function ModalAssingPin({show, setShow}: Props) {
+export default function ModalAssingPin({show, setShow, numCard}: Props) {
     const [step, setStep] = useState(1);
     const [input1, setInput1] = useState<string>("");
     const [input2, setInput2] = useState<string>("");
@@ -37,9 +39,9 @@ export default function ModalAssingPin({show, setShow}: Props) {
 
     const auth = useAuth();
 
-    useEffect(()=> {
-        consultCliente();
-    }, [])
+    // useEffect(()=> {
+    //     consultCliente();
+    // }, [])
 
     const buscarCliente = async () => {
         if (auth.user != null) {
@@ -70,45 +72,50 @@ export default function ModalAssingPin({show, setShow}: Props) {
         setShow(true);
     }
 
-    const consultCliente = async () => {
-        const client = await buscarCliente();
-        const data = await CreditCardController.consultaPorCliente({
-            persona: {
-                noIdentificacion: auth.user?.username!,
-                tipoDeIdentificacion: client.tipoDeIdentificacion.descCorta
-            }
-        }, auth.user?.token!);
-        setCard(data.tarjeta[0].valNumeroTarjeta);
-    }
+    // const consultCliente = async () => {
+    //     const client = await buscarCliente();
+    //     const data = await CreditCardController.consultaPorCliente({
+    //         persona: {
+    //             noIdentificacion: auth.user?.username!,
+    //             tipoDeIdentificacion: client.tipoDeIdentificacion.descCorta
+    //         }
+    //     }, auth.user?.token!);
+    //     setCard(data.tarjeta[0].valNumeroTarjeta);
+    // }
 
-    const mergePin = () => {
-        let pinCompleto = `${input1}${input2}${input3}${input4}`;
-        createPIN(pinCompleto, cardNumberClear);
-        let pinComplete;
-        console.log(" pin",pinblock);
-        pinComplete = assingPIN(pinblock, card);
-
-        console.log(pinComplete);
-        console.log(stateAssign);
-        if (stateAssign == "TRANSACCION EXITOSA") {
-            setStep(3);
-        }
+    const mergePin = async () => {
+        createPIN(pin, numCard);
+        let pinComplete: any;
+        setTimeout(() => {pinComplete = assingPIN(pinblock, numCard).then( () => {
+                if (stateAssign == "TRANSACCION EXITOSA") {
+                    setStep(3);
+                    setShow(false);
+                } 
+                if (stateAssign == "LA TARJETA INGRESADA YA SE LE REALIZO LA ASIGNACION DE CLAVE") {
+                    console.log("Enter to de console duplicate");
+                }
+                if ( stateAssign.includes("CAMPO REQUERIDO") ) {
+                    console.log("No funciono");
+                    setShow(false);
+                }
+            });
+        }, 500);
         //  else {
         //     setStep(2);
         //     console.log("LA TARJETA INGRESADA YA SE LE REALIZO LA ASIGNACION DE CLAVE");
         // }
     }
 
-    const knowType = (event:any) => {
-        let numberC = event.target.value;
-        if (numberC.length > 15 ) {
-            setType("string");
-            setCardNumberClear(numberC);
-        } else if (numberC.length < 16) {
-            setType("number");
-            setCardNumberClear(numberC);
-        }
-    }
+    // const knowType = (event:any) => {
+    //     let numberC = event.target.value;
+    //     if (numberC.length > 15 ) {
+    //         setType("string");
+    //         setCardNumberClear(numberC);
+    //     } else if (numberC.length < 16) {
+    //         setType("number");
+    //         setCardNumberClear(numberC);
+    //     }
+    // }
     
     const createPIN = async (pinGet:any, panGet:any) => {
         const pinblock = await TransaccionesController.crearPinblock(
@@ -124,6 +131,18 @@ export default function ModalAssingPin({show, setShow}: Props) {
             setStateAssing(res.aplicarTransaccionResponse.descripcionRespuesta);
         } catch (e) {
             console.log(e);
+        }
+    }
+
+    const showPin = (event: any) => {
+        let data = event.target.value;
+        if (data.length > 3 ) {
+            setType("string");
+            setPin(data);
+        }
+        if (data.length < 3 ) {
+            setType("number");
+            setPin(data);
         }
     }
 
@@ -172,8 +191,8 @@ export default function ModalAssingPin({show, setShow}: Props) {
                     </Row>
                     {step === 1 && (
                         <Row>
-                            <h4 className={"text-purple-900"}><Trans>ingresarPin</Trans></h4>
-                            <div className={"d-flex pin-center"}>
+                            {/* <h4 className={"text-purple-900"}><Trans>ingresarPin</Trans></h4> */}
+                            {/* <div className={"d-flex pin-center"}>
                                 <img src={pinAct} alt="pin_actual"/>
                                 <div className="m-3">
                                     <input className="fs-1 p-0 ps-1 form-control last-number" aria-label="Username"
@@ -195,37 +214,25 @@ export default function ModalAssingPin({show, setShow}: Props) {
                                            placeholder="__" aria-describedby="basic-addon1" maxLength={1}
                                            onChange={(e) => setInput4(e.target.value)}></input>
                                 </div>
-                            </div>
-
-                            <h4 className={"text-purple-900"}><Trans>Numero de tarjeta</Trans></h4>
+                            </div> */}
+                            {/* <h4 className={"text-purple-900"}><Trans>Numero de tarjeta</Trans></h4>
                             <div className="pin-center">
                             <div className="m-3">
                                     <input className="form-control w-100 last-number input-card" type={type}
                                            aria-describedby="basic-addon1" maxLength={16} minLength={16} onChange={(event) => {knowType(event)}}></input>
                                 </div>
-                            </div>
-                            {/* <div className="my-1 py-1"></div>
-                            <h4 className={"text-purple-900"}><Trans>confirmarPin</Trans></h4>
-                            <div className="d-flex pin-center">
-                                <img src={pinNuev} alt="pin_actual"/>
-                                <div className="m-3">
-                                    <input className="fs-1 p-0 ps-1 form-control last-number" aria-label="Username"
-                                           placeholder="__" aria-describedby="basic-addon1"  maxLength={1}></input>
-                                </div>
-                                <div className="m-3">
-                                    <input className="fs-1 p-0 ps-1 form-control last-number" aria-label="Username"
-                                           placeholder="__" aria-describedby="basic-addon1"maxLength={1}></input>
-                                </div>
-                                <div className="m-3">
-                                    <input className="fs-1 p-0 ps-1 form-control last-number" aria-label="Username"
-                                           placeholder="__" aria-describedby="basic-addon1" maxLength={1}></input>
-                                </div>
-                                <div className="m-3">
-                                    <input className="fs-1 p-0 ps-1 form-control last-number" aria-label="Username"
-                                           placeholder="__" aria-describedby="basic-addon1" maxLength={1}></input>
-                                </div>
                             </div> */}
-                            <Row>
+                            <div>
+                                <div className="container-inputs-cards">
+                                    <label htmlFor="" className="label-document-pin" >Nuevo pin </label>
+                                    <input className="enter-data font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
+                                </div>
+                                <div className="container-inputs-cards">
+                                    <label htmlFor="" className="label-document-pin">Confirmar pin</label>
+                                    <input className="enter-data font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
+                                </div>
+                            </div>
+                            <Row className="mt-5">
                                 <Col>
                                     <p className="text-muted"><Trans>noNumerosConsecutivos</Trans></p>
                                 </Col>
@@ -233,18 +240,11 @@ export default function ModalAssingPin({show, setShow}: Props) {
                             <div className="d-flex aling-items-center justify-content-center">
                                 <Row className="col-9"></Row>
                                 <Col className="d-flex align-items-center">
-                                    <h4 className="font-light text-purple-900 me-3"><Trans>continuar</Trans></h4>
-                                    <Button className="btn-arrow" onClick={() => mergePin()}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
-                                             className="bi bi-arrow-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                        </svg>
+                                    <Button className="btn-arrow btn-accept" onClick={() => mergePin()} >Aceptar
                                     </Button>
                                 </Col>
                             </div>
                         </Row>
-
                     )}
                     {step === 2 && (
                         <Row>

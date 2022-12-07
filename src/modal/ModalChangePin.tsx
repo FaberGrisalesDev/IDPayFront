@@ -156,7 +156,7 @@ export default function ModalChangePin({show, setShow}: Props) {
                     setMsgError("errorAuth");
                 }
             } catch(e) {
-                console.error("Error: " + e)
+                console.error("Error: " + e);
             }
         }
     }

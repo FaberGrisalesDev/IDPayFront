@@ -1,0 +1,29 @@
+    .label-document-pin {
+        position: relative;
+        left: 19px;
+        top: 15px;
+        width: 20%;
+        height: 25px;
+        background-color: var(--color-white);
+        color: var(--color-text-description);
+        font-family: 'OpenSans-Regular';
+        font-size: var(--small-text-ever);
+        float: left;
+    }
+
+    .container-inputs-cards {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .font-style {
+        text-align: center;
+        font-size: 50px;
+        letter-spacing: 40px;
+    }
+
+    .btn-accept {
+        width: 90%;
+        height: 3rem;
+        border-radius: 40px;
+    }
