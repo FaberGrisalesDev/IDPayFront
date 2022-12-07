@@ -275,6 +275,9 @@
             height: 755px;
         }
 
+        .scroll-cards {
+            height: 50vh;
+        }
     }
 
     @media only screen and (max-width: 480px){
@@ -291,6 +294,6 @@
         }
 
         .scroll-cards {
-            height: 50vh;
+            height: 30vh;
         }
     }

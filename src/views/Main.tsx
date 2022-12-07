@@ -407,14 +407,14 @@ export function Main() {
     const showCardScroll = (val:any) => {
         let size = window.screen.width
         console.log(size)
-        if( size <= 768 && size >= 426){
+        if( size <= 768 && size >= 481){
             if (val > 2) {
                 setClassCard("col-lg-3 scroll-cards")
             } else {
                 setClassCard("col-lg-3")
             }           
         }
-        else if( size <= 425){
+        else if( size <= 480){
             if (val > 1) {
                 setClassCard("col-lg-3 scroll-cards")
             } else {
@@ -547,8 +547,8 @@ export function Main() {
                             <div className="mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
-                                tarjetaCardObject != undefined ? 
-                                tarjetaCardObject.map( (item: any, index: number) => {
+                            numberCards != undefined ? 
+                            numberCards.map( (item: any, index: number) => {
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
                                                 <Card.Body className="card-cards" id={`cardB${index}`} onClick={() => {
@@ -595,8 +595,8 @@ export function Main() {
                                 <h2 className="text-products">Mis productos</h2>
                                 {
                                     //tarjetaCardObject != undefined ? 
-                                tarjetaCardObject != undefined ? 
-                                tarjetaCardObject.map( (item: any, index: number) => {
+                            numberCards != undefined ? 
+                            numberCards.map( (item: any, index: number) => {
                                         console.log(item.fourDigits);
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
@@ -621,7 +621,7 @@ export function Main() {
                        <Col className="col-12 col-md-7 col-lg-9">
                             <Container className="img-container">
                                 <Row>
-                                    <Col>
+                                    <Col className="col-lg-6 col-sm-12">
                                         <div className="container-saldos-card">
                                             <div className="imgs-logo-card">
                                                 <img src={idPay} alt="" className="img-logoId" />

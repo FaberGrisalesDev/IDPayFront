@@ -111,7 +111,7 @@ export function QueryMovements() {
             value: '09'
         },
         {
-            label: "Nomviembre",
+            label: "Noviembre",
             value: '10'
         },
         {
