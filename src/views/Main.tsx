@@ -547,8 +547,13 @@ export function Main() {
                             <div className="mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
+<<<<<<< Updated upstream
                                 tarjetaCardObject != undefined ? 
                                 tarjetaCardObject.map( (item: any, index: number) => {
+=======
+                                    tarjetaCardObject != undefined ? 
+                                    tarjetaCardObject.map( (item: any, index: number) => {
+>>>>>>> Stashed changes
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
                                                 <Card.Body className="card-cards" id={`cardB${index}`} onClick={() => {
@@ -594,9 +599,15 @@ export function Main() {
                             <div className="text-center mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
+<<<<<<< Updated upstream
                                     //tarjetaCardObject != undefined ? 
                                 tarjetaCardObject != undefined ? 
                                 tarjetaCardObject.map( (item: any, index: number) => {
+=======
+                                    // numberCards != undefined ? 
+                                    tarjetaCardObject != undefined ? 
+                                    tarjetaCardObject.map( (item: any, index: number) => {
+>>>>>>> Stashed changes
                                         console.log(item.fourDigits);
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
