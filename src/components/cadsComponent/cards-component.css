@@ -1,0 +1,35 @@
+
+        /* .card-container-cards {
+            width: 80%;
+            margin: 3% 2% 0 10%;
+            border-radius: 20px;
+            height: 130px;
+            background-color: #fff;
+            text-align: start;
+            border: none;
+        }
+     */
+        .card-container-cards:hover {
+            cursor: pointer;
+        }
+
+        .card-cards-two{
+            width: 100%;
+            text-align: start;
+            padding: 0px 35px;
+        }
+
+        .info-target-card{
+            font-family: 'OpenSans-Regular';
+            font-size: var(--small-text-ever);
+            color: var(--color-black-text);
+            line-height: 0.2rem;
+            font-weight: 600;
+        }
+        
+        .info-target-card-n{
+            font-family: 'OpenSans-Regular';
+            font-size: var(--small-text-ever);
+            color: var(--color-black-text);
+            line-height: 0.2rem;
+        }

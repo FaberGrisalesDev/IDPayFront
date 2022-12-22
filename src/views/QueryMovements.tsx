@@ -14,6 +14,7 @@ import {CreditCardController} from "../controller/CreditCardController";
 import { FiArrowDownLeft, FiSearch, FiArrowUpRight } from "react-icons/fi";
 import { useParams, useNavigate } from "react-router-dom";
 import "../Styles/Movimientos.css";
+import Search from '../images/main/lupe.png';
 import { type } from "os";
 
 
@@ -25,7 +26,7 @@ export function QueryMovements() {
 
     const navegation = useNavigate();
 
-    let [step, setStep] = useState(1);
+let [step, setStep] = useState(1);
     let number = useParams();
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const [titulo, setTitulo] = useState<string>('');
@@ -54,7 +55,6 @@ export function QueryMovements() {
                     token: auth.user.token
                 })
                 setTypeDocument(data.tipoDeIdentificacion.descCorta);
-
             } catch (error) {
                 setShowAlert(true);
                 setTitulo('No se encontró el cliente');
@@ -117,9 +117,9 @@ export function QueryMovements() {
         {
             label: "Diciembre",
             value: '11'
-        },
-
+        }
     ]
+
 
 
     // const consultarPorCliente = () => {
@@ -191,13 +191,13 @@ export function QueryMovements() {
                     //     }
                     // }, auth.user.token)
                     // console.log("Traer informacion de tarjeta", data);
-                    console.log("this is number ",number.number)
+                    // console.log("this is number ",number.number)
                     // const card = data.tarjeta[0].valNumeroTarjeta;
                     const card = number.number;
                     // data.tarjeta.forEach((element:any) => {
                     //     element.valNumeroTarjeta;
                     // });
-                    console.log("Card: ", card);
+                    // console.log("Card: ", card);
                     if (card) {
                         const movements = await CreditCardController.consultMovementsCard(
                         {
@@ -209,9 +209,9 @@ export function QueryMovements() {
                         }, 
                         auth.user.token
                         );
-                        console.log("Se supone que la data de la tarjeta en movimientos es la siguiente: ", movements.valDescripcionRespuesta);
+                        // console.log("Se supone que la data de la tarjeta en movimientos es la siguiente: ", movements.valDescripcionRespuesta);
                         allMovements = setAllMovements(movements.transaccion);
-                        console.log(allMovements);
+                        // console.log(allMovements);
                     } else {
                         console.log("No hay tarjeta disponible");
                     }
@@ -231,7 +231,7 @@ export function QueryMovements() {
         year = dateComplete.getFullYear();
 
         // QA - DEV
-        //year = year + 1;
+        // year = year + 1;
         // month = month -4;
 
         dateStart = "01";
@@ -288,8 +288,7 @@ export function QueryMovements() {
         } ) 
     }
       
-    const setDates = (val:any, name:any) => {
-        setNameMonth(name);
+    const setDates = (val:any) => {
         const dataDates = getDataMonth(val);
         if  ( dataDates) {
             let start = dataDates.dateStart;
@@ -303,7 +302,6 @@ export function QueryMovements() {
             }
             let resultStart = `${year}${month}${start}`;
             let resultEnd = `${year}${month}${end}`;
-            console.log(typeof month, month)
             // let startArray = startDate.split('-');
             // let endArray = endDate.split('-');
             // const resultStart = format(new Date(parseInt(startArray[0]), parseInt(startArray[1]), parseInt(startArray[2])));
@@ -321,6 +319,20 @@ export function QueryMovements() {
             setTimeout(() => setShowAlert(false), 4000);
             return;
         }
+    }
+
+    const getOption = (event:any) => {
+        let value = event.target.value;
+        months.map( (item) => {
+            if (item.value == value ) {
+                setNameMonth(item.label);
+            }
+        })
+        setDates(value);
+    }
+
+    const changeMonth = (name: any) => {
+        setNameMonth(name);
     }
 
     useEffect(NameMonth, [])
@@ -365,7 +377,57 @@ export function QueryMovements() {
                         </svg>
                     </Button>
                 </Col>
-                { step === 1 && (
+                <Col className="container-body-movements" >
+                    <div className="container-search">
+                        <div className="container-inputs-moviments">
+                            <label className="label-document-pin">MES</label>
+                            <select id="selectMonth" className="enter-data-mov drowtown_menu web-select" onChange={(event)=>{getOption(event)}}>
+                                {
+                                    months.map( (item) => { 
+                                        const date = new Date();
+                                        let month = date.getMonth();
+                                        let monthStart : any = (month - 4)
+                                        return (
+                                            <option className="option-style" value={item.value} >{item.label}</option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div>
+                        {/* <Button className="search-movements" onClick={()=>{}}><img src={Search} alt=''/></Button> */}
+                    </div>
+                        <div className="text-center">
+                            <h3 className="mb-5">Tus ultimos movimientos de {nameMonth}</h3>
+                        </div>
+                        <div className="container-movements">
+                            <Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>Tipo</th>
+                                    <th>Fecha</th>
+                                    <th>Descripcion</th>
+                                    <th>Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    allMovements.map( (item : any) => {
+                                    let valorComplete = item.valValor;
+                                    let valorWithOutDecimal = valorComplete.substring(0,8);
+                                    let resultValue = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP' }).format(parseInt(valorWithOutDecimal))
+                                    return (<tr>
+                                        <td>{item.nomEstablecimiento === null ? item.valDescripcion : item.nomEstablecimiento}</td>
+                                        <td>{item.fecMovimiento}</td>
+                                        <td>{item.fillerTrn1}</td>
+                                        <td>${resultValue.slice(0, -7)}</td>
+                                    </tr>)
+                                    })
+                                }
+                            </tbody>
+                            </Table>
+                        </div>
+                    </Col>
+                {/* { step === 1 && (
                     // <Col className="m-1">
                     //     <div className="text-center">
                     //         <Button onClick={() => {navegation('/main')}}>Volver</Button>
@@ -382,56 +444,8 @@ export function QueryMovements() {
                     //         </Row>
                     //         <button className="button-date col-margin" onClick={()=>setDates()}>Consultar</button>
                     //     </div>
-                    // </Col>
-                    <Col className="container-body-movements" >
-                        <div className="container-inputs-moviments">
-                            <label className="label-document-pin">MES</label>
-                            <select className="enter-data-mov drowtown_menu web-select">
-                                {
-                                    months.map( (item) => {
-                                        const date = new Date();
-                                        let month = date.getMonth();
-                                        // let monthStart : any = (month - 4)
-                                        return (
-                                            <option className="option-style" value={item.value} onClick={ () => {setDates(item.value, item.label)}}>{item.label}</option>
-                                        )
-                                    })
-                                }
-                            </select>
-                        </div>
-                        <div className="text-center">
-                            <h3>Tus ultimos movimientos de {nameMonth}</h3>
-                        </div>
-                        <div>
-                            <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>Tipo</th>
-                                    <th>Fecha</th>
-                                    <th>Descripcion</th>
-                                    <th>Monto</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    // objetMovements.map( (item) => {
-                                        allMovements.map( (item : any) => {
-                                        let valorComplete = item.valValor;
-                                        let valorWithOutDecimal = valorComplete.substring(0,8);
-                                        let resultValue = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP' }).format(parseInt(valorWithOutDecimal))
-                                        return (<tr>
-                                            <td>{item.nomEstablecimiento === null ? item.valDescripcion : item.nomEstablecimiento}</td>
-                                            <td>{item.fecMovimiento}</td>
-                                            <td>{item.fillerTrn1}</td>
-                                            <td>${resultValue.slice(0, -7)}</td>
-                                        </tr>)
-                                    })
-                                }
-                            </tbody>
-                            </Table>
-                        </div>
-                    </Col> 
-                )}
+                    // </Col> 
+                )} */}
                 
             </Row>
 
