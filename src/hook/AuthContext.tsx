@@ -11,7 +11,8 @@ export interface AuthType {
 export interface UsernameInformationType {
     token: string,
     username: string,
-    rol: number
+    rol: number,
+    celular: string
 }
 
 interface AuthContextType {

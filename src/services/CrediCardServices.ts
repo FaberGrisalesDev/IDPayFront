@@ -17,7 +17,7 @@ export class crediCardService {
             'headers' : {
                 'Content-Type': 'application/json',
                 'X-TenantID' : this.tenantID ,
-                "Authorization": "Bearer " + token
+                "Authorization": "Bearer " + token  
             }
         });
     }

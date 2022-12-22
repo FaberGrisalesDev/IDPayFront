@@ -41,6 +41,7 @@ import { TransaccionesController } from "../controller/TransaccionesController";
 import { QueryMovements } from "./QueryMovements";
 import { crediCardService } from "../services/CrediCardServices";
 import { useCookies } from "react-cookie";
+import CardComponent from "../components/cadsComponent/CardComponent";
 import imgClose from '../images/img/close.svg';
 import idPaySmall from '../images/main-img/smallidPay.png';
 import Search from '../images/main/lupe.png';
@@ -85,10 +86,13 @@ export function Main() {
     const [classSelect, setClassSelect] = useState<string>("card-container-cards");
     const [classSelectBackground, setClassSelectBackground] = useState<string>("");
     const [activeOrBlock , setactiveOrBlock] = useState<boolean>(false);
-    
+    const [unActive , setUnActive] = useState<boolean>(false);
+    const [isPin, setIsPin] = useState<boolean>(false);
+    const [sizeItem, setSizeItem] = useState<number>(0);
+
     const auth = useAuth();
     const navegation = useNavigate();
-
+    
     interface Props {
 
     }
@@ -207,52 +211,52 @@ export function Main() {
             "fillerTar1": "N-N NORMAL",
             "fillerTar2": null
         },
-        // {
-        //     "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
-        //     "valSaldo": -8110.74,
-        //     "valCupoTotalAprobado": 2000000.0,
-        //     "valCupoDisponible": 2008110.74,
-        //     "valCupoDisponibleAvance": 2000000.0,
-        //     "fecCorteTarjeta": "2023-08-15T05:00:00.000+00:00",
-        //     "fecLimitePago": "2023-08-31T05:00:00.000+00:00",
-        //     "valPagoMinimo": 0.0,
-        //     "valValorUltimoPago": 51400.0,
-        //     "valDiasMora": 0,
-        //     "valValorMora": 0.0,
-        //     "valSaldoUltimoCorte": -8110.74,
-        //     "valTipoTarjeta": "TARJETA PERSONAL",
-        //     "codTipoTarjeta": "1",
-        //     "valCvv": "0000",
-        //     "valFechaVencimiento": "1900-01-01",
-        //     "bin": "41464713",
-        //     "afinidad": "47",
-        //     "valLineaCredito": null,
-        //     "fillerTar1": "N-N NORMAL",
-        //     "fillerTar2": null
-        // },
-        // {
-        //     "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
-        //     "valSaldo": -8110.74,
-        //     "valCupoTotalAprobado": 2000000.0,
-        //     "valCupoDisponible": 2008110.74,
-        //     "valCupoDisponibleAvance": 2000000.0,
-        //     "fecCorteTarjeta": "2023-08-15T05:00:00.000+00:00",
-        //     "fecLimitePago": "2023-08-31T05:00:00.000+00:00",
-        //     "valPagoMinimo": 0.0,
-        //     "valValorUltimoPago": 51400.0,
-        //     "valDiasMora": 0,
-        //     "valValorMora": 0.0,
-        //     "valSaldoUltimoCorte": -8110.74,
-        //     "valTipoTarjeta": "TARJETA PERSONAL",
-        //     "codTipoTarjeta": "1",
-        //     "valCvv": "0000",
-        //     "valFechaVencimiento": "1900-01-01",
-        //     "bin": "41464713",
-        //     "afinidad": "47",
-        //     "valLineaCredito": null,
-        //     "fillerTar1": "N-N NORMAL",
-        //     "fillerTar2": null
-        // },
+        {
+            "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
+            "valSaldo": -8110.74,
+            "valCupoTotalAprobado": 2000000.0,
+            "valCupoDisponible": 2008110.74,
+            "valCupoDisponibleAvance": 2000000.0,
+            "fecCorteTarjeta": "2023-08-15T05:00:00.000+00:00",
+            "fecLimitePago": "2023-08-31T05:00:00.000+00:00",
+            "valPagoMinimo": 0.0,
+            "valValorUltimoPago": 51400.0,
+            "valDiasMora": 0,
+            "valValorMora": 0.0,
+            "valSaldoUltimoCorte": -8110.74,
+            "valTipoTarjeta": "TARJETA PERSONAL",
+            "codTipoTarjeta": "1",
+            "valCvv": "0000",
+            "valFechaVencimiento": "1900-01-01",
+            "bin": "41464713",
+            "afinidad": "47",
+            "valLineaCredito": null,
+            "fillerTar1": "N-N NORMAL",
+            "fillerTar2": null
+        },
+        {
+            "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
+            "valSaldo": -8110.74,
+            "valCupoTotalAprobado": 2000000.0,
+            "valCupoDisponible": 2008110.74,
+            "valCupoDisponibleAvance": 2000000.0,
+            "fecCorteTarjeta": "2023-08-15T05:00:00.000+00:00",
+            "fecLimitePago": "2023-08-31T05:00:00.000+00:00",
+            "valPagoMinimo": 0.0,
+            "valValorUltimoPago": 51400.0,
+            "valDiasMora": 0,
+            "valValorMora": 0.0,
+            "valSaldoUltimoCorte": -8110.74,
+            "valTipoTarjeta": "TARJETA PERSONAL",
+            "codTipoTarjeta": "1",
+            "valCvv": "0000",
+            "valFechaVencimiento": "1900-01-01",
+            "bin": "41464713",
+            "afinidad": "47",
+            "valLineaCredito": null,
+            "fillerTar1": "N-N NORMAL",
+            "fillerTar2": null
+        },
         // {
         //     "valNumeroTarjeta": "AE667957EA7F9356DC55A3DD4BD7A58A",
         //     "valSaldo": -8110.74,
@@ -305,8 +309,6 @@ export function Main() {
 
     const consultarPorCliente = () => {
 
-        // procceDataCard(prueba);
-
         (async () => {
 
             if (auth.user != null) {
@@ -334,8 +336,8 @@ export function Main() {
                         setMinimoAPagar(formatCurrency(data.tarjeta[0].valPagoMinimo))
                         setcupoDispAvance(formatCurrency(data.tarjeta[0].valCupoDisponibleAvance))
                         setMiSaldo(formatCurrency(data.tarjeta[0].valSaldo))
-                        // setEstado(data.tarjeta[0].fillerTar1)
-                        setEstado("N-N NORMAL");
+                        setEstado(data.tarjeta[0].fillerTar1)
+                        // setEstado("N-N NORMAL");
                         setNCard(data.tarjeta[0].valNumeroTarjeta)
                         setLast4(data.tarjeta[0].fourDigits)
                         setShowAlert(true);
@@ -343,7 +345,6 @@ export function Main() {
                         setMensaje("Cliente encontrado");
                         setTipoAlerta("success");
                         setTimeout(() => setShowAlert(false), 5000);
-                        console.log(nCard);
                     } else {
                         setShowAlert(true);
                         setTitulo("Cliente no encontrado");
@@ -365,6 +366,7 @@ export function Main() {
             }
         })()
         showCardScroll(tarjetaCardObject.length);
+        setSizeItem(tarjetaCardObject.length);
     }
 
     const showHoverImage = (imageName: any, trueOrFalse: boolean) => {
@@ -406,7 +408,6 @@ export function Main() {
 
     const showCardScroll = (val:any) => {
         let size = window.screen.width
-        console.log(size)
         if( size <= 768 && size >= 481){
             if (val > 2) {
                 setClassCard("col-lg-3 scroll-cards")
@@ -422,7 +423,7 @@ export function Main() {
             } 
         }
         else if( size > 768){
-            if (val > 4) {
+            if (val > 3) {
                 setClassCard("col-lg-3 scroll-cards")
             } else {
                 setClassCard("col-lg-3")
@@ -430,46 +431,76 @@ export function Main() {
         }
     }
 
-    const styleById = (id: number) => {
+
+    /**
+     * Change style of element´s object.
+     * @param cC class of card to change container card
+     * @param cB class of body card to change background card
+     * @param cId class with id of each objet cards
+     * @param cCC class of container card
+     */
+    const changeClass = (cC: string, cC1: string, cB: string, cB1: string, cId: number, cCC: string) => {
+        const c1 = document.getElementById(cC); 
+        const c2 = document.getElementById(cC1); 
+        const c3 = document.getElementById(cB); 
+        const c4 = document.getElementById(cB1); 
+        c1!.className = cCC;
+        c2!.className = cCC;
+        c3!.className = cCC;
+        c4!.className = cCC;
+    }
+
+    const styleById = (id: number, size : any) => {
+        console.log("This is the size", size)
+        // const size = id.lengths
         const card = document.getElementById(`card${id}`);
         const cardB = document.getElementById(`cardB${id}`);
+        const classCard = "card-container-cards select-card";
+        const classCardB = "card-cards background-select";
+        const classCardContainer = "card-container-cards";
+
         if (card != null) {
             if (id === 0) {
-                card.className = "card-container-cards select-card";
-                cardB!.className = "card-cards background-select";
-                const c1 = document.getElementById(`card${id+1}`); 
-                const c2 = document.getElementById(`card${id+2}`); 
-                const c3 = document.getElementById(`cardB${id+1}`); 
-                const c4 = document.getElementById(`cardB${id+2}`); 
-                c1!.className = "card-container-cards";
-                c2!.className = "card-container-cards";
-                c3!.className = "card-container-cards";
-                c4!.className = "card-container-cards";
+                card.className = classCard;
+                cardB!.className = classCardB;
+                changeClass(
+                    `card${id+1}`, 
+                    `card${id+1}`,
+                    `cardB${id+1}`, 
+                    `cardB${id+1}`,
+                    id,
+                    classCardContainer);
             } else if (id === 1) {
-                card!.className = "card-container-cards select-card";
-                cardB!.className = "card-cards background-select";
-                const c1 = document.getElementById(`card${id-1}`); 
-                const c2 = document.getElementById(`card${id+1}`); 
-                const c3 = document.getElementById(`cardB${id-1}`); 
-                const c4 = document.getElementById(`cardB${id+1}`); 
-                c1!.className = "card-container-cards";
-                c2!.className = "card-container-cards";
-                c3!.className = "card-container-cards";
-                c4!.className = "card-container-cards";
-            } else if (id === 2) {
-                card!.className = "card-container-cards select-card";
-                cardB!.className = "card-cards background-select";
-                const c1 = document.getElementById(`card${id-1}`); 
-                const c2 = document.getElementById(`card${id-2}`); 
-                const c3 = document.getElementById(`cardB${id-1}`); 
-                const c4 = document.getElementById(`cardB${id-2}`); 
-                c1!.className = "card-container-cards";
-                c2!.className = "card-container-cards";
-                c3!.className = "card-container-cards";
-                c4!.className = "card-container-cards";
-            } else {
-                card!.className = "card-container-cards";
-                cardB!.className = "card-cards background-select";
+                console.log("Enter 1");
+                card.className = classCard;
+                cardB!.className = classCardB;
+                changeClass(
+                    `card${id-1}`, 
+                    `card${id+1}`,
+                    `cardB${id-1}`,
+                    `cardB${id+1}`,
+                    id, 
+                    classCardContainer);
+            } else if (id === (sizeItem-1)) {
+                card.className = classCard;
+                cardB!.className = classCardB;
+                changeClass(
+                    `card${id-1}`, 
+                    `card${id-1}`,
+                    `cardB${id-1}`,
+                    `cardB${id-1}`,
+                    id,
+                    classCardContainer);
+            } else if ( id > 1 ) {
+                card.className = classCard;
+                cardB!.className = classCardB;
+                changeClass(
+                    `card${id-1}`, 
+                    `card${id+1}`, 
+                    `cardB${id-1}`, 
+                    `cardB${id+1}`, 
+                    id,
+                    classCardContainer);
             }
         }
     }
@@ -479,9 +510,8 @@ export function Main() {
         , []);
 
     const showInfoCard = (index: number, data: any) => {
-        console.log(estado, "Jmm")
         estado != 'N-N NORMAL' ? setactiveOrBlock(false) : setactiveOrBlock(true);
-        console.log(activeOrBlock, "Jmm")
+        estado == 'O-O PENDIENTE ENTREGA' ? setUnActive(true) : setUnActive(false);
         setNumberCardValue(data.valNumeroTarjeta);
         setCupoTotal(formatCurrency(data.valCupoTotalAprobado));
         setDisponibleCompras(formatCurrency(data.valCupoDisponible));
@@ -490,7 +520,7 @@ export function Main() {
         setcupoDispAvance(formatCurrency(data.valCupoDisponibleAvance))
         setMiSaldo(formatCurrency(data.valSaldo))
         setEstado(data.fillerTar1)
-        estado != 'N-N NORMAL' ? setactiveOrBlock(false) : setactiveOrBlock(true);
+        console.log(estado, data.fillerTar1);
         setNCard(data.valNumeroTarjeta)
         setLast4(data.fourDigits)
     }
@@ -534,45 +564,40 @@ export function Main() {
     return (
         <Container fluid className="container-background-main">
             <InformationUserBanner/>
-            <Row className="d-flex justify-content-around">
-                <ModalExtractCertificate show={showModalExtract} setShow={setShowModalExtract}/>
-                <ModalFreeze acOBl={activeOrBlock} nCardIn={numberCardValue} show={showModalFreeze} setShow={setShowModalFreeze}  />
-                <ModalAssigPin numCard={nCard} show={showModalAssigPin} setShow={setShowModalAssingPin}/>
-                <ModalChangePin show={showModalChangePin} setShow={setShowModalChangePin}/>
-            </Row>
-            <Row className="m-0">
+            <Row className="m-0 heigh-view">
                 { step === 0 && (
                     <>
-                        <Col className={`${classCard} m-0 p-0 col-12 col-md-5`}>
-                            <div className="mt-4">
+                        {/*<Col className={`${classCard} m-0 p-0 col-12 col-md-5`}>
+                             <div className="mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
-                            numberCards != undefined ? 
-                            numberCards.map( (item: any, index: number) => {
+                                        numberCards != undefined ? 
+                                        numberCards.map( (item: any, index: number) => {
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
-                                                <Card.Body className="card-cards" id={`cardB${index}`} onClick={() => {
+                                                <Card.Body className="card-cards-two" id={`cardB${index}`} onClick={() => {
                                                         setStep(1);
                                                     }}>
+                                                    <img src={logoVisa} alt="" className="style-icon-visa" />
                                                     <p className="info-target-card">Tarjeta Crédito</p>
-                                                    <p className="info-target-card">No.******** {item.fourDigits}</p>
+                                                    <p className="info-target-card-n">No.******** {item.fourDigits}</p>
                                                 </Card.Body>
                                             </Card>
                                         )
                                     }) :
                                     ''
-                                }
-                                <Card className="card-container-cards-newCards">
+                                }  */}
+                                {/* <Card className="card-container-cards-newCards">
                                     <Card.Body className="card-cards-newCard text-start">
                                         <p className="new-target">Solicitar nueva tarjeta crédito<img src={more} alt="" className="icon-more"/></p>
                                     </Card.Body>
-                                </Card>
+                                </Card> */}
                                 {/* <div className=''>
                                     <img src={idPaySmall} alt="" className='logo-small' />
                                     <p className='textSmall'>*Organiza*</p>
                                     <p className='help-text'><Trans>necesitasAyuda</Trans></p>
                                 </div> */}
-                            </div>
+                             {/* </div>
                         </Col>
                         <Col className="col-12 col-md-7 col-lg-9">
                             <Container className="img-container">
@@ -584,41 +609,41 @@ export function Main() {
                                         <img src={imgClose} alt="" className="close-main"/>
                                     </Col>
                                 </Row>
-                            </Container>
-                        </Col>
+                            </Container> 
+                            </Col> */}
+                        <CardComponent step={step} classCard={classCard} nCard={nCard} />
                     </>
                 )}
                 {  step === 1 && (
                     <>
-                       <Col className={`${classCard} m-0 p-0 col-12 col-md-5`}>
+                       {/* <Col className={`${classCard} m-0 p-0 col-12 col-md-5`}>
                             <div className="text-center mt-4">
                                 <h2 className="text-products">Mis productos</h2>
                                 {
-                                    //tarjetaCardObject != undefined ? 
-                            numberCards != undefined ? 
-                            numberCards.map( (item: any, index: number) => {
-                                        console.log(item.fourDigits);
+                                    // numberCards != undefined ? 
+                                        numberCards != undefined ? 
+                                        numberCards.map( (item: any, index: number) => { 
                                         return (
                                             <Card className="card-container-cards"  id={`card${index}`}>
-                                                <Card.Body className={`card-cards-two`} id={`cardB${index}`} onClick={() => { showInfoCard(index, item); styleById(index); }}>
+                                                <Card.Body className={`card-cards-two`} id={`cardB${index}`} onClick={() => { showInfoCard(index, item); styleById(index, sizeItem); }}>
                                                     <img src={logoVisa} alt="" className="style-icon-visa" />
                                                     { estado != 'N-N NORMAL' ?  <img src={iconFrozzen} alt="" className="style-icon" /> : '' }
                                                     <p className="info-target-card">Tarjeta Crédito</p>
-                                                    <p className="info-target-card">No.******** {item.fourDigits}</p>
+                                                    <p className="info-target-card-n">No.******** {item.fourDigits}</p>
                                                 </Card.Body>
                                             </Card>
                                         )
                                     }) :
                                     ''
-                                }
-                                <Card className="card-container-cards-newCards">
+                                } */}
+                                {/* <Card className="card-container-cards-newCards">
                                     <Card.Body className="card-cards-newCard text-start">
                                         <p className="new-target">Solicitar nueva tarjeta crédito<img src={more} alt="" className="icon-more"/></p>
                                     </Card.Body>
-                                </Card>
-                            </div>
-                       </Col>
-                       <Col className="col-12 col-md-7 col-lg-9">
+                                </Card> */}
+                            {/* </div>
+                       </Col> */}
+                       {/* <Col className="col-12 col-md-7 col-lg-9 p-0">
                             <Container className="img-container">
                                 <Row>
                                     <Col className="col-lg-6 col-sm-12">
@@ -628,56 +653,68 @@ export function Main() {
                                                 <img src={tarjFig} alt="" className="img-logoCard" />
                                             </div>
                                             <progress max={100} value={50} className="progress-card"></progress>
-                                            <p className="card-information">Disponible {cupoTotal}</p>
-                                            <p className="card-information">Saldo utilizado {miSaldo}</p>
-                                            <p className="card-information">Cupo avances {cupoDispAvance}</p>
+                                            <Row>
+                                                <Col>
+                                                    <strong><p className="card-information">Disponible:</p></strong>
+                                                    <strong><p className="card-information">Saldo utilizado:</p></strong>
+                                                    <strong><p className="card-information">Cupo avances:</p></strong>
+                                                    { estado != "O-O PENDIENTE ENTREGA"  ? (<><strong>Estado Tarjeta:</strong> {estado}</>) : '' }
+                                                </Col>
+                                                <Col>
+                                                    <p className="card-information">{cupoTotal}</p>
+                                                    <p className="card-information">{miSaldo}</p>
+                                                    <p className="card-information">{cupoDispAvance}</p>
+                                                    { estado ==  "O-O PENDIENTE ENTREGA" ? <Button className="btn-pay-act" onClick={() => {setShowModalFreeze(true)}} >ACTIVAR</Button> : ''}
+                                                </Col>
+                                            </Row>
                                         </div>
+                                        {console.log("El estado es ",estado)}
                                         {
-                                            estado == 'N-N NORMAL' ?
+                                            estado == 'N-N NORMAL' || estado == 'P-P PREVENTIVO FRAUDE' ?
                                             (
                                                 <>
                                                     <div className="container-data-card">
                                                         <img src={money} alt=""  />
-                                                        <p className="text-data-main">Total a pagar</p>
+                                                        <strong><p className="text-data-main">Total a pagar</p></strong>
                                                         <p className="text-data-color">{miSaldo}</p>
-                                                        <p className="text-data-main">Minimo a pagar</p>
+                                                        <strong><p className="text-data-main">Minimo a pagar</p></strong>
                                                         <p className="text-data-color">{minimoAPagar}</p>
-                                                        <p className="text-data-main">Fecha limite de pago</p>
+                                                        <strong><p className="text-data-main">Fecha limite de pago</p></strong>
                                                         <p className="text-data-color">{fechaLimitePago} <Button className="btn-pay">Pagar</Button> </p>
                                                     </div>
                                                     <div className="container-buttons">
-                                                        <Button className="btn-accions" 
+                                                        <Button className="btn-accions padd-btn" 
                                                         onMouseEnter={() => { showHoverImage(frozen, true) }} 
                                                         onMouseLeave={() => { showHoverImage(frozen, false) }}
                                                         onClick={() => setShowModalFreeze(true) }
                                                         >
                                                             <img src={imgBtn1} alt=""/>
-                                                            {/* { estado == 'N-N NORMAL'  ? 'Congelar' : 'Descongelar' } */}
                                                             { estado == 'N-N NORMAL'  ? 'Congelar' : 'Descongelar' }
                                                         </Button>
                                                         <Button 
-                                                            className="btn-accions" 
+                                                            className="btn-accions"
                                                             onMouseEnter={() => { showHoverImage(lock, true) }} 
                                                             onMouseLeave={() => { showHoverImage(lock, false) }}
-                                                            onClick={() => {setShowModalAssingPin(true)}}
+                                                            onClick={() => { isPin ? setShowModalChangePin(true) : setShowModalAssingPin(true) }}
                                                             >
                                                             <img src={imgBtn2} alt="" /> <br />
-                                                            Generar Pin
-                                                        </Button>
-                                                        <Button className="btn-accions" onMouseEnter={() => { showHoverImage(payments, true) }} onMouseLeave={() => { showHoverImage(payments, false) }}>
+                                                            { isPin ? 'Cambiar pin' : 'Generar Pin' }
+                                                            
+                                                        </Button> */}
+                                                        {/* <Button className="btn-accions" onMouseEnter={() => { showHoverImage(payments, true) }} onMouseLeave={() => { showHoverImage(payments, false) }}>
                                                             <img src={imgBtn3} alt="" />
                                                             Programar Pagos
                                                         </Button>
                                                         <Button className="btn-accions" onMouseEnter={() => { showHoverImage(avance, true) }} onMouseLeave={() => { showHoverImage(avance, false) }}>
                                                             <img src={imgBtn4} alt="" /> <br />
                                                             Realizar Avance
-                                                        </Button>
-                                                    </div>
+                                                        </Button> */}
+                                                    {/* </div>
                                                 </>
                                             ) : ''
                                         }
-                                    </Col>
-                                    <Col>
+                                    </Col> */}
+                                    {/* <Col>
                                         {
                                             estado == 'N-N NORMAL' ? (
                                                 <>
@@ -691,7 +728,7 @@ export function Main() {
                                     </Col>
                                 </Row>
                             </Container>
-                       </Col>
+                       </Col> */}
                     </>
                 )}
             </Row>

@@ -10,6 +10,7 @@ import { useAuth } from "../hook/AuthContext";
 import { CreditCardController } from "../controller/CreditCardController";
 import AlertDismissible from "../components/AlertDismissible";
 import { TransaccionesController } from "../controller/TransaccionesController";
+import "./modalStyles/modalChangePin.css";
 
 type Props = {
     show: boolean;
@@ -30,10 +31,12 @@ export default function ModalChangePin({show, setShow}: Props) {
     const [tarjeta, setTarjeta] = useState<string>("");
     const [minutos, setMinutos] = useState<number>(30);
     const [segundos, setSegundos] = useState<number>(0);
+    const [type, setType] = useState("number");
     const currentPin = "1234"; //TODO este pin se debe traer desde el back
     const auth = useAuth();
 
     function closeModalPin() {
+        console.log("enter close modal")
         setStep(1);
         setShow(false);
     }    
@@ -77,7 +80,7 @@ export default function ModalChangePin({show, setShow}: Props) {
     /** Function to send confirmation sms */
     const sendSms = async () => {
         //TODO logica para enviar sms de confirmacion
-        setSmsCod("123456");
+        // setSmsCod("123456");
     }
 
     /** Function to validate the entered pin and send the confirmation sms */
@@ -171,9 +174,23 @@ export default function ModalChangePin({show, setShow}: Props) {
         }, 1000);
     }
 
+    const showPin = (event: any) => {
+        let data = event.target.value;
+        if (data.length > 3 ) {
+            setType("string");
+            setPin(data);
+        }
+        if (data.length < 3 ) {
+            setType("number");
+            setPin(data);
+        }
+    }
+
     useEffect(() => {
         if(step === 2) {contCrono();}
     }, [segundos]);
+
+
 
     return (
         <Modal
@@ -186,27 +203,10 @@ export default function ModalChangePin({show, setShow}: Props) {
         >
             <Modal.Body>
                 <div
-                    className="position-absolute pay-gradient-main btn-circle"
-                    style={{top: 22, right: 30, cursor: "pointer"}}
+                    className="btn-container"
                     onClick={() => closeModalPin()}
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="white"
-                        className="bi bi-x-lg"
-                        viewBox="0 0 16 16"
-                    >
-                        <path
-                            fillRule="evenodd"
-                            d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"
-                        />
-                        <path
-                            fillRule="evenodd"
-                            d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"
-                        />
-                    </svg>
+                    <h1 className="btn-close">x</h1>
                 </div>
                 <div
                     className="pay-border-gradient-bg-white-main p-3"
@@ -219,7 +219,29 @@ export default function ModalChangePin({show, setShow}: Props) {
                     </Row>
                     {step === 1 && (
                         <Row>
-                            <h4 className={"text-purple-900 text-center"}><Trans>ingresaPinActual</Trans></h4>                            
+                            <div>
+                                <div className="container-inputs-cards">
+                                    <label htmlFor="" className="label-document-pin" >Último pin </label>
+                                    <input className="enter-data font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
+                                </div>
+                                <div className="container-inputs-cards">
+                                    <label htmlFor="" className="label-document-pin" >Nuevo pin </label>
+                                    <input className="enter-data font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
+                                </div>
+                                <div className="container-inputs-cards">
+                                    <label htmlFor="" className="label-document-pin">Confirmar pin</label>
+                                    <input className="enter-data font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
+                                </div>
+                            </div>
+                            <div className="d-flex aling-items-center justify-content-center">
+                                <Row className="col-9"></Row>
+                                <Col className="d-flex align-items-center">
+                                    {/* <Button className="btn-arrow btn-accept" onClick={() => mergePin()} >Aceptar */}
+                                    <Button className="btn-arrow btn-accept mt-5"  >Aceptar
+                                    </Button>
+                                </Col>
+                            </div>
+                            {/* <h4 className={"text-purple-900 text-center"}><Trans>ingresaPinActual</Trans></h4>                            
                             <div className={"d-flex pin-center justify-content-center"}>
                                 <img src={pinAct} alt="pin_actual"/>
                                 <PinInput 
@@ -287,7 +309,7 @@ export default function ModalChangePin({show, setShow}: Props) {
                                         </svg>
                                     </Button>
                                 </Col>
-                            </div>
+                            </div> */}
                         </Row>
                     )}
                     {step === 2 && (

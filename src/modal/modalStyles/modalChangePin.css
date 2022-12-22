@@ -1,0 +1,50 @@
+.label-document-pin {
+    position: relative;
+    left: 19px;
+    top: 15px;
+    width: 20%;
+    height: 25px;
+    background-color: var(--color-white);
+    color: var(--color-text-description);
+    font-family: 'OpenSans-Regular';
+    font-size: var(--small-text-ever);
+    float: left;
+}
+
+.container-inputs-cards {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.font-style {
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 40px;
+}
+
+.btn-accept {
+    width: 90%;
+    height: 3rem;
+    border-radius: 40px;
+    background: linear-gradient(90deg, rgb(61, 170, 224) 15%, rgb(68, 85, 228) 32%, rgb(207, 51, 226) 100%) !important;
+    color: #fff;
+    border: none;
+}
+
+.btn-container {
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+}
+
+.btn-close {
+    width: 6%;
+    height: 3rem;
+    border-radius: 50px;
+    padding-top: 0px;
+    padding-left: 3px;
+    margin-top: 0px;
+    background: transparent linear-gradient(90deg, #803EE5A6 0%, #7880E8D9 100%) 0% 0% no-repeat padding-box;
+    color: #fff;
+    border: none;
+}
