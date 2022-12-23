@@ -450,7 +450,7 @@ export default function CardComponent (props: Props) {
                                             <Card.Body className={`card-cards-two`} id={`cardB${index}`} onClick={() => { showInfoCard(index, item); styleById(index, sizeItem); }}>
                                                 <img src={logoVisa} alt="" className="style-icon-visa" />
                                                 { estado != 'N-N NORMAL' ?  <img src={iconFrozzen} alt="" className="style-icon" /> : '' }
-                                                <p className="info-target-card">Tarjeta Crédito</p>
+                                                <p className="info-target-card">Tarjeta de crédito</p>
                                                 <p className="info-target-card-n">No.******** {item.fourDigits}</p>
                                             </Card.Body>
                                         </Card>

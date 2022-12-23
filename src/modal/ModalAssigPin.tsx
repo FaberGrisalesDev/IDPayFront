@@ -12,6 +12,7 @@ import "./modalStyles/modalAssingPin.css";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import LoaderGeneral from "../components/Loader/LoaderGeneral";
+import imgClose from "../images/img/close.svg";
 
 
 type Props = {
@@ -128,7 +129,10 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
                 confirmButtonText: 'Aceptar',
             })
         }
+<<<<<<< Updated upstream
         
+=======
+>>>>>>> Stashed changes
         if (pinComplete.descripcionRespuesta == "TRANSACCIøN REPETIDA") {
             setShow(false);
             setShowLoader(false);
@@ -139,7 +143,10 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
                 confirmButtonText: 'Aceptar',
             })
         }
+<<<<<<< Updated upstream
         
+=======
+>>>>>>> Stashed changes
         if ( pinComplete.descripcionRespuesta.includes("CAMPO REQUERIDO") ) {
             setShow(false);
             setShowLoader(false);
@@ -203,7 +210,7 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
                 size={"lg"}
                 show={show}
                 onHide={() => setShow(false)}
-                contentClassName={"pay-border-extra-modal"}
+                contentClassName={"pay-border-extra-modal container-modal"}
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
@@ -212,7 +219,7 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
                         className="btn-container"
                         onClick={() => setShow(false)}
                     >
-                        <h1 className="btn-close">x</h1>
+                        <img src={imgClose} alt=""/>
                     </div>
                     <div
                         className="pay-border-gradient-bg-white-main p-3 "
@@ -226,24 +233,24 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
                         {step === 1 && (
                             <Row>
                                 <div>
-                                    <div className="container-inputs-cards">
+                                    <div className="">
                                         <label htmlFor="" className="label-document-pin" >Nuevo pin </label>
-                                        <input className="enter-data font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
+                                        <input className="enter-data-modal font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
                                     </div>
-                                    <div className="container-inputs-cards">
+                                    <div className="">
                                         <label htmlFor="" className="label-document-pin">Confirmar pin</label>
-                                        <input className="enter-data font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
+                                        <input className="enter-data-modal font-style" maxLength={4} minLength={4} type={type} onChange={ (event) => { showPin(event) }}  />
                                     </div>
                                 </div>
-                                <Row className="mt-5">
+                                {/* <Row className="mt-5">
                                     <Col>
                                         <p className="text-muted"><Trans>noNumerosConsecutivos</Trans></p>
                                     </Col>
-                                </Row>
+                                </Row> */}
                                 <div className="d-flex aling-items-center justify-content-center">
                                     <Row className="col-9"></Row>
                                     <Col className="d-flex align-items-center">
-                                        <Button className="btn-arrow btn-accept" onClick={() => mergePin()} >Aceptar
+                                        <Button className="btn-arrow btn-accept mt-4" onClick={() => mergePin()} >Aceptar
                                         </Button>
                                     </Col>
                                 </div>

@@ -132,6 +132,13 @@
 }
 
 /* Dispositivos */
+@media only screen and (max-width: 1536px){
+
+    .btn-sesionCookies {
+        width: 12%;
+        height: 45px;
+    }
+}
 @media only screen and (max-width: 1440px){
     
     .btn-sesionCookies {
