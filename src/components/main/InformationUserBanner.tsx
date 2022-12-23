@@ -93,8 +93,8 @@ export function InformationUserBanner(props: any) {
         <Container fluid>
             {/* {views === "entry" && ( */}
                 <Row className="pay-gradient-main content-banner m-0">
-                    <Col className="col-2 col-md-2 d-flex col-lg-1 justify-content-center">
-                        <img src={BANNER_ITEMS.logo} alt="logo_home" className="m-auto img-fluid" onClick={() => { navigate("/home") }} />
+                    <Col className="col-2 col-md-2 d-flex img-logo col-lg-1 justify-content-center">
+                        <img src={BANNER_ITEMS.logo} alt="logo_home" className="m-auto img-fluid" onClick={() => { navigate("/main") }} />
                     </Col>
                     <Col className="col-8 col-md-3 col-lg-7 m-auto p-0">
                         <h2 className="title-banner"><Trans>Hola</Trans>{simpleName}</h2>
@@ -121,8 +121,8 @@ export function InformationUserBanner(props: any) {
                             className="title-name ml-2">
                             {userName}
                         </span>
-                        <h5 className="conexion-info mt-2">
-                        <Trans>ultimoIngreso</Trans> 05 nov 2022 a las 4:34:06 pm</h5>
+                        {/* <h5 className="conexion-info mt-2">
+                        <Trans>ultimoIngreso</Trans> 05 nov 2022 a las 4:34:06 pm</h5> */}
                     </Col>
                     <Col className="col-2 col-md-2 col-lg-1">
                         <img src={BANNER_ITEMS.avatarM} alt='' className="m-auto img-fluid" />
@@ -145,3 +145,4 @@ export function InformationUserBanner(props: any) {
         </Container>
     )
 }
+    

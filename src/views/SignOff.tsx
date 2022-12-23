@@ -11,11 +11,13 @@ export function SignOff() {
 
     const navegation = useNavigate();
 
-    setTimeout(() => {
-        navegation("/");
-    }, 3000);
+    const goSlash = () => {
+        setTimeout(() => {
+            navegation("/");
+        }, 2000);        
+    }
 
-    
+    useEffect( goSlash , []);
 
     return(
         <Container fluid>

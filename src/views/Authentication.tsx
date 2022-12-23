@@ -69,7 +69,6 @@ export function Authentication() {
                 if (userInfo === undefined) {
                     return;
                 }
-                console.log(userInfo?.rol);
                 if (userInfo.rol === 2) {
                     navigate('/main');
                 }

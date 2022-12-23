@@ -34,6 +34,7 @@
     --icon-close-banner: url('../src/images/svg/closeBanner.svg');
     --icon-definitions: url('../src/images/svg/definitions.svg');
     --color-gradient-global: transparent linear-gradient(271deg, #DF32FA 0%, #843BF9 54%, #57ABFB 100%) 0% 0% no-repeat padding-box;
+    --color-btns-linear: linear-gradient(90deg, rgba(61,170,224,1) 15%, rgba(68,85,228,1) 32%, rgba(207,51,226,1) 100%);
     --box-shadow-contour:  inset 0px 3px 6px #00000029, 0px 3px 6px #00000029;
     --larger-texts-ever: 45px;
     --big-text-ever: 40px;

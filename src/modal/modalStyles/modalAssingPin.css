@@ -26,4 +26,7 @@
         width: 90%;
         height: 3rem;
         border-radius: 40px;
+        background: linear-gradient(90deg, rgb(61, 170, 224) 15%, rgb(68, 85, 228) 32%, rgb(207, 51, 226) 100%) !important;
+        color: #fff;
+        border: none;
     }

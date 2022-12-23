@@ -34,3 +34,29 @@
     .web-select {
         -webkit-appearance: none;
     }
+
+    .search-movements {
+        height: 4rem;
+        width: 8%;
+        margin: 4.5% 0% 0% 0%;
+        background-color: #fff;
+        border: none;
+    }
+
+    .search-movements:hover {
+        background-color: #fff;
+    }
+
+    .container-search {
+        display: flex;
+    }
+
+    .container-movements {
+        max-height: 29rem;
+        overflow-y: scroll;
+    }
+
+    .heigh-view {
+        height: auto;
+        padding-top: 2%;
+    }
