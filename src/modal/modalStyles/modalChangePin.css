@@ -48,3 +48,10 @@
     color: #fff;
     border: none;
 }
+
+.label-wrong {
+    text-align: center;
+    color: #e31f1f;
+    font-size: 20px;
+    font-weight: 600;
+}

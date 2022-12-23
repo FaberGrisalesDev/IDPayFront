@@ -49,8 +49,11 @@ export default class AuthenticationService {
 
     public static sendTextMessage = (number: string, message: string) => {
         return new Promise((resolve, reject) => {
-           resolve(SmsServices.sendMessage(message, number))
-           reject( new Error("Error en la promesa"))
+            if (number == null) {
+                reject( new Error("Error en la promesa"))
+            } else {
+                resolve(SmsServices.sendMessage(message, number))
+            }
         })
     }
 

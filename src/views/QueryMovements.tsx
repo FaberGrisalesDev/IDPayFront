@@ -16,6 +16,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "../Styles/Movimientos.css";
 import Search from '../images/main/lupe.png';
 import { type } from "os";
+import CardComponent from "../components/cadsComponent/CardComponent";
 
 
 export function formatCurrency(value: number) {
@@ -26,7 +27,7 @@ export function QueryMovements() {
 
     const navegation = useNavigate();
 
-let [step, setStep] = useState(1);
+    let [step, setStep] = useState(1);
     let number = useParams();
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const [titulo, setTitulo] = useState<string>('');
@@ -44,306 +45,14 @@ let [step, setStep] = useState(1);
     const [endDate, setEndDate] = useState<string>("");
     const [nameMonth, setNameMonth] = useState("");
     const auth = useAuth();
-
     let [allMovements, setAllMovements] = useState<any>([]);
-    const buscarCliente = async () => {
-        if (auth.user != null) {
-            let data;
-            try {
-                data = await CreditCardController.findById({
-                    numberDocument: auth.user.username,
-                    token: auth.user.token
-                })
-                setTypeDocument(data.tipoDeIdentificacion.descCorta);
-            } catch (error) {
-                setShowAlert(true);
-                setTitulo('No se encontró el cliente');
-                setMensaje("por favor intenta nuevamente.");
-                setTipoAlerta("danger");
-                setTimeout(() => setShowAlert(false), 3000)
-                console.error('error: ', error);
-            } finally {
-                setLoading(true);
-            }
-            return data
-        }
-    }
-
-    const months = [
-        {
-            label: "Enero",
-            value: '00'
-        },
-        {
-            label: "Febrero",
-            value: '01'
-        },
-        {
-            label: "Marzo",
-            value: '02'
-        },
-        {
-            label: "Abril",
-            value: '03'
-        },
-        {
-            label: "Mayo",
-            value: '04'
-        },
-        {
-            label: "Junio",
-            value: '05'
-        },
-        {
-            label: "Julio",
-            value: '06'
-        },
-        {
-            label: "Agosto",
-            value: '07'
-        },
-        {
-            label: "Septiembre",
-            value: '08'
-        },
-        {
-            label: "Octubre",
-            value: '09'
-        },
-        {
-            label: "Noviembre",
-            value: '10'
-        },
-        {
-            label: "Diciembre",
-            value: '11'
-        }
-    ]
-
-
-
-    // const consultarPorCliente = () => {
-        //some thing
-
-    //     (async () => {
-
-    //         if (auth.user != null) {
-    //             try {
-    //                 const cliente = await buscarCliente()
-    //                 if(cliente && cliente.idCliente){
-    //                     const tarjeta = await CreditCardController.consultCardByClientId(cliente.idCliente, auth.user.token);
-    //                     if(tarjeta && tarjeta !== ""){
-    //                         const movements = await CreditCardController.consultMovementsCard(
-    //                             {tarjeta: {valNumeroTarjeta: tarjeta, fillerTar1: "2022-05-10", fillerTar2: "2022-08-15"}}, auth.user.token);
-    //                     }
-    //                 }
-    //                 const data = await CreditCardController.consultaPorCliente({
-    //                     persona: {
-    //                         noIdentificacion: auth.user.username,
-    //                         tipoDeIdentificacion: cliente.tipoDeIdentificacion.descCorta
-    //                     }
-    //                 }, auth.user.token)
-    //                 if (data) {
-    //                     setDisponibleCompras(formatCurrency(data.tarjeta[0].valCupoDisponible))
-    //                     setFechaCorte(data.tarjeta[0].fecCorteTarjeta.split('T')[0])
-    //                     setTotalAPagar(formatCurrency(data.tarjeta[0].valSaldo));
-    //                     setShowAlert(true);
-    //                     setTitulo("Mensaje");
-    //                     setMensaje("Cliente encontrado");
-    //                     setTipoAlerta("success");
-    //                     setTimeout(() => setShowAlert(false), 5000);
-    //                 } else {
-    //                     setShowAlert(true);
-    //                     setTitulo("Cliente no encontrado");
-    //                     setMensaje(data + ", por favor intenta nuevamente.");
-    //                     setTipoAlerta("danger");
-    //                     setTimeout(() => setShowAlert(false), 4000)
-    //                     return;
-    //                 }
-    //             } catch (error) {
-    //                 setShowAlert(true);
-    //                 setTitulo('No se encontró el cliente');
-    //                 setMensaje("por favor intenta nuevamente.");
-    //                 setTipoAlerta("danger");
-    //                 setTimeout(() => setShowAlert(false), 3000)
-    //                 console.error('error: ', error);
-    //             } finally {
-    //                 setLoading(false);
-    //             }
-    //         }
-    //     })()
-    // }
-    
-
-    /**
-     * Method to consult information about customer by doc number
-     */
-    const consultarCliente =  (date1:any, date2:any) => {
-        (async () =>
-        {
-            if (auth.user != null) {
-                const cliente = await buscarCliente();
-                try {
-                    // const data = await CreditCardController.consultaPorCliente({
-                    //     persona: {
-                    //         noIdentificacion: auth.user.username,
-                    //         tipoDeIdentificacion: cliente.tipoDeIdentificacion.descCorta
-                    //     }
-                    // }, auth.user.token)
-                    // console.log("Traer informacion de tarjeta", data);
-                    // console.log("this is number ",number.number)
-                    // const card = data.tarjeta[0].valNumeroTarjeta;
-                    const card = number.number;
-                    // data.tarjeta.forEach((element:any) => {
-                    //     element.valNumeroTarjeta;
-                    // });
-                    // console.log("Card: ", card);
-                    if (card) {
-                        const movements = await CreditCardController.consultMovementsCard(
-                        {
-                            tarjeta: {
-                                valNumeroTarjeta: card, 
-                                fillerTar1: date1, 
-                                fillerTar2: date2
-                            }
-                        }, 
-                        auth.user.token
-                        );
-                        // console.log("Se supone que la data de la tarjeta en movimientos es la siguiente: ", movements.valDescripcionRespuesta);
-                        allMovements = setAllMovements(movements.transaccion);
-                        // console.log(allMovements);
-                    } else {
-                        console.log("No hay tarjeta disponible");
-                    }
-
-                } catch (error){
-                    console.log("Error", error);
-                }
-            }
-        } )();
-    }
-
-
-    const getDataMonth =  (month: any) => {
-        let dateComplete = new Date();
-        let dateStart, dateEnd, year : any;
-        
-        year = dateComplete.getFullYear();
-
-        // QA - DEV
-        // year = year + 1;
-        // month = month -4;
-
-        dateStart = "01";
-        dateEnd = "31";
-
-        let objDates = {
-            month: month,
-            year: year,
-            dateStart: dateStart,
-            dateEnd: dateEnd
-        }
-
-        return objDates;
-    }
-
-    // const format = (inputDate:any) => {
-    //     let date, month, year : any;
-        
-    //     date = inputDate.getDate();
-    //     month = inputDate.getMonth();
-    //     year = inputDate.getFullYear();
-
-    //     // QA - DEV
-    //     // year = year + 1;
-    //     // month = month -4;
-        
-    //     if ( date < 10) {
-    //         date = date
-    //             .toString()
-    //             .padStart(2, '0');
-    //     }
-
-    //     if ( month < 10 ) {
-    //         month = month
-    //         .toString()
-    //         .padStart(2, '0');
-    //     }
-
-    //     return `${year}${month}${date}`;
-    // }
-
-    const NameMonth = () => {
-        let month = new Date();
-        let monthN = month.getMonth();
-        let year = month.getFullYear();
-        let resultStart = `${year}${monthN+1}01`;
-        let resultEnd = `${year}${monthN+1}31`;
-
-        months.map( (item) => {
-            if ( item.value === monthN.toString() ) {
-                setNameMonth(item.label)
-                consultarCliente(resultStart, resultEnd);
-            }
-        } ) 
-    }
-      
-    const setDates = (val:any) => {
-        const dataDates = getDataMonth(val);
-        if  ( dataDates) {
-            let start = dataDates.dateStart;
-            let end = dataDates.dateEnd;
-            let month : any = parseInt(dataDates.month) + 1;
-            let year = dataDates.year;
-            if ( month < 10 ) {
-                month = month
-                .toString()
-                .padStart(2, '0');
-            }
-            let resultStart = `${year}${month}${start}`;
-            let resultEnd = `${year}${month}${end}`;
-            // let startArray = startDate.split('-');
-            // let endArray = endDate.split('-');
-            // const resultStart = format(new Date(parseInt(startArray[0]), parseInt(startArray[1]), parseInt(startArray[2])));
-            // const resultEnd = format(new Date(parseInt(endArray[0]), parseInt(endArray[1]), parseInt(endArray[2])));
-            // setStartDate(resultStart);
-            // setEndDate(resultEnd);
-            consultarCliente(resultStart, resultEnd);
-            // consultarCliente("20230601", "20230631");
-            // setStep(2);
-        } else  {
-            setShowAlert(true);
-            setTitulo("Error data no valida");
-            setMensaje("Por favor ingrese las fechas necesarias");
-            setTipoAlerta("danger");
-            setTimeout(() => setShowAlert(false), 4000);
-            return;
-        }
-    }
-
-    const getOption = (event:any) => {
-        let value = event.target.value;
-        months.map( (item) => {
-            if (item.value == value ) {
-                setNameMonth(item.label);
-            }
-        })
-        setDates(value);
-    }
-
-    const changeMonth = (name: any) => {
-        setNameMonth(name);
-    }
-
-    useEffect(NameMonth, [])
 
     return (
         <Container fluid style={{backgroundColor: "#EDF0F7"}} >
             <InformationUserBanner/>
-            <Row className={"p-3 w-100"}>
+            {/* <Row className={"p-3 w-100"}>
                 <Row>
                     <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-                        {/* <>No se que esto</> */}
                     </Tabs>
                 </Row>
                 <Col sm={4} lg={3} className={"border-end border-3"}>
@@ -359,7 +68,6 @@ let [step, setStep] = useState(1);
                             <img className={"img-visa"} src={logoVisa} alt="logo_visa"/>
                             <div className="my-1"></div>
                             <h5><Trans>tarjetaCredito</Trans></h5>
-                            {/* <h6><Trans>numero</Trans>**********9069</h6> */}
                         </Card.Body>
                     </div>
 
@@ -394,61 +102,44 @@ let [step, setStep] = useState(1);
                                 }
                             </select>
                         </div>
-                        {/* <Button className="search-movements" onClick={()=>{}}><img src={Search} alt=''/></Button> */}
                     </div>
-                        <div className="text-center">
-                            <h3 className="mb-5">Tus ultimos movimientos de {nameMonth}</h3>
-                        </div>
-                        <div className="container-movements">
-                            <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>Tipo</th>
-                                    <th>Fecha</th>
-                                    <th>Descripcion</th>
-                                    <th>Monto</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    allMovements.map( (item : any) => {
-                                    let valorComplete = item.valValor;
-                                    let valorWithOutDecimal = valorComplete.substring(0,8);
-                                    let resultValue = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP' }).format(parseInt(valorWithOutDecimal))
-                                    return (<tr>
-                                        <td>{item.nomEstablecimiento === null ? item.valDescripcion : item.nomEstablecimiento}</td>
-                                        <td>{item.fecMovimiento}</td>
-                                        <td>{item.fillerTrn1}</td>
-                                        <td>${resultValue.slice(0, -7)}</td>
-                                    </tr>)
-                                    })
-                                }
-                            </tbody>
-                            </Table>
-                        </div>
-                    </Col>
-                {/* { step === 1 && (
-                    // <Col className="m-1">
-                    //     <div className="text-center">
-                    //         <Button onClick={() => {navegation('/main')}}>Volver</Button>
-                    //         <h1 className="input-title-container-calendar">Ingresa el periodo de tiempo que deseas consultar</h1>
-                    //         <Row>
-                    //             <Col className="col-margin">
-                    //                 <h4 className="input-title-calendar">Fecha Inicio</h4>
-                    //                 <input type="date" className="calendar-input" onChange={(event) => {setStartDate(event.target.value)}} />
-                    //             </Col>
-                    //             <Col className="col-margin">
-                    //                 <h4 className="input-title-calendar">Fecha FIn</h4>
-                    //                 <input type="date" className="calendar-input" onChange={(event) => {setEndDate(event.target.value)}} />
-                    //             </Col>
-                    //         </Row>
-                    //         <button className="button-date col-margin" onClick={()=>setDates()}>Consultar</button>
-                    //     </div>
-                    // </Col> 
-                )} */}
-                
-            </Row>
+                    <div className="text-center">
+                        <h3 className="mb-5">Tus ultimos movimientos de {nameMonth}</h3>
+                    </div>
+                    <div className="container-movements">
+                        <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Fecha</th>
+                                <th>Descripcion</th>
+                                <th>Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                allMovements.map( (item : any) => {
+                                let valorComplete = item.valValor;
+                                let valorWithOutDecimal = valorComplete.substring(0,8);
+                                let resultValue = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP' }).format(parseInt(valorWithOutDecimal))
+                                return (<tr>
+                                    <td>{item.nomEstablecimiento === null ? item.valDescripcion : item.nomEstablecimiento}</td>
+                                    <td>{item.fecMovimiento}</td>
+                                    <td>{item.fillerTrn1}</td>
+                                    <td>${resultValue.slice(0, -7)}</td>
+                                </tr>)
+                                })
+                            }
+                        </tbody>
+                        </Table>
+                    </div>
+                </Col>               
+            </Row> 
+            */}
 
+            <Row className="heigh-view">
+                <CardComponent step={step} />
+            </Row>
         </Container>        
     );
 }

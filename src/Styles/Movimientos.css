@@ -55,3 +55,8 @@
         max-height: 29rem;
         overflow-y: scroll;
     }
+
+    .heigh-view {
+        height: auto;
+        padding-top: 2%;
+    }

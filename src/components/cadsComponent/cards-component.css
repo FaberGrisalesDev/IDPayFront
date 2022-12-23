@@ -1,24 +1,4 @@
 
-        /* .card-container-cards {
-            width: 80%;
-            margin: 3% 2% 0 10%;
-            border-radius: 20px;
-            height: 130px;
-            background-color: #fff;
-            text-align: start;
-            border: none;
-        }
-     */
-        .card-container-cards:hover {
-            cursor: pointer;
-        }
-
-        .card-cards-two{
-            width: 100%;
-            text-align: start;
-            padding: 0px 35px;
-        }
-
         .info-target-card{
             font-family: 'OpenSans-Regular';
             font-size: var(--small-text-ever);
@@ -32,4 +12,19 @@
             font-size: var(--small-text-ever);
             color: var(--color-black-text);
             line-height: 0.2rem;
+        }
+
+        .card-container-cards-newCards {
+            width: 80%;
+            margin: 3% 2% 0 10%;
+            border-radius: 16px;
+            height: 73px;
+            border: none;
+        }
+
+        .text-products {
+            color: var(--color-large-text);
+            font-family: 'MyriadPro-Regular';
+            font-size: var(--subtitle-text-ever);
+            margin: 50px 70px 0px;
         }

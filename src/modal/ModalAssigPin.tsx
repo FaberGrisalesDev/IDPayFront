@@ -49,7 +49,7 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
         customClass: {
           confirmButton: 'bg-btn-swal'
         }
-      })
+    })
 
     // useEffect(()=> {
     //     consultCliente();
@@ -116,6 +116,8 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
             })
             setStep(3);
         }
+        
+
         if (pinComplete.descripcionRespuesta == "LA TARJETA INGRESADA YA SE LE REALIZO LA ASIGNACION DE CLAVE") {
             setShow(false);
             setShowLoader(false);
@@ -126,6 +128,18 @@ export default function ModalAssingPin({show, setShow, numCard}: Props) {
                 confirmButtonText: 'Aceptar',
             })
         }
+        
+        if (pinComplete.descripcionRespuesta == "TRANSACCIøN REPETIDA") {
+            setShow(false);
+            setShowLoader(false);
+            swalObject.fire({
+                title: 'Error',
+                text: 'Transacción repetida',
+                icon: 'error',
+                confirmButtonText: 'Aceptar',
+            })
+        }
+        
         if ( pinComplete.descripcionRespuesta.includes("CAMPO REQUERIDO") ) {
             setShow(false);
             setShowLoader(false);
