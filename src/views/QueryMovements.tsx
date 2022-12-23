@@ -137,7 +137,7 @@ export function QueryMovements() {
             </Row> 
             */}
 
-            <Row className="heigh-view">
+            <Row className="heigh-view w-100">
                 <CardComponent step={step} />
             </Row>
         </Container>        

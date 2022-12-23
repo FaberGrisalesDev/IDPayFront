@@ -552,12 +552,14 @@ export default function DataCards ( props: Props) {
                                             months.map( (item) => { 
                                                 const date = new Date();
                                                 let month = date.getMonth();
-                                                let monthStart : any = (month - 4)
+                                                let monthStart : any = (month - 4);
                                                 if (item.value > monthStart) {
                                                     return (
                                                         <option className="option-style" value={item.value} >{item.label}</option>
                                                     )
                                                 }
+                                                // QA
+                                                // <option className="option-style" value={item.value} >{item.label}</option>
                                             })
                                         }
                                     </select>
