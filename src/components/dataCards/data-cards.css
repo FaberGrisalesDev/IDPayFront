@@ -1,0 +1,119 @@
+
+        .img-woman-noCards {
+            width: 32%;
+            margin-left: 45%;
+            margin-top: 20%;
+        }
+
+        .scroll-cards {
+            overflow-y: scroll;
+            height: 74vh;
+        }
+
+        @media only screen and (max-width: 1280px){
+
+            .card-container-cards {
+                height: 117px !important;
+            }
+
+            .img-woman-noCards{
+                width: 43%;
+                margin-left: 40%;
+                margin-top: 20%;
+            }
+        }
+
+        @media only screen and (max-width: 1920px){
+
+            .img-woman-noCards {
+                margin-top: 8%;
+            }
+
+            .card-container-cards{
+                height: 160px;
+            }
+
+            .heigh-view {
+                height: 835px !important;
+            }
+        }
+        @media only screen and (max-width: 1536px){
+            
+            .card-container-cards {
+                height: 120px;
+            }
+        }
+
+        @media only screen and (max-width: 768px){
+            
+            .img-woman-noCards {
+                width: 70%;
+                margin-left: 20%;
+                margin-top: 70%;
+            }
+
+            .new-target, .info-target-card, .info-target-card-n-n {
+                font-size: var(--smaller-text-ever);
+            }
+
+            .close-main{
+                width: 15%;
+            }
+
+            .movements-body{
+                padding: 4% 0%;
+                margin-top: 6%;
+                height: 45px;
+            }
+
+            .movements-body:hover{
+                cursor: pointer
+            }
+
+            .img-container {
+                height: 755px;
+            }
+
+            .scroll-cards {
+                height: 50vh;
+            }
+        }
+
+        @media only screen and (max-width: 480px){
+
+            .card-container-cards {
+                height: 130px !important;
+            }
+
+            .img-container{
+                width: 85%;
+                margin: auto;
+                margin-top: 15px;
+                height: 720px;
+            }
+
+            .img-woman-noCards {
+                margin-top: 80%;
+            }
+
+            .scroll-cards {
+                height: 35vh;
+            }
+
+            .heigh-view {
+                height: 975px !important;
+            }
+
+            .background-select {
+                height: 110px;
+            }
+        }
+
+        .padd-btn {
+            padding: 0 4% 0 4%;
+        }
+
+        .heigh-view {
+            height: auto;
+            padding-top: 2%;
+        }

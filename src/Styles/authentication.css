@@ -111,7 +111,7 @@
     display: block;
     border: none;
     font-family: 'OpenSans-Regular';
-    margin-top: 15%;
+    margin-top: 10%;
     height: 40px;
 }
 
@@ -171,7 +171,12 @@
     }
 
     .background_woman {
-        width: 116%;
+        width: 100%;
+        height: auto;
+    }
+
+    .btn-continue-login{
+        width: 100%;
     }
 }
 
@@ -189,7 +194,7 @@
         font-size: var(--very-medium-text);
     }
 
-    .text-data, .label-document{
+    .label-document{
         font-size: var(--small-text-ever);
         width: 50%;
     }

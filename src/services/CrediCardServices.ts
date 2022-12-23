@@ -17,7 +17,7 @@ export class crediCardService {
             'headers' : {
                 'Content-Type': 'application/json',
                 'X-TenantID' : this.tenantID ,
-                "Authorization": "Bearer " + token
+                "Authorization": "Bearer " + token  
             }
         });
     }
@@ -30,5 +30,15 @@ export class crediCardService {
                 "Authorization": "Bearer " + token
             }
         });
+    }
+
+    public static getIfPin(path: string, token: string):Promise<any>{
+        return axios.get(`${this.URL}${this.apiController}/get-info/${path}`, {
+            'headers' : {
+                'Content-Type': 'application/json',
+                'X-TenantID' : this.tenantID ,
+                "Authorization": "Bearer " + token
+            }
+        })
     }
 }
