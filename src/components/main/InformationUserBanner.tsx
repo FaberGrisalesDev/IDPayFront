@@ -108,7 +108,8 @@ export function InformationUserBanner(props: any) {
                                 {/* <div>
                                     <img src={Triangle} alt='' />
                                 </div> */}
-                                <Dropdown.Item className="icon-definitions">Ajustes de la cuenta</Dropdown.Item>
+                                <Dropdown.Item className="icon-definitions" onClick={() => navigate("/settings")} >Ajustes de la cuenta</Dropdown.Item>
+                                {/* <Dropdown.Item className="icon-definitions">Ajustes de la cuenta</Dropdown.Item> */}
                                 <Dropdown.Item
                                     onClick={() => navigate("/sign-off")}
                                     className="close-icon"

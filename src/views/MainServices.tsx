@@ -63,7 +63,6 @@ export function MainServices() {
         console.log("Inglés");
         window.sessionStorage.setItem('language', 'en_US');
         selectLanguage('en');
-
     }
 
     return (

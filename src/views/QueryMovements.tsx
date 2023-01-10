@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {Button, Card, Col, Container, Form, Row, Tab, Tabs, Table} from "react-bootstrap";
+import React, { useState} from "react";
+import {Container, Row } from "react-bootstrap";
 import {InformationUserBanner} from "../components/main/InformationUserBanner";
 import "../Styles/Movimientos.css";
 import CardComponent from "../components/cadsComponent/CardComponent";

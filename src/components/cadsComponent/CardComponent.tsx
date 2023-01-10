@@ -45,6 +45,7 @@ export default function CardComponent (props: Props) {
     const [showLoader, setShowLoader] = useState(false);
     const [allMovements, setAllMovements] = useState<any>([]);
     const [pinState, setPinState ] = useState<boolean>(false);
+    const [dataCardInfo, setDataCardInfo] = useState<any>();
     
     /**
      * 
@@ -217,7 +218,6 @@ export default function CardComponent (props: Props) {
 
     const showInfoCard = (index: number, data: any) => {
         setChangeDisplay(true);
-        console.log("Index");
         estado != 'N-N NORMAL' ? setactiveOrBlock(false) : setactiveOrBlock(true);
         setNumberCardValue(data.valNumeroTarjeta);
         setCupoTotal(formatCurrency(data.valCupoTotalAprobado));
@@ -300,14 +300,15 @@ export default function CardComponent (props: Props) {
             if (auth.user != null) {
                 try {
                     setShowLoader(true);
-                    const cliente = await buscarCliente()
+                    const cliente = await buscarCliente();
+                    setDataCardInfo(cliente);
                     const data = await CreditCardController.consultaPorCliente4Digits( {
                         persona: {
                             noIdentificacion: auth.user?.username!,
                             tipoDeIdentificacion: cliente.tipoDeIdentificacion.descCorta
                         }
                     }, auth.user?.token!);
-                    if (data) {
+                    if (data) {     
                         setShowLoader(false);
                         setNumberCards(data.tarjeta);
                         setNumberCardValue(data.tarjeta[0].valNumeroTarjeta);
@@ -509,6 +510,7 @@ export default function CardComponent (props: Props) {
                 auth={auth}
                 step = {props.step}
                 movements = {allMovements}
+                data={dataCardInfo}
             />
         </>
     )

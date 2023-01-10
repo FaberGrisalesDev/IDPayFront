@@ -7,6 +7,14 @@ import {AlertComponent} from "../alerts/AlertFailAuth";
 import {BsEye, BsEyeSlash} from "react-icons/bs";
 import {UserController} from "../controller/UserController";
 import {useAuth} from "../hook/AuthContext";
+import { InformationUserBanner } from "../components/main/InformationUserBanner";
+
+/**
+ * Style
+ */
+
+
+import '../Styles/updatePassword.css';
 
 export function UpdatePassword() {
     //* Variables
@@ -120,22 +128,106 @@ export function UpdatePassword() {
     }
 
     return (
-        <Container fluid style={{backgroundColor: "#EDF0F7"}}>
+        <Container fluid>
             {renderShowAlert()}
-
-            <Row className={"min-vh-100"}>
-                <Col className={"d-none d-lg-block pay-gradient-main"}>
+            <InformationUserBanner />
+            <h1 className="text-center mt-5 mb-5">Actualizar contraseña</h1>
+            <Container className="w-50">
+                <Card>
+                    <Card.Body>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Contraseña actual</Form.Label>
+                                <div className="d-flex justify-content-center">
+                                    <Form.Control 
+                                        placeholder="Ingresa contraseña actual" 
+                                        minLength={8}
+                                        maxLength={12}
+                                        className="form-control borderTopLef32"
+                                        value={password}
+                                        onChange={handlePassword}
+                                        aria-label="password"
+                                        type={showEyePassword ? "text" : "password"}
+                                        aria-describedby="basic-addon1"
+                                        />
+                                    <Button
+                                        className="col-md-2 eye-pass pay-gradient-main password borderTopRight32"
+                                        type="button"
+                                        onClick={() => setShowEyePassword(!showEyePassword)}
+                                    >
+                                        {showEyePassword ? <BsEye/> : <BsEyeSlash/>}
+                                    </Button>
+                                </div>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Nueva contraseña</Form.Label>
+                                <div className="d-flex justify-content-center">
+                                    <Form.Control 
+                                        placeholder="Ingresa nueva contraseña" 
+                                        maxLength={12}
+                                        className="form-control borderTopLef32"
+                                        value={newPassword}
+                                        onChange={handleNewPassword}
+                                        aria-label="newPassword"
+                                        type={showEyeNewPassword ? "text" : "password"}
+                                        aria-describedby="basic-addon1"
+                                        />
+                                        <Button
+                                            className="col-md-2 eye-pass pay-gradient-main password borderTopRight32"
+                                            type="button"
+                                            onClick={() => setShowEyeNewPassword(!showEyeNewPassword)}
+                                        >
+                                            {showEyeNewPassword ? <BsEye/> : <BsEyeSlash/>}
+                                        </Button>
+                                </div>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Confitmar contraseña</Form.Label>
+                                <div className="d-flex justify-content-center">
+                                    <Form.Control 
+                                        placeholder="Ingresa confirmar contraseña" 
+                                        minLength={8}
+                                        maxLength={12}
+                                        className="form-control borderTopLef32"
+                                        value={passwordConfirm}
+                                        onChange={handlePasswordConfirm}
+                                        aria-label="password"
+                                        type={showEyePasswordConfirm ? "text" : "password"}
+                                        aria-describedby="basic-addon1"
+                                        />
+                                        <Button
+                                            className="col-md-2 eye-pass pay-gradient-main password borderTopRight32"
+                                            type="button"
+                                            onClick={() => setShowEyePasswordConfirm(!showEyePasswordConfirm)}
+                                        >
+                                            {showEyePasswordConfirm ? <BsEye/> : <BsEyeSlash/>}
+                                        </Button>
+                                </div>
+                            </Form.Group>
+                            <div className="d-flex justify-content-center">
+                                <Button 
+                                    className="d-flex justify-content-center" 
+                                    onClick={handleAuth}
+                                    type="submit"
+                                    >
+                                    Submit
+                                </Button>
+                            </div>
+                        </Form>
+                    </Card.Body>
+                </Card>
+            </Container>
+            {/* <Row>
+                <Col className="col-4">
                 </Col>
-                <Col className={"my-auto text-center px-lg-5"}>
+                <Col className="my-auto text-center px-lg-5">
                     <Row className={"mb-2"}>
                         <Col>
                             <img src={idSign} alt="sign_in"/>
                             <div className="my-2 py-2"/>
                             <h1 className={"display-6 fw-bold text-purple-900"}>Hola ;)</h1>
-                            <h3 className={"text-purple-900 mb-4"}>Te dije que te ayudaría a actualizar tu
-                                contraseña</h3>
-                            <h5 className={"fw-light"}>Por favor ingresa tu nueva contraseña <br/> Cumpliendo con las
-                                siguientes instrucciones:</h5>
+                            <h3 className={"text-purple-900 mb-4"}>Te dije que te ayudaría a actualizar tu contraseña</h3>
+                            <h5 className={"fw-light"}>Por favor ingresa tu nueva contraseña <br/> Cumpliendo con las siguientes instrucciones: </h5>
                         </Col>
                     </Row>
                     <Row className={"mb-3"}>
@@ -256,7 +348,7 @@ export function UpdatePassword() {
                         </Row>
                     </Form>
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
     )
 }

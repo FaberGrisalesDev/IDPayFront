@@ -19,6 +19,9 @@ import money from "../../images/svg/money.svg";
 import frozen from "../../images/svg/buttons/frozen.svg";
 import lock from "../../images/svg/buttons/lock.svg";
 
+// Data
+import DataPayment from '../../models/ModelPayments/ObjectPay.js';
+
 type Props = {
     clickOn: boolean;
     state: string;
@@ -33,7 +36,9 @@ type Props = {
     auth: any;
     movements?: any;
     statePin?:boolean;
+    data?:any;
 }
+
 export default function DataCards ( props: Props) {
 
     const navegation = useNavigate();
@@ -52,6 +57,7 @@ export default function DataCards ( props: Props) {
     let [allMovements, setAllMovements] = useState<any>(props.movements);
 
     const movementsTest:Array<any> = [];
+
     // const movementsTest = [
     //         {
     //             "valIdentificadorProductoBanco": null,
@@ -323,6 +329,8 @@ export default function DataCards ( props: Props) {
 
         // QA - DEV
         // year = year + 1;
+        // QA - PROD
+         year = year - 1;
         // month = month -4;
 
         dateStart = "01";
@@ -339,6 +347,7 @@ export default function DataCards ( props: Props) {
     }
 
     const getOption = (event:any) => {
+        
         setShowLoader(true);
         let value = event.target.value;
         months.map( (item) => {
@@ -439,6 +448,12 @@ export default function DataCards ( props: Props) {
         } ) 
     }
 
+    const payCard = () => {
+        console.log(DataPayment.InformacionPago);
+        console.log(props.data);
+
+    }
+
     useEffect(NameMonth, [])
 
 
@@ -482,7 +497,7 @@ export default function DataCards ( props: Props) {
                                                             <strong><p className="text-data-main">Minimo a pagar</p></strong>
                                                             <p className="text-data-color">{props.minPay}</p>
                                                             <strong><p className="text-data-main">Fecha limite de pago</p></strong>
-                                                            <p className="text-data-color">{props.limitDate} <Button className="btn-pay">Pagar</Button> </p>
+                                                            <p className="text-data-color">{props.limitDate} <Button className="btn-pay" onClick={()=>{payCard()}}>Pagar</Button> </p>
                                                         </div>
                                                         <div className="container-buttons">
                                                             <Button className="btn-accions padd-btn" 
@@ -549,11 +564,12 @@ export default function DataCards ( props: Props) {
                                     <label className="label-document-pin">MES</label>
                                     <select id="selectMonth" className="enter-data-mov drowtown_menu web-select" onChange={(event)=>{getOption(event)}}>
                                         {
-                                            months.map( (item) => { 
+                                            months.map( (item, key) => { 
+                                                console.log(setDates)
                                                 const date = new Date();
                                                 let month = date.getMonth();
                                                 let monthStart : any = (month - 4);
-                                                if (item.value > monthStart) {
+                                                if (parseInt(item.value) >  month) {
                                                     return (
                                                         <option className="option-style" value={item.value} >{item.label}</option>
                                                     )
