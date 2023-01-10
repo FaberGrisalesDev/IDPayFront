@@ -1,0 +1,41 @@
+    @import '../../index.css';
+
+    .container-option-setting {
+        width: 50%;
+        height: 8rem;
+        border: 2px solid var(--color-large-text);
+        border-radius: 20px;
+        padding: 0 1%;
+    }
+
+    .label-oprtion-setting {
+        position: relative;
+        bottom: 1rem;
+        right: 13rem;
+        background-color: #fff;
+        width: 20%;
+    }
+
+    .text-option-setting {
+        text-align: start;
+        margin-left: 10%;
+        font-size: 25px;
+    }
+
+    .icon-next {
+        position: relative;
+        left: 15rem;
+    }
+
+    .icon-next:hover {
+        cursor: pointer;
+    }
+
+    .bar-option-setting {
+        border: none;
+        height: 1rem;
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 3%;
+        background: var(--color-gradient-global);
+    }

@@ -1,0 +1,21 @@
+        .img-woman {
+            height: 30rem;
+        }
+
+        .container-img-women {
+            margin-top: 20%;
+        }
+
+        .img-logo {
+            height: 4rem;
+        }
+
+        .container-img-logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .text-settings {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }

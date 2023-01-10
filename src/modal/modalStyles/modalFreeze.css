@@ -8,6 +8,8 @@
     display: block;
     margin: auto;
     width: 70%;
+    border: none;
+    border-radius: 20px;
 }
 
 .modal-msj{
@@ -30,6 +32,7 @@
     font-family: 'OpenSans-Regular';
     font-size: 16px;  
     color: var(--color-white);
+    width: 65%;
 }
 
 .bg-btn-swal {

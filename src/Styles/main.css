@@ -9,7 +9,7 @@
     }
 
     .img-container {
-        width: 100%;
+        width: 98%;
         background-color: #fff;
         height: 725px;
         margin: 1.5% 0% 2% 0%;
@@ -28,7 +28,7 @@
         width: 80%;
         margin: 3% 2% 0 10%;
         border-radius: 20px;
-        height: 130px;
+        height: 120px;
         background-color: #fff;
         text-align: start;
         border: none;
@@ -131,22 +131,23 @@
 
     .card-information{
         font-family: 'OpenSans-Regular';
-        font-size: var(--small-item_ever);
+        font-size: var(--small-text-ever);
         color: var(--color-black-text);
+        font-weight: 100;
     }
 
     .progress-card{
         height: 26px;
         width: 94%;
-        margin-top: 15px;
+        margin-top: 7px;
     }
 
     .container-saldos-card {
         border: 3px solid var(--color-large-text);
         box-shadow: 0px 3px 6px #00000029;
-        margin-top: 2%;
+        margin-top: 4%;
         border-radius: 20px;
-        height: 18rem;
+        height: 19rem;
         padding-left: 5%;
     }
 
@@ -155,7 +156,7 @@
         justify-content: space-between;
         margin-top: 5%;
         height: 4rem;
-        width: 90%;
+        width: 75%;
         margin-left: 3%;
     }
 
@@ -171,6 +172,9 @@
     .text-data-main {
         margin-left: 10%;
         margin-bottom: 0%;
+        font-weight: 100;
+        font-family: 'OpenSans-Regular';
+        font-size: var(--small-text-ever);
     }
 
     .text-data-color {
@@ -256,6 +260,10 @@
         display: flex;
     }
 
+    .movements-body:hover{
+        cursor: pointer
+    }
+
     .btn-act {
         margin-top: -3%;
         margin-left: 63%;
@@ -270,6 +278,41 @@
 
     .glass-movements{
         margin-left: 20px;
+    }
+    @media only screen and (max-width: 1920px){
+
+        .btn-accions{
+            margin-top: 3%;
+        }
+
+        .img-container{
+            max-width: 1410px;
+        }
+    }
+
+    @media only screen and (max-width: 1536px){
+
+        .background-select{
+            height: 100px
+        }
+    }
+
+    @media only screen and (max-width: 1280px){
+        .style-icon{
+            margin-left: 59%;
+        }
+
+        .btn-accions {
+            width: 30%;
+        }
+
+        .background-select{
+            padding: 3% 8%;
+        }
+
+        .img-woman-noCards {
+            width: 40%;
+        }
     }
   
     @media only screen and (max-width: 768px){ 
@@ -318,6 +361,16 @@
 
         .scroll-cards {
             height: 30vh;
+        }
+
+        .background-select {
+            padding: 0% 8%;
+        }
+
+        .select-card{
+            width: 85%;
+            border: 2px solid var(--color-large-text);
+            border-radius: 30px;
         }
     }
 

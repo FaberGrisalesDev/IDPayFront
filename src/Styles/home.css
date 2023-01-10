@@ -638,6 +638,58 @@
     
     /* Dispositivos */
 
+    @media only screen and (max-width: 1920px){
+
+        .woman_carousel {
+            height: 674px;
+        }
+
+        .img-user-logo{
+            left: 35px
+        }
+
+        .btn-sesion {
+            width: 19%;
+            height: 45px;
+        }
+    }
+
+    @media only screen and (max-width: 1280px){
+
+        .description-target {
+            margin-left: 40px;
+            padding: 0px 38px;
+        }
+
+        .text-shopping{
+            margin-left: 36px
+        }
+
+        .listItem-card, .description-homework{
+            font-size: var(--small-text-ever);
+        }
+    
+        .homework-itemOne {
+            width: 6%;
+        }
+    
+        .homework-itemSp {
+            width: 20%;
+        }
+    
+        .homework-itemPayment {
+            width: 18%;
+        }
+    
+        .homework-itemCard {
+            width: 19%;
+        }
+        
+        .cardBody-national {
+            margin-left: 58%;
+        }
+    }
+    
 @media only screen and (max-width: 1536px){
 
     .content-items{
@@ -650,7 +702,7 @@
 
     .imgTest {
         width: 90% !important;
-        height: 420px;
+        height: 380px;
     }
 
     .woman_carousel {
@@ -658,12 +710,12 @@
         height: 538px;
     }
 
-    .text-main,.title-target {
+    .text-main, .title-target {
         font-size: var(--bg-medium-text-ever);
     }
 
     .btn-sesion {
-        width: 22%;
+        width: 23%;
         height: 41px;
     }
 
@@ -677,6 +729,8 @@
 
     .btn-cookieshome{
         font-size: var(--subtitle-text-ever);
+        height: 48px;
+        margin-top: -36px;
     }
 
     .content-cards {
@@ -730,14 +784,18 @@
     }
 }
 
-
 @media only screen and (max-width: 1440px){
+
+    .woman_carousel{
+        height: auto;
+    }
+
     .btn-sesion {
-        width: 25%;
+        width: 28%;
     }
 
     .text-cookies{
-        font-size: var(--very-medium-text);
+        font-size: var(--small-texts-ever);
     }
 
     .cookies-mobile {
@@ -752,7 +810,8 @@
     .description-target{
         text-align: left;
         margin-left: 0px;
-        padding: 0px 104px;
+        padding: 0px 97px;
+        font-size: var(--smaller-text-ever);
     }
 
     .text-target{
@@ -794,36 +853,9 @@
     .cardBody-international{
         margin-top: -117px;
     }
-}
 
-@media only screen and (max-width: 1280px){
-    .description-target {
-        margin-left: 40px;
-        padding: 0px 38px;
-    }
-
-    .listItem-card{
-        font-size: var(--small-text-ever);
-    }
-
-    .homework-itemOne {
-        width: 6%;
-    }
-
-    .homework-itemSp {
-        width: 20%;
-    }
-
-    .homework-itemPayment {
-        width: 18%;
-    }
-
-    .homework-itemCard {
-        width: 19%;
-    }
-    
-    .cardBody-national {
-        margin-left: 58%;
+    .listItem_cash{
+        font-size: var(--smaller-text-ever);
     }
 }
 

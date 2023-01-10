@@ -29,6 +29,7 @@ import {QueryMovements} from "./views/QueryMovements";
 import {PoliciesCookies} from './views/PoliciesCookies';
 import { MainServices } from './views/MainServices';
 import UserFlow from './components/main/UserFlow';
+import { Settings } from './views/Settings';
 
 
 ReactDOM.render(
@@ -57,6 +58,11 @@ ReactDOM.render(
                                 <Admin/>
                             </RequireAuth>
                         }/>
+                        <Route path={'/settings'} element={
+                            <RequireAuth>
+                                <Settings />
+                            </RequireAuth>
+                        }/>
                         <Route path={"/sign-in"} element={<SignIn/>}/>
                         <Route path={"/auth"} element={<Authentication/>}/>
                         <Route path={"/sign-in/code"} element={<SignInCode/>}/>
@@ -77,14 +83,13 @@ ReactDOM.render(
                         <Route path={"/recover-password/:token"} element={<RecoverPassword/>}/>
                         
                         <Route path={"/"} element={<TemplateSideBar/>}>
-                            {/* <Route path={"/home"} element={<Home/>}/> */}
-                            
-                            <Route path={"/Usuarios"} element={
-                                <RequireAuth>
-                                    <User/>
-                                </RequireAuth>
-                            }/>
-                            <Route path={"/language"} element={<Language/>}/>
+                        {/* <Route path={"/home"} element={<Home/>}/> */}    
+                        <Route path={"/Usuarios"} element={
+                            <RequireAuth>
+                                <User/>
+                            </RequireAuth>
+                        }/>
+                        <Route path={"/language"} element={<Language/>}/>
                         </Route>
                         <Route path={"/update-password"} element={<UpdatePassword/>}/>
                     </Routes>
